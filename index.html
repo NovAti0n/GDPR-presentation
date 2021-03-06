@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>English presentation</title>
+		<meta charset = "UTF-8">
+
+		<link rel = "stylesheet" type = "text/css" href = "https://unpkg.com/7.css">
+		<!-- <link rel = "stylesheet" href = "https://unpkg.com/xp.css"> -->
+		<!-- <link rel = "stylesheet" href = "https://unpkg.com/98.css"> -->
+
+		<style>
+			body {
+				background: url(https://wallpaperaccess.com/full/220742.jpg) no-repeat center center fixed;
+				/* background: url(https://wallpapercave.com/wp/wp2754864.jpg) no-repeat center center fixed; */
+				/* background: #008080; */
+
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-ms-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				-o-user-select: none;
+				user-select: none;
+
+				overflow: hidden;
+			}
+
+			.ie-address-bar {
+				display: flex;
+				align-items: center;
+			}
+
+			.round {
+				line-height: 1;
+				border-radius: 50%;
+			}
+
+			@font-face {
+				font-family: lucida;
+				src: url(lucida.ttf);
+			}
+
+			textarea {
+				font-family: 'lucida';
+				font-size: 18px;
+			}
+
+			.excel {
+				width: 200px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id = "intro-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Introduction to the GDPR</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"></button>
+					<button onclick = "yes_cancel_dialog('Exit Presentation', 'Are you sure you would like to exit the presentation?', 'alert(`no`)')" aria-label = "Close"></button>
+				</div>
+			</div>
+			<div class = "window-body">
+				<p>Internet is an incredible tool, but it has a dark side. Have you ever gone to a website and been assaulted by a lot of popups asking you to accept cookies? Have you ever received loads of emails about a thing that you were just searching for or talking about five minutes ago? How can evil companies retrieve all this data from you? Are they using black magic? This is what we will be trying to answer today.</p>
+				<p>From your lamp to your flip-flops, everything is connected to the Internet these days. No wonder Google is able to know every single thing about you. Let’s do an experiment, just follow these simple steps:</p>
+				<ul class = "tree-view">
+					<details close>
+						<summary>If you have an iPhone and are not using Google Maps...</summary>
+						<ul>
+							<li>· Open settings.</li>
+							<li>· Go to "Confidentialité", then "Services de localisation", then "Services système", then "Lieux importants".</li>
+							<li>· You should see a list of places you've been. Click on one to see more!</li>
+						</ul>
+					</details>
+					<details close>
+						<summary>If you are using Google Maps...</summary>
+						<ul>
+							<li>· Open Google Maps.</li>
+							<li>· Click on your profile picture on the top-right corner.</li>
+							<li>· Click on "Vos trajets".</li>
+							<li>· You should see your recent paths.</li>
+						</ul>
+					</details>
+				</ul>
+				<p>So, are you terrified now?</p>
+				<button onclick = "document.getElementById('why-window').hidden = false">Yes, I am!</button>
+				<button onclick = "info_dialog('Try Again', `That's the wrong answer! Try again by clicking on 'Yes, I am!'...`)">No...</button>
+			</div>
+		</div>
+
+		<div hidden id = "why-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Why did we choose to work on this topic?</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"></button>
+					<button aria-label = "Close" onclick = "document.getElementById('why-window').hidden = true"></button>
+				</div>
+			</div>
+			<div class = "window-body">
+				<p>Sometimes, things do not have any explanation. Just deal with it.</p>
+				<button onclick = "document.getElementById('form-window').hidden = false">Ok?</button>
+			</div>
+		</div>
+
+		<div hidden id = "form-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Small survey</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"></button>
+					<button aria-label = "Close" onclick = "document.getElementById('form-window').hidden = true"></button>
+				</div>
+			</div>
+			<div class = "window-body">
+				<h4>How much do you know about the GDPR?</h4>
+				<p>In this little survey, find out how much you <i>really</i> know about the GDPR, and more!</p>
+				<p>Just kidding, you'll only find out about how much you know about the GDPR, nothing else.</p>
+
+				<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
+				<fieldset>
+					<legend>Please select your answer</legend>
+					<div class = "field-row">
+						<input id = "q1-r0" type = "radio" name = "q1" value = "1" onclick = "document.getElementById('q1-text').hidden = false">
+        				<label for = "q1-r0">Yes, absolutely</label>
+					</div>
+					<div class = "field-row">
+						<input id = "q1-r1" type = "radio" name = "q1" value = "2" onclick = "document.getElementById('q1-text').hidden = false">
+        				<label for = "q1-r1">I think I've heard of it</label>
+					</div>
+					<div class = "field-row">
+						<input id = "q1-r2" type = "radio" name = "q1" value = "3" onclick = "document.getElementById('q1-text').hidden = true">
+        				<label for = "q1-r2">Not at all</label>
+					</div>
+					<div class = "field-row">
+						<input style = "width: 300px" hidden id = "q1-text" type = "text" placeholder = "Explain what they are in a few words...">
+					</div>
+				</fieldset>
+
+				<h5>Do you know what they are used for?</h5>
+				<fieldset>
+					<legend>Please select your answer</legend>
+					<div class = "field-row">
+						<input id = "q2-r0" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
+        				<label for = "q2-r0">Yes, absolutely</label>
+					</div>
+					<div class = "field-row">
+						<input id = "q2-r1" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
+        				<label for = "q2-r1">I think I do</label>
+					</div>
+					<div class = "field-row">
+						<input id = "q2-r2" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = true">
+        				<label for = "q2-r2">Not at all</label>
+					</div>
+					<div class = "field-row">
+						<input style = "width: 300px" hidden id = "q2-text" type = "text" placeholder = "Explain what they are used for in a few words...">
+					</div>
+				</fieldset>
+
+				<h5>
+					Do you know what your personal data* is used for?<br>
+					<i>*e.g., conversations, search history, favourite books, movies, who your friends are, where you've been, &c</i>
+				</h5>
+				<fieldset>
+					<legend>Please select your answer</legend>
+					<div class = "field-row">
+						<input id = "q3-r0" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
+        				<label for = "q3-r0">Yes, absolutely</label>
+					</div>
+					<div class = "field-row">
+						<input id = "q3-r1" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
+        				<label for = "q3-r1">I think I do</label>
+					</div>
+					<div class = "field-row">
+						<input id = "q3-r2" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = true">
+        				<label for = "q3-r2">Not at all</label>
+					</div>
+					<div class = "field-row">
+						<input style = "width: 300px" hidden id = "q3-text" type = "text" placeholder = "Explain what it is used for in a few words...">
+					</div>
+				</fieldset>
+
+				<h5>Do you know what the GDPR is?</h5>
+				<fieldset>
+					<legend>Please select your answer</legend>
+					<div class = "field-row">
+						<input id = "q4-r0" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
+        				<label for = "q4-r0">Yes, absolutely</label>
+					</div>
+					<div class = "field-row">
+						<input id = "q4-r1" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
+        				<label for = "q4-r1">I think I've heard of it</label>
+					</div>
+					<div class = "field-row">
+						<input id = "q4-r2" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = true">
+        				<label for = "q4-r2">Not at all</label>
+					</div>
+					<div class = "field-row">
+						<input style = "width: 300px" hidden id = "q4-text" type = "text" placeholder = "Explain what it is in a few words...">
+					</div>
+				</fieldset>
+				
+				<button id="surveyButton" onclick = "document.getElementById('video').hidden = false">Next</button>
+			</div>
+		</div>
+
+		<div hidden id = "notepad-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "notepad.png" style = "width: 16px; height: 16px; margin-right: 4px">Notepad</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"></button>
+					<button aria-label = "Maximize"></button>
+					<button aria-label = "Close" onclick = "document.getElementById('notepad-window').hidden = true"></button>
+				</div>
+			</div>
+			<div style = "padding: 0" class = "window-body">
+				<textarea style = "margin-bottom: -3px; min-width: 400px; min-height: 300px">tutoriel 2008 comment ouvrir son explorateur de fichier</textarea>
+			</div>
+		</div>
+
+		<div hidden id = "cmd-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Command Prompt</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"></button>
+					<button aria-label = "Maximize"></button>
+					<button aria-label = "Close" onclick = "document.getElementById('cmd-window').hidden = true"></button>
+				</div>
+			</div>
+			<div style = "padding: 0" class = "window-body">
+				<pre style = "background-color: black; color: white">
+Microsoft&#10094;R&#10095; Windows DOS
+&#10094;C&#10095; Copyright Microsoft Corp 1990-2001.
+<br>C:&#92;WINDOWS&#92;SYSTEM32> brichant.exe
+You have summoned the great Brichant!<br>
+He will grant you thre--
+I have just been informed tha--
+Ok the great Brichant will grant you NO wishes!<br>
+Loading the GREAT BRICHANT...
+				</pre>
+			</div>
+		</div>
+
+		<div hidden id = "excel-window" class = "draggable window glass" style = "position: absolute">
+			<div class = "title-bar">
+				<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Microsoft Excel 2077 - vocab.xls</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"></button>
+					<button aria-label = "Maximize"></button>
+					<button aria-label = "Close" onclick = "document.getElementById('excel-window').hidden = true"></button>
+				</div>
+			</div>
+			<div style = "padding: 0" class = "window-body">
+				<input class = "excel" style = "font-weight: bold;" type = "text" value = "English" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "French" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Additional notes" readonly><br>
+				<input class = "excel" type = "text" value = "GDPR (General Data Protection Regulation)" readonly><input class = "excel" type = "text" value = "RGPD (Réglement Général sur la Protection des Données)" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Data" readonly><input class = "excel" type = "text" value = "Données" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "To reply to" readonly><input class = "excel" type = "text" value = "Répondre à" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Turnover" readonly><input class = "excel" type = "text" value = "Chiffres d'affaires" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "To stalk / to track" readonly><input class = "excel" type = "text" value = "Traquer" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "To act" readonly><input class = "excel" type = "text" value = "Agir" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Database" readonly><input class = "excel" type = "text" value = "Base de données" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "To involve" readonly><input class = "excel" type = "text" value = "Impliquer" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Loopholes" readonly><input class = "excel" type = "text" value = "Failles" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "To hold" readonly><input class = "excel" type = "text" value = "Conserver" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Burden" readonly><input class = "excel" type = "text" value = "Fardeau" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "To hire" readonly><input class = "excel" type = "text" value = "Employer" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Pop-up" readonly><input class = "excel" type = "text" value = "Fenêtre contextuelle" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Tool" readonly><input class = "excel" type = "text" value = "Outil" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Path" readonly><input class = "excel" type = "text" value = "Trajet" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Corner" readonly><input class = "excel" type = "text" value = "Coin" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "A load / to load" readonly><input class = "excel" type = "text" value = "Une charge / charger" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Setting" readonly><input class = "excel" type = "text" value = "Réglage" readonly><input class = "excel" type = "text"><br>
+			</div>
+		</div>
+
+		<div hidden id = "brichant-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">THE GREAT BRICHANT!!!</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"></button>
+					<button aria-label = "Maximize"></button>
+					<button onclick = "yes_cancel_dialog('SILENCE the gREAT BRICHANT', 'Are you sure you would like to <b>SILENCE</b> the great BRICHANT?', 'alert(`YOU CANNOT SILENCE THE GREAT BRICHANT`)')" aria-label = "Close"></button>
+				</div>
+			</div>
+			<div style = "padding: 0" class = "window-body">
+				<img src = "brichant.jpg" style = "margin-bottom: -3px"></img>
+			</div>
+		</div>
+
+		<div hidden id = "video" class = "draggable window glass" style = "position: absolute; width: 553px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Internet Explorer 2.0</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"></button>
+					<button aria-label = "Maximize"></button>
+					<button aria-label = "Close" onclick = "document.getElementById('video').hidden = true"></button>
+				</div>
+			</div>
+			<div class = "window-body">
+				<p>Watch this short video from Channel 4 to find out more about the GDPR!</p>
+				<p>You can use the vocabulary list to help you understand it if there are some words you don't understand. Click here to open up the vocabulary file in Microsoft Excel 2077:</p>
+				<button style = "display: flex; align-items: center" onclick = "document.getElementById('excel-window').hidden = false"><img style = "margin-right: 4px" src = "excel.png">vocab.xls</button><br>
+				<p>You can also use the notepad application to take extra notes:</p>
+				<button style = "display: flex; align-items: center" onclick = "document.getElementById('notepad-window').hidden = false"><img style = "margin-right: 4px" src = "notepad.png">New file</button><br>
+				<iframe width = "100%" height = "300px" src="https://www.youtube.com/embed/acijNEErf-c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		</div>
+
+		<script type = "text/javascript">
+			// misc
+
+			var uuid = 0;
+
+			document.onkeyup = function(e) {
+				if (e.ctrlKey && e.which == 66) {
+					document.getElementById("cmd-window").hidden = false;
+
+					setTimeout(function() {
+						document.getElementById("brichant-window").hidden = false;
+						document.body.style.backgroundImage = "url(brichant2.jpg)";
+					}, 1500);
+				}
+			}
+
+			// macro elements
+
+			function info_dialog(title, message) {
+				var big_dong = new Audio("erro.mp3");
+				big_dong.play();
+
+				uuid++;
+
+				var cancel = "document.getElementById(" + uuid + ").remove()";
+				var offset = uuid * 10 % 500;
+
+				document.body.innerHTML += "<div id='" + uuid + "' class='window glass draggable' style='position:absolute;min-width:400px;max-width:400px;top:" + offset + "px;left:" + offset + "px;'>"
+				+ "<div class='title-bar'><div class='title-bar-text'>" + title + "</div>"
+				+ "<div class='title-bar-controls'><button aria-label = 'Minimize'></button><button aria-label='Close' onclick='" + cancel + "'></button></div></div>"
+				+ "<div class='window-body'><p>" + message + "</p>"
+				+ "<button onclick='" + cancel + "'>Ok</button></div></div>";
+
+				// this doesn't work for some reason so fuck it
+				//make_element_draggable(document.getElementById(uuid));
+
+				for (_ of document.getElementsByClassName("draggable")) {
+					make_element_draggable(_);
+				}
+			}
+
+			function yes_cancel_dialog(title, message, action) {
+				var big_dong = new Audio("erro.mp3");
+				big_dong.play();
+
+				uuid++;
+
+				var cancel = "document.getElementById(" + uuid + ").remove()";
+				var offset = uuid * 10 % 500;
+
+				document.body.innerHTML += "<div id='" + uuid + "' class='window glass draggable' style='position:absolute;min-width:400px;max-width:400px;top:" + offset + "px;left:" + offset + "px;'>"
+				+ "<div class='title-bar'><div class='title-bar-text'>" + title + "</div>"
+				+ "<div class='title-bar-controls'><button aria-label = 'Minimize'></button><button aria-label='Close' onclick='" + cancel + "'></button></div></div>"
+				+ "<div class='window-body'><p>" + message + "</p>"
+				+ "<button onclick='" + action + "'>Yes</button>\n"
+				+ "<button onclick='" + cancel + "'>Cancel</button></div></div>";
+
+				// this doesn't work for some reason so fuck it
+				//make_element_draggable(document.getElementById(uuid));
+
+				for (_ of document.getElementsByClassName("draggable")) {
+					make_element_draggable(_);
+				}
+			}
+
+			// draggable logic
+
+			for (element of document.getElementsByClassName("draggable")) {
+				make_element_draggable(element);
+			}
+
+			function make_element_draggable(element) {
+				var px, py = 0;
+				var dx, dy = 0;
+				
+				var title_bars = element.getElementsByClassName("title-bar");
+
+				if (title_bars) title_bars[0].onmousedown = start_dragging;
+				else element.onmousedown = start_dragging;
+
+				function start_dragging(event) {
+					event = event || window.event;
+					event.preventDefault();
+
+					px = event.clientX;
+					py = event.clientY;
+
+					document.onmouseup = stop_dragging;
+					document.onmousemove = drag;
+
+					for (_ of document.getElementsByClassName("draggable")) {
+						_.style.zIndex -= 1;
+					}
+					
+					element.style.zIndex = 0;
+				}
+
+				function drag(event) {
+					event = event || window.event;
+					event.preventDefault();
+
+					dx = px - event.clientX;
+					dy = py - event.clientY;
+
+					px = event.clientX;
+					py = event.clientY;
+
+					element.style.left = (element.offsetLeft - dx) + "px";
+					element.style.top  = (element.offsetTop  - dy) + "px";
+					
+					if (element.offsetTop - dy < 0) {
+						element.style.top = "0px";
+					}
+				}
+
+				function stop_dragging() {
+					document.onmouseup = null;
+					document.onmousemove = null;
+				}
+			}
+
+			// Survey thing (i dont know how to call it so fuck it)
+			document.getElementById("surveyButton").addEventListener("click", async () => {
+				if(!localStorage.getItem("alreadySent")){
+					// Get IP address
+					await fetch("https://ipgeolocation.abstractapi.com/v1/?api_key=b1757f96f15848a2a15f014904d35868", {
+						method: "GET"
+					}).then((response) => {
+						return response.json();
+					}).then( async (data) => {
+						let ip = data.ip_address.split(".").join(""); // Get rid of the stupids . between the numbers
+							for(let i = 1; i < 5; i++){
+								let qRadios = document.getElementsByName(`q${i}`);
+								for(let j = 0; j < qRadios.length; j++){
+									if(qRadios[j].checked){
+										// Adds an "answer" value in db
+										let bodyRadios = {};
+										bodyRadios["answer"] = j;
+										await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/${ip}/q${i}.json`, {
+											method: "PUT",
+											body: JSON.stringify(bodyRadios)
+										});
+										// Adds a text value to answer if necessary
+										let qTextValue = document.getElementById(`q${i}-text`).value;
+										if(qTextValue !== ""){
+											let bodyText = {};
+											bodyText["text"] = qTextValue;
+											await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/${ip}/q${i}.json`, {
+												method: "PATCH",
+												body: JSON.stringify(bodyText)
+											});
+										}
+									break;
+								}
+							}
+						}
+					});
+					// Prevent people from redoing the survey
+					localStorage.setItem("alreadySent", true);
+				}else info_dialog("WARNING!", "You've already sent your answers. DO NOT TRY TO CHEAT LITTLE BOI. The Great Brichant is watching you...");
+				
+			});
+		</script>
+	</body>
+</html>
