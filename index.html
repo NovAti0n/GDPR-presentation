@@ -5,7 +5,9 @@
 		<title>English presentation</title>
 		<meta charset = "UTF-8">
 
-		<link rel = "stylesheet" type = "text/css" href = "https://unpkg.com/7.css">
+		<link rel = "stylesheet" type = "text/css" href = "windows.css">
+
+		<!-- <link rel = "stylesheet" type = "text/css" href = "https://unpkg.com/7.css"> -->
 		<!-- <link rel = "stylesheet" href = "https://unpkg.com/xp.css"> -->
 		<!-- <link rel = "stylesheet" href = "https://unpkg.com/98.css"> -->
 
@@ -28,16 +30,6 @@
 				user-select: none;
 
 				overflow: hidden;
-			}
-
-			.ie-address-bar {
-				display: flex;
-				align-items: center;
-			}
-
-			.round {
-				line-height: 1;
-				border-radius: 50%;
 			}
 
 			@font-face {
@@ -120,90 +112,92 @@
 				<p>In this little survey, find out how much you <i>really</i> know about the GDPR, and more!</p>
 				<p>Just kidding, you'll only find out about how much you know about the GDPR, nothing else.</p>
 
-				<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
-				<fieldset>
-					<legend>Please select your answer</legend>
-					<div class = "field-row">
-						<input id = "q1-r0" type = "radio" name = "q1" value = "1" onclick = "document.getElementById('q1-text').hidden = false">
-        				<label for = "q1-r0">Yes, absolutely</label>
-					</div>
-					<div class = "field-row">
-						<input id = "q1-r1" type = "radio" name = "q1" value = "2" onclick = "document.getElementById('q1-text').hidden = false">
-        				<label for = "q1-r1">I think I've heard of it</label>
-					</div>
-					<div class = "field-row">
-						<input id = "q1-r2" type = "radio" name = "q1" value = "3" onclick = "document.getElementById('q1-text').hidden = true">
-        				<label for = "q1-r2">Not at all</label>
-					</div>
-					<div class = "field-row">
-						<input style = "width: 300px" hidden id = "q1-text" type = "text" placeholder = "Explain what they are in a few words...">
-					</div>
-				</fieldset>
+				<form>
+					<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input id = "q1-r0" type = "radio" name = "q1" value = "1" onclick = "document.getElementById('q1-text').hidden = false">
+							<label for = "q1-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input id = "q1-r1" type = "radio" name = "q1" value = "2" onclick = "document.getElementById('q1-text').hidden = false">
+							<label for = "q1-r1">I think I've heard of it</label>
+						</div>
+						<div class = "field-row">
+							<input id = "q1-r2" type = "radio" name = "q1" value = "3" onclick = "document.getElementById('q1-text').hidden = true">
+							<label for = "q1-r2">Not at all</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "q1-text" type = "text" placeholder = "Explain what they are in a few words...">
+						</div>
+					</fieldset>
 
-				<h5>Do you know what they are used for?</h5>
-				<fieldset>
-					<legend>Please select your answer</legend>
-					<div class = "field-row">
-						<input id = "q2-r0" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
-        				<label for = "q2-r0">Yes, absolutely</label>
-					</div>
-					<div class = "field-row">
-						<input id = "q2-r1" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
-        				<label for = "q2-r1">I think I do</label>
-					</div>
-					<div class = "field-row">
-						<input id = "q2-r2" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = true">
-        				<label for = "q2-r2">Not at all</label>
-					</div>
-					<div class = "field-row">
-						<input style = "width: 300px" hidden id = "q2-text" type = "text" placeholder = "Explain what they are used for in a few words...">
-					</div>
-				</fieldset>
+					<h5>Do you know what they are used for?</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input id = "q2-r0" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
+							<label for = "q2-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input id = "q2-r1" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
+							<label for = "q2-r1">I think I do</label>
+						</div>
+						<div class = "field-row">
+							<input id = "q2-r2" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = true">
+							<label for = "q2-r2">Not at all</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "q2-text" type = "text" placeholder = "Explain what they are used for in a few words...">
+						</div>
+					</fieldset>
 
-				<h5>
-					Do you know what your personal data* is used for?<br>
-					<i>*e.g., conversations, search history, favourite books, movies, who your friends are, where you've been, &c</i>
-				</h5>
-				<fieldset>
-					<legend>Please select your answer</legend>
-					<div class = "field-row">
-						<input id = "q3-r0" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
-        				<label for = "q3-r0">Yes, absolutely</label>
-					</div>
-					<div class = "field-row">
-						<input id = "q3-r1" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
-        				<label for = "q3-r1">I think I do</label>
-					</div>
-					<div class = "field-row">
-						<input id = "q3-r2" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = true">
-        				<label for = "q3-r2">Not at all</label>
-					</div>
-					<div class = "field-row">
-						<input style = "width: 300px" hidden id = "q3-text" type = "text" placeholder = "Explain what it is used for in a few words...">
-					</div>
-				</fieldset>
+					<h5>
+						Do you know what your personal data* is used for?<br>
+						<i>*e.g., conversations, search history, favourite books, movies, who your friends are, where you've been, &c</i>
+					</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input id = "q3-r0" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
+							<label for = "q3-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input id = "q3-r1" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
+							<label for = "q3-r1">I think I do</label>
+						</div>
+						<div class = "field-row">
+							<input id = "q3-r2" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = true">
+							<label for = "q3-r2">Not at all</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "q3-text" type = "text" placeholder = "Explain what it is used for in a few words...">
+						</div>
+					</fieldset>
 
-				<h5>Do you know what the GDPR is?</h5>
-				<fieldset>
-					<legend>Please select your answer</legend>
-					<div class = "field-row">
-						<input id = "q4-r0" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
-        				<label for = "q4-r0">Yes, absolutely</label>
-					</div>
-					<div class = "field-row">
-						<input id = "q4-r1" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
-        				<label for = "q4-r1">I think I've heard of it</label>
-					</div>
-					<div class = "field-row">
-						<input id = "q4-r2" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = true">
-        				<label for = "q4-r2">Not at all</label>
-					</div>
-					<div class = "field-row">
-						<input style = "width: 300px" hidden id = "q4-text" type = "text" placeholder = "Explain what it is in a few words...">
-					</div>
-				</fieldset>
-				
-				<button id="surveyButton" onclick = "document.getElementById('video').hidden = false">Next</button>
+					<h5>Do you know what the GDPR is?</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input id = "q4-r0" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
+							<label for = "q4-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input id = "q4-r1" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
+							<label for = "q4-r1">I think I've heard of it</label>
+						</div>
+						<div class = "field-row">
+							<input id = "q4-r2" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = true">
+							<label for = "q4-r2">Not at all</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "q4-text" type = "text" placeholder = "Explain what it is in a few words...">
+						</div>
+					</fieldset>
+					
+					<input disabled id = "submit-survey" onclick = "document.getElementById('ie-window').hidden = false">Next</input>
+				</form>
 			</div>
 		</div>
 
@@ -272,7 +266,8 @@ Loading the GREAT BRICHANT...
 				<input class = "excel" type = "text" value = "Path" readonly><input class = "excel" type = "text" value = "Trajet" readonly><input class = "excel" type = "text"><br>
 				<input class = "excel" type = "text" value = "Corner" readonly><input class = "excel" type = "text" value = "Coin" readonly><input class = "excel" type = "text"><br>
 				<input class = "excel" type = "text" value = "A load / to load" readonly><input class = "excel" type = "text" value = "Une charge / charger" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Setting" readonly><input class = "excel" type = "text" value = "Réglage" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Settings" readonly><input class = "excel" type = "text" value = "Réglages" readonly><input class = "excel" type = "text"><br>
+				<input class = "excel" type = "text" value = "Cookie" readonly><input class = "excel" type = "text" value = "Témoin de connexion" readonly><input class = "excel" type = "text"><br>
 			</div>
 		</div>
 
@@ -290,13 +285,13 @@ Loading the GREAT BRICHANT...
 			</div>
 		</div>
 
-		<div hidden id = "video" class = "draggable window glass" style = "position: absolute; width: 553px">
+		<div hidden id = "ie-window" class = "draggable window glass" style = "position: absolute; width: 553px">
 			<div class = "title-bar">
 				<div class = "title-bar-text">Internet Explorer 2.0</div>
 				<div class = "title-bar-controls">
 					<button aria-label = "Minimize"></button>
 					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "document.getElementById('video').hidden = true"></button>
+					<button aria-label = "Close" onclick = "document.getElementById('ie-window').hidden = true"></button>
 				</div>
 			</div>
 			<div class = "window-body">
@@ -324,6 +319,8 @@ Loading the GREAT BRICHANT...
 					}, 1500);
 				}
 			}
+
+			var survey_radio_buttons = document.getElementsByName
 
 			// macro elements
 
@@ -430,8 +427,8 @@ Loading the GREAT BRICHANT...
 				}
 			}
 
-			// Survey thing (i dont know how to call it so fuck it)
-			document.getElementById("surveyButton").addEventListener("click", async () => {
+			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did)
+			document.getElementById("submit-survey").addEventListener("click", async () => {
 				if(!localStorage.getItem("alreadySent")){
 					// Get IP address
 					await fetch("https://ipgeolocation.abstractapi.com/v1/?api_key=b1757f96f15848a2a15f014904d35868", {
@@ -440,27 +437,27 @@ Loading the GREAT BRICHANT...
 						return response.json();
 					}).then( async (data) => {
 						let ip = data.ip_address.split(".").join(""); // Get rid of the stupids . between the numbers
-							for(let i = 1; i < 5; i++){
-								let qRadios = document.getElementsByName(`q${i}`);
-								for(let j = 0; j < qRadios.length; j++){
-									if(qRadios[j].checked){
-										// Adds an "answer" value in db
-										let bodyRadios = {};
-										bodyRadios["answer"] = j;
+						for(let i = 1; i < 5; i++){
+							let qRadios = document.getElementsByName(`q${i}`);
+							for(let j = 0; j < qRadios.length; j++){
+								if(qRadios[j].checked){
+									// Adds an "answer" value in db
+									let bodyRadios = {};
+									bodyRadios["answer"] = j;
+									await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/${ip}/q${i}.json`, {
+										method: "PUT",
+										body: JSON.stringify(bodyRadios)
+									});
+									// Adds a text value to answer if necessary
+									let qTextValue = document.getElementById(`q${i}-text`).value;
+									if(qTextValue !== ""){
+										let bodyText = {};
+										bodyText["text"] = qTextValue;
 										await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/${ip}/q${i}.json`, {
-											method: "PUT",
-											body: JSON.stringify(bodyRadios)
+											method: "PATCH",
+											body: JSON.stringify(bodyText)
 										});
-										// Adds a text value to answer if necessary
-										let qTextValue = document.getElementById(`q${i}-text`).value;
-										if(qTextValue !== ""){
-											let bodyText = {};
-											bodyText["text"] = qTextValue;
-											await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/${ip}/q${i}.json`, {
-												method: "PATCH",
-												body: JSON.stringify(bodyText)
-											});
-										}
+									}
 									break;
 								}
 							}
