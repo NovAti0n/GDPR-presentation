@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html lang = "en">
 	<head>
 		<title>English presentation</title>
 		<meta charset = "UTF-8">
 
 		<link rel = "stylesheet" type = "text/css" href = "windows.css">
+		<link rel = "icon" href = "favico.png" type = "image/png">
 
 		<!-- <link rel = "stylesheet" type = "text/css" href = "https://unpkg.com/7.css"> -->
 		<!-- <link rel = "stylesheet" href = "https://unpkg.com/xp.css"> -->
@@ -60,25 +61,25 @@
 			<div class = "window-body">
 				<p>Internet is an incredible tool, but it has a dark side. Have you ever gone to a website and been assaulted by a lot of popups asking you to accept cookies? Have you ever received loads of emails about a thing that you were just searching for or talking about five minutes ago? How can evil companies retrieve all this data from you? Are they using black magic? This is what we will be trying to answer today.</p>
 				<p>From your lamp to your flip-flops, everything is connected to the Internet these days. No wonder Google is able to know every single thing about you. Let’s do an experiment, just follow these simple steps:</p>
-				<ul class = "tree-view">
+				<div class = "tree-view">
 					<details close>
 						<summary>If you have an iPhone and are not using Google Maps...</summary>
 						<ul>
-							<li>· Open settings.</li>
-							<li>· Go to "Confidentialité", then "Services de localisation", then "Services système", then "Lieux importants".</li>
-							<li>· You should see a list of places you've been. Click on one to see more!</li>
+							<li>Open settings.</li>
+							<li>Go to "Confidentialité", then "Services de localisation", then "Services système", then "Lieux importants".</li>
+							<li>You should see a list of places you've been. Click on one to see more!</li>
 						</ul>
 					</details>
 					<details close>
 						<summary>If you are using Google Maps...</summary>
 						<ul>
-							<li>· Open Google Maps.</li>
-							<li>· Click on your profile picture on the top-right corner.</li>
-							<li>· Click on "Vos trajets".</li>
-							<li>· You should see your recent paths.</li>
+							<li>Open Google Maps.</li>
+							<li>Click on your profile picture on the top-right corner.</li>
+							<li>Click on "Vos trajets".</li>
+							<li>You should see your recent paths.</li>
 						</ul>
 					</details>
-				</ul>
+				</div>
 				<p>So, are you terrified now?</p>
 				<button onclick = "document.getElementById('why-window').hidden = false">Yes, I am!</button>
 				<button onclick = "info_dialog('Try Again', `That's the wrong answer! Try again by clicking on 'Yes, I am!'...`)">No...</button>
@@ -112,20 +113,20 @@
 				<p>In this little survey, find out how much you <i>really</i> know about the GDPR, and more!</p>
 				<p>Just kidding, you'll only find out about how much you know about the GDPR, nothing else.</p>
 
-				<form>
+				<form onsubmit = "return false" id = "survey">
 					<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
 					<fieldset>
 						<legend>Please select your answer</legend>
 						<div class = "field-row">
-							<input id = "q1-r0" type = "radio" name = "q1" value = "1" onclick = "document.getElementById('q1-text').hidden = false">
+							<input required id = "q1-r0" type = "radio" name = "q1" value = "1" onclick = "document.getElementById('q1-text').hidden = false">
 							<label for = "q1-r0">Yes, absolutely</label>
 						</div>
 						<div class = "field-row">
-							<input id = "q1-r1" type = "radio" name = "q1" value = "2" onclick = "document.getElementById('q1-text').hidden = false">
+							<input required id = "q1-r1" type = "radio" name = "q1" value = "2" onclick = "document.getElementById('q1-text').hidden = false">
 							<label for = "q1-r1">I think I've heard of it</label>
 						</div>
 						<div class = "field-row">
-							<input id = "q1-r2" type = "radio" name = "q1" value = "3" onclick = "document.getElementById('q1-text').hidden = true">
+							<input required id = "q1-r2" type = "radio" name = "q1" value = "3" onclick = "document.getElementById('q1-text').hidden = true">
 							<label for = "q1-r2">Not at all</label>
 						</div>
 						<div class = "field-row">
@@ -137,15 +138,15 @@
 					<fieldset>
 						<legend>Please select your answer</legend>
 						<div class = "field-row">
-							<input id = "q2-r0" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
+							<input required id = "q2-r0" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
 							<label for = "q2-r0">Yes, absolutely</label>
 						</div>
 						<div class = "field-row">
-							<input id = "q2-r1" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
+							<input required id = "q2-r1" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
 							<label for = "q2-r1">I think I do</label>
 						</div>
 						<div class = "field-row">
-							<input id = "q2-r2" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = true">
+							<input required id = "q2-r2" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = true">
 							<label for = "q2-r2">Not at all</label>
 						</div>
 						<div class = "field-row">
@@ -160,15 +161,15 @@
 					<fieldset>
 						<legend>Please select your answer</legend>
 						<div class = "field-row">
-							<input id = "q3-r0" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
+							<input required id = "q3-r0" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
 							<label for = "q3-r0">Yes, absolutely</label>
 						</div>
 						<div class = "field-row">
-							<input id = "q3-r1" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
+							<input required id = "q3-r1" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
 							<label for = "q3-r1">I think I do</label>
 						</div>
 						<div class = "field-row">
-							<input id = "q3-r2" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = true">
+							<input required id = "q3-r2" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = true">
 							<label for = "q3-r2">Not at all</label>
 						</div>
 						<div class = "field-row">
@@ -180,15 +181,15 @@
 					<fieldset>
 						<legend>Please select your answer</legend>
 						<div class = "field-row">
-							<input id = "q4-r0" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
+							<input required id = "q4-r0" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
 							<label for = "q4-r0">Yes, absolutely</label>
 						</div>
 						<div class = "field-row">
-							<input id = "q4-r1" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
+							<input required id = "q4-r1" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
 							<label for = "q4-r1">I think I've heard of it</label>
 						</div>
 						<div class = "field-row">
-							<input id = "q4-r2" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = true">
+							<input required id = "q4-r2" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = true">
 							<label for = "q4-r2">Not at all</label>
 						</div>
 						<div class = "field-row">
@@ -196,7 +197,7 @@
 						</div>
 					</fieldset>
 					
-					<input disabled id = "submit-survey" onclick = "document.getElementById('ie-window').hidden = false">Next</input>
+					<input class = "button" type = "submit" value = "Submit">
 				</form>
 			</div>
 		</div>
@@ -320,6 +321,11 @@ Loading the GREAT BRICHANT...
 				}
 			}
 
+			// window.onerror = function(message, url, line) {
+			// 	console.log(`%c${url}:${line} %c${message}`, "font-weight: bold", "color: green");
+			// 	return true;
+			// }
+
 			var survey_radio_buttons = document.getElementsByName
 
 			// macro elements
@@ -428,7 +434,8 @@ Loading the GREAT BRICHANT...
 			}
 
 			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did)
-			document.getElementById("submit-survey").addEventListener("click", async () => {
+			document.getElementById("survey").addEventListener("submit", async () => {
+				document.getElementById('ie-window').hidden = false;
 				if(!localStorage.getItem("alreadySent")){
 					// Get IP address
 					await fetch("https://ipgeolocation.abstractapi.com/v1/?api_key=b1757f96f15848a2a15f014904d35868", {
@@ -466,7 +473,6 @@ Loading the GREAT BRICHANT...
 					// Prevent people from redoing the survey
 					localStorage.setItem("alreadySent", true);
 				}else info_dialog("WARNING!", "You've already sent your answers. DO NOT TRY TO CHEAT LITTLE BOI. The Great Brichant is watching you...");
-				
 			});
 		</script>
 	</body>
