@@ -8,6 +8,9 @@
 		<link rel = "stylesheet" type = "text/css" href = "windows.css">
 		<link rel = "icon" href = "favico.png" type = "image/png">
 
+		<!-- defer attributes lets us load the script when loading webpage, but only run it after all the HTML is loaded -->
+		<!-- <script defer type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js"></script> -->
+
 		<!-- <link rel = "stylesheet" type = "text/css" href = "https://unpkg.com/7.css"> -->
 		<!-- <link rel = "stylesheet" href = "https://unpkg.com/xp.css"> -->
 		<!-- <link rel = "stylesheet" href = "https://unpkg.com/98.css"> -->
@@ -46,6 +49,153 @@
 			.excel {
 				width: 200px;
 			}
+
+			/* video stuff */
+			/* TODO CLEANME */
+
+			.controls, .controls > * {
+				padding:0;
+				margin:0;
+			}
+			.controls {
+				overflow:hidden;
+				background:transparent;
+				width:100%;
+				height:8.0971659919028340080971659919028%; /* of figure's height */
+				position:relative;
+			}
+			.controls[data-state=hidden] {
+				display:none;
+			}
+			.controls[data-state=visible] {
+				display:block;
+			}
+			.controls > * {
+				float:left;
+				width:3.90625%;
+				height:100%;
+				margin-left:0.1953125%;
+				display:block;
+			}
+			.controls > *:first-child {
+				margin-left:0;
+			}
+			.controls .progress {
+				cursor:pointer;
+				width:75.390625%;
+			}
+			.controls button:hover, .controls button:focus {
+				opacity:0.5;
+			}
+			.controls button[data-state="play"] {
+				background-image: url(v-play.png);
+			}
+			.controls button[data-state="pause"] {
+				background-image: url(v-pause.png);
+			}
+			.controls button[data-state="go-fullscreen"] {
+				background-image: url(v-full.png);	
+			}
+			.controls button[data-state="cancel-fullscreen"] {
+				background-image: url(v-full.png);	
+			}
+			.controls progress {
+				display:block;
+				width:100%;
+				height:81%;
+				border:none;
+				overflow:hidden;
+				-moz-border-radius:2px;
+				-webkit-border-radius:2px;
+				border-radius:2px;
+				color:#cc181e; /* Internet Explorer uses this value as the progress bar's value colour */
+			}
+			.controls progress[data-state="fake"] {
+				background:#e6e6e6;
+				height:65%;
+			}
+			.controls progress span {
+				width:0%;
+				height:100%;
+				display:inline-block;
+				background-color:#cc181e;	
+			}
+
+			.controls progress::-moz-progress-bar {
+				background-color:#cc181e;
+			}
+			/* Chrome requires its own rule for this, otherwise it ignores it */
+			.controls progress::-webkit-progress-value {
+				background-color:#cc181e;
+			}
+
+			/* fullscreen */
+			html:-ms-fullscreen {
+				width:100%;
+			}
+			:-webkit-full-screen {
+				background-color:transparent;
+			}
+			video:-webkit-full-screen + .controls {
+				background:#ccc; /* required for Chrome which doesn't heed the transparent value set above */
+			}
+			video:-webkit-full-screen + .controls progress {
+				margin-top:0.5rem;
+			}
+
+			/* hide controls on fullscreen with WebKit */
+			figure[data-fullscreen=true] video::-webkit-media-controls {
+				display:none !important;
+			}
+			figure[data-fullscreen=true] {
+				max-width:100%;
+				width:100%;
+				margin:0;
+				padding:0;
+				max-height:100%;
+			}
+			figure[data-fullscreen=true] video {
+				height:auto;
+			}
+			figure[data-fullscreen=true] figcaption {
+				display:none;
+			}
+			figure[data-fullscreen=true] .controls {
+				position:absolute;
+				bottom:2%;
+				width:100%;
+				z-index:2147483647;
+			}
+			figure[data-fullscreen=true] .controls li {
+				width:5%;
+			}
+			figure[data-fullscreen=true] .controls .progress {
+				width:68%;
+			}
+
+			.video-container {
+				position: relative;
+				margin: 0;
+				padding: 0;
+			}
+
+			.video-container video {
+				width: 100%;
+				top: 0;
+				position: absolute;
+				display: block;
+			}
+
+			.video-container:before {
+				content: '';
+				position: absolute;
+				background: rgba(0, 0, 0, 0.5);
+				border-radius: 5px;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+			}
 		</style>
 	</head>
 
@@ -63,7 +213,7 @@
 				<p>From your lamp to your flip-flops, everything is connected to the Internet these days. No wonder Google is able to know every single thing about you. Let’s do an experiment, just follow these simple steps:</p>
 				<div class = "tree-view">
 					<details close>
-						<summary>If you have an iPhone and are not using Google Maps...</summary>
+						<summary>If you have an iPhone and are not using Google Maps:</summary>
 						<ul>
 							<li>Open settings.</li>
 							<li>Go to "Confidentialité", then "Services de localisation", then "Services système", then "Lieux importants".</li>
@@ -71,7 +221,7 @@
 						</ul>
 					</details>
 					<details close>
-						<summary>If you are using Google Maps...</summary>
+						<summary>If you are using Google Maps:</summary>
 						<ul>
 							<li>Open Google Maps.</li>
 							<li>Click on your profile picture on the top-right corner.</li>
@@ -198,6 +348,7 @@
 					</fieldset>
 					
 					<input class = "button" type = "submit" value = "Submit">
+					<button onclick = "document.getElementById('results-window').hidden = false">View results</button>
 				</form>
 			</div>
 		</div>
@@ -213,6 +364,52 @@
 			</div>
 			<div style = "padding: 0" class = "window-body">
 				<textarea style = "margin-bottom: -3px; min-width: 400px; min-height: 300px">tutoriel 2008 comment ouvrir son explorateur de fichier</textarea>
+			</div>
+		</div>
+		
+		<div id = "results-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"></button>
+					<button aria-label = "Maximize"></button>
+					<button aria-label = "Close" onclick = "document.getElementById('results-window').hidden = true"></button>
+				</div>
+			</div>
+			<div class = "window-body">
+				<p>Here are the results of the first survey!</p>
+				<p>Click on each tab to see an overview of each question!!!!11</p>
+
+				<menu role = "tablist">
+					<button>Question 1</button>
+					<button>Question 2</button>
+					<button>Question 3</button>
+					<button>Question 4</button>
+				</menu>
+				
+				<article role = "tabpanel">
+					<h4>Do you know what cookies are?</h4>
+					
+					<!-- TODO faudra peut-être enlever la classe 'animate' pcq elle est lente as fuck -->
+
+					<div role = "progressbar" class = "animate">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div style = "width: 60%"></div>
+					</div>
+					<p>60% of respondents answered yes!</p>
+					<div role = "progressbar" class = "animate paused">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div style = "width: 20%"></div>
+					</div>
+					<p>20% of respondents answered they'd heard if them...</p>
+					<div role = "progressbar" class = "animate error ">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div style = "width: 40%"></div>
+					</div>
+					<p>40% of respondents answered no :(</p>
+				</article>
+
+				<!-- faut repeter les <article> là pour chaque question -->
 			</div>
 		</div>
 
@@ -286,7 +483,7 @@ Loading the GREAT BRICHANT...
 			</div>
 		</div>
 
-		<div hidden id = "ie-window" class = "draggable window glass" style = "position: absolute; width: 553px">
+		<div id = "ie-window" class = "draggable window glass" style = "position: absolute; width: 553px">
 			<div class = "title-bar">
 				<div class = "title-bar-text">Internet Explorer 2.0</div>
 				<div class = "title-bar-controls">
@@ -301,7 +498,30 @@ Loading the GREAT BRICHANT...
 				<button style = "display: flex; align-items: center" onclick = "document.getElementById('excel-window').hidden = false"><img style = "margin-right: 4px" src = "excel.png">vocab.xls</button><br>
 				<p>You can also use the notepad application to take extra notes:</p>
 				<button style = "display: flex; align-items: center" onclick = "document.getElementById('notepad-window').hidden = false"><img style = "margin-right: 4px" src = "notepad.png">New file</button><br>
-				<iframe width = "100%" height = "300px" src="https://www.youtube.com/embed/acijNEErf-c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p>You can either view the video here, just below, or by clicking on <a href = "https://www.youtube.com/embed/acijNEErf-c">this link</a>.</p>
+				<p>If you need to download it for whatever reason, click <a href = "video.mp4">here</a>.</p>
+				
+				<figure class = "video-container" id = "video-container" width = "100%" style = "margin: 0">
+					<div id = "video-controls" class = "controls" style = "background-color: #1b1b1b; margin-top: -5px; height: 35px; padding: 0">
+						<div class = "progress" style = "background-color: #444444; color: #cc181e; height: 8px; width: 100%">
+							<progress id = "progress" value = "0" min = "0">
+								<span id = "progress-bar"></span>
+							</progress>
+							<img src = "v-head.png" style = "position: absolute; top: -4px; z-index:300000;"></img>
+						</div><br>
+						<div style = "width: 100%; height: 100%; padding: 0; margin-top: -7px">
+							<img src = "v-play.png" style = "margin: 0" id = "playpause"></img>
+							<img src = "v-ytb.png" style = "position: absolute; right: 30px"></img>
+							<img src = "v-full.png" id = "fs" data-state = "go-fullscreen" style = "position: absolute; right: 0px"></img>
+						</div>
+					</div>
+					<video id = "video" width = "100%" controls preload = "metadata">
+						<source src = "video.mp4" type = "video/mp4">
+						<p>Your browser doesn't support videos :(</p>
+						<p>Use the link above...</p>
+					</video>
+					
+				</figure>
 			</div>
 		</div>
 
@@ -434,6 +654,8 @@ Loading the GREAT BRICHANT...
 			}
 
 			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did)
+			// MARKER: le javascript moche de noa
+
 			document.getElementById("survey").addEventListener("submit", async () => {
 				document.getElementById('ie-window').hidden = false;
 				if(!localStorage.getItem("alreadySent")){
@@ -474,6 +696,155 @@ Loading the GREAT BRICHANT...
 					localStorage.setItem("alreadySent", true);
 				}else info_dialog("WARNING!", "You've already sent your answers. DO NOT TRY TO CHEAT LITTLE BOI. The Great Brichant is watching you...");
 			});
+
+			// html5 video stuff
+
+			(function () {
+				'use strict';
+
+				// Does the browser actually support the video element?
+				var supportsVideo = !!document.createElement('video').canPlayType;
+
+				if (supportsVideo) {
+					// Obtain handles to main elements
+					var videoContainer = document.getElementById('video-container');
+					var video = document.getElementById('video');
+					var videoControls = document.getElementById('video-controls');
+
+					// Hide the default controls
+					video.controls = false;
+
+					// Display the user defined video controls
+					videoControls.setAttribute('data-state', 'visible');
+
+					// Obtain handles to buttons and other elements
+					var playpause = document.getElementById('playpause');
+					var progress = document.getElementById('progress');
+					var progressBar = document.getElementById('progress-bar');
+					var fullscreen = document.getElementById('fs');
+
+					// If the browser doesn't support the progress element, set its state for some different styling
+					var supportsProgress = (document.createElement('progress').max !== undefined);
+					if (!supportsProgress) progress.setAttribute('data-state', 'fake');
+
+					// Check if the browser supports the Fullscreen API
+					var fullScreenEnabled = !!(document.fullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled || document.webkitSupportsFullscreen || document.webkitFullscreenEnabled || document.createElement('video').webkitRequestFullScreen);
+					// If the browser doesn't support the Fulscreen API then hide the fullscreen button
+					if (!fullScreenEnabled) {
+						fullscreen.style.display = 'none';
+					}
+
+					// Set the video container's fullscreen state
+					var setFullscreenData = function(state) {
+						videoContainer.setAttribute('data-fullscreen', !!state);
+						// Set the fullscreen button's 'data-state' which allows the correct button image to be set via CSS
+						fullscreen.setAttribute('data-state', !!state ? 'cancel-fullscreen' : 'go-fullscreen');
+					}
+
+					// Checks if the document is currently in fullscreen mode
+					var isFullScreen = function() {
+						return !!(document.fullScreen || document.webkitIsFullScreen || document.mozFullScreen || document.msFullscreenElement || document.fullscreenElement);
+					}
+
+					// Fullscreen
+					var handleFullscreen = function() {
+						// If fullscreen mode is active...	
+						if (isFullScreen()) {
+								// ...exit fullscreen mode
+								// (Note: this can only be called on document)
+								if (document.exitFullscreen) document.exitFullscreen();
+								else if (document.mozCancelFullScreen) document.mozCancelFullScreen();
+								else if (document.webkitCancelFullScreen) document.webkitCancelFullScreen();
+								else if (document.msExitFullscreen) document.msExitFullscreen();
+								setFullscreenData(false);
+							}
+							else {
+								// ...otherwise enter fullscreen mode
+								// (Note: can be called on document, but here the specific element is used as it will also ensure that the element's children, e.g. the custom controls, go fullscreen also)
+								if (videoContainer.requestFullscreen) videoContainer.requestFullscreen();
+								else if (videoContainer.mozRequestFullScreen) videoContainer.mozRequestFullScreen();
+								else if (videoContainer.webkitRequestFullScreen) {
+									// Safari 5.1 only allows proper fullscreen on the video element. This also works fine on other WebKit browsers as the following CSS (set in styles.css) hides the default controls that appear again, and 
+									// ensures that our custom controls are visible:
+									// figure[data-fullscreen=true] video::-webkit-media-controls { display:none !important; }
+									// figure[data-fullscreen=true] .controls { z-index:2147483647; }
+									video.webkitRequestFullScreen();
+								}
+								else if (videoContainer.msRequestFullscreen) videoContainer.msRequestFullscreen();
+								setFullscreenData(true);
+							}
+						}
+
+					// Only add the events if addEventListener is supported (IE8 and less don't support it, but that will use Flash anyway)
+					if (document.addEventListener) {
+						// Wait for the video's meta data to be loaded, then set the progress bar's max value to the duration of the video
+						video.addEventListener('loadedmetadata', function() {
+							progress.setAttribute('max', video.duration);
+						});
+
+						// Changes the button state of certain button's so the correct visuals can be displayed with CSS
+						var changeButtonState = function(type) {
+							// Play/Pause button
+							if (type == 'playpause') {
+								if (video.paused || video.ended) {
+									playpause.setAttribute('src', 'v-play.png');
+								}
+								else {
+									playpause.setAttribute('src', 'v-pause.png');
+								}
+							}
+						}
+
+						// Add event listeners for video specific events
+						video.addEventListener('play', function() {
+							changeButtonState('playpause');
+						}, false);
+						video.addEventListener('pause', function() {
+							changeButtonState('playpause');
+						}, false);
+
+						// Add events for all buttons			
+						playpause.addEventListener('click', function(e) {
+							if (video.paused || video.ended) video.play();
+							else video.pause();
+						});			
+
+						fs.addEventListener('click', function(e) {
+							handleFullscreen();
+						});
+
+						// As the video is playing, update the progress bar
+						video.addEventListener('timeupdate', function() {
+							// For mobile browsers, ensure that the progress element's max attribute is set
+							if (!progress.getAttribute('max')) progress.setAttribute('max', video.duration);
+							progress.value = video.currentTime;
+							progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
+						});
+
+						// React to the user clicking within the progress bar
+						progress.addEventListener('click', function(e) {
+							//var pos = (e.pageX  - this.offsetLeft) / this.offsetWidth; // Also need to take the parent into account here as .controls now has position:relative
+							var pos = (e.pageX  - (this.offsetLeft + this.offsetParent.offsetLeft)) / this.offsetWidth;
+							video.currentTime = pos * video.duration;
+						});
+
+						// Listen for fullscreen change events (from other controls, e.g. right clicking on the video itself)
+						document.addEventListener('fullscreenchange', function(e) {
+							setFullscreenData(!!(document.fullScreen || document.fullscreenElement));
+						});
+						document.addEventListener('webkitfullscreenchange', function() {
+							setFullscreenData(!!document.webkitIsFullScreen);
+						});
+						document.addEventListener('mozfullscreenchange', function() {
+							setFullscreenData(!!document.mozFullScreen);
+						});
+						document.addEventListener('msfullscreenchange', function() {
+							setFullscreenData(!!document.msFullscreenElement);
+						});
+					}
+				}
+
+			})();
 		</script>
 	</body>
 </html>
