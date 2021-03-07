@@ -407,6 +407,9 @@
 						<div id = "q1-b2" style = "width: 40%"></div>
 					</div>
 					<p><span id = "q1-b2-span">40</span>% of respondents answered no :(</p>
+					<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+					<div id = "jeff"></div>
+					
 				</article>
 				<article role = "tabpanel">
 					<h4>Do you know what they are used for?</h4>
@@ -708,7 +711,7 @@ Loading the GREAT BRICHANT...
 				}
 			}
 
-			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did and its the most beautiful code ive ever seen :o )
+			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did and its the most beautiful code ive ever seen this is not sarcastic :thumbs_up:)
 
 			document.getElementById("survey").addEventListener("submit", async () => {
 				document.getElementById('ie-window').hidden = false;
@@ -771,22 +774,51 @@ Loading the GREAT BRICHANT...
 					}
 				});
 				if(total === 0){
-					return false
+					return "aymeric <3"
 				}else return r / total * 100;
 			}
 
+			async function fetchTexts(question){
+				let dbText;
+				question = parseInt(question);
+				await fetch("https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey.json", {
+					method: "GET"
+				}).then((response) => {
+					return response.json();
+				}).then((data) => {
+					let array = Object.values(data); // Transforms the JSON into array (easier)
+					for(let i = 0; i < array.length; i++){
+						dbText = eval(`array[${i}].q${question}?.text`);
+					}
+				});
+				return dbText;
+			}
+
 			document.getElementById("view-button").addEventListener("click", () => {
-				for(let i = 1; i < 4; i++){
-					for(let j = 0; j < 3; j++){
-						fetchResults(i, j).then((results) => {
-							if(!results){
-								document.getElementById(`q${i}-b${j}`).setAttribute("style", `width: 0%`);
+				// Answers
+				let martha = document.getElementById("jeff");
+				let kentin, smith = "";
+				for(let k = 1; k < 4; k++){
+					for(let l = 0; l < 3; l++){
+						fetchResults(k, l).then((results) => {
+							if(results === "aymeric <3"){
+								document.getElementById(`q${k}-b${l}`).setAttribute("style", `width: 0%`);
 							}else{
-								document.getElementById(`q${i}-b${j}`).setAttribute("style", `width: ${results}%`);
-								document.getElementById(`q${i}-b${j}-span`).innerText = results;
+								document.getElementById(`q${k}-b${l}`).setAttribute("style", `width: ${results}%`);
+								document.getElementById(`q${k}-b${l}-span`).innerText = results;
 							}
 						})
 					}
+				}
+				// Text
+				for(let m = 1; m < 5; m++){
+					fetchTexts(m).then((text) => {
+						if(text !== undefined){
+							console.log("mdr");
+							smith += `<input class = "excel" type = "text" value = "no genré" readonly><input class = "excel" type = "text" value = "${text}" readonly><br>`
+							martha.innerHTML = smith; // yes
+						}
+					});
 				}
 			});
 
