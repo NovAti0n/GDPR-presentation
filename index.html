@@ -348,7 +348,7 @@
 					</fieldset>
 					
 					<input class = "button" type = "submit" value = "Submit">
-					<button onclick = "document.getElementById('results-window').hidden = false">View results</button>
+					<button id = "view-button" onclick = "document.getElementById('results-window').hidden = false">View results</button>
 				</form>
 			</div>
 		</div>
@@ -394,22 +394,77 @@
 
 					<div role = "progressbar" class = "animate">
 						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-						<div style = "width: 60%"></div>
+						<div id = "q1-b0" style = "width: 60%"></div>
 					</div>
-					<p>60% of respondents answered yes!</p>
+					<p><span id = "q1-b0-span">60</span>% of respondents answered yes!</p>
 					<div role = "progressbar" class = "animate paused">
 						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-						<div style = "width: 20%"></div>
+						<div id = "q1-b1" style = "width: 20%"></div>
 					</div>
-					<p>20% of respondents answered they'd heard if them...</p>
+					<p><span id = "q1-b1-span">20</span>% of respondents answered they'd heard if them...</p>
 					<div role = "progressbar" class = "animate error ">
 						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-						<div style = "width: 40%"></div>
+						<div id = "q1-b2" style = "width: 40%"></div>
 					</div>
-					<p>40% of respondents answered no :(</p>
+					<p><span id = "q1-b2-span">40</span>% of respondents answered no :(</p>
 				</article>
+				<article role = "tabpanel">
+					<h4>Do you know what they are used for?</h4>
 
-				<!-- faut repeter les <article> là pour chaque question -->
+					<div role = "progressbar" class = "animate">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div id = "q2-b0" style = "width: 60%"></div>
+					</div>
+					<p><span id = "q2-b0-span">60</span>% of respondents answered yes!</p>
+					<div role = "progressbar" class = "animate paused">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div id = "q2-b1" style = "width: 20%"></div>
+					</div>
+					<p><span id = "q2-b1-span">20</span>% of respondents answered they'd heard if them...</p>
+					<div role = "progressbar" class = "animate error ">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div id = "q2-b2" style = "width: 40%"></div>
+					</div>
+					<p><span id = "q2-b2-span">40</span>% of respondents answered no :(</p>
+				</article>
+				<article role = "tabpanel">
+					<h4>Do you know what your personal data is used for?</h4>
+
+					<div role = "progressbar" class = "animate">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div id = "q3-b0" style = "width: 60%"></div>
+					</div>
+					<p><span id = "q3-b0-span">60</span>% of respondents answered yes!</p>
+					<div role = "progressbar" class = "animate paused">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div id = "q3-b1" style = "width: 20%"></div>
+					</div>
+					<p><span id = "q3-b1-span">20</span>% of respondents answered they'd heard if them...</p>
+					<div role = "progressbar" class = "animate error ">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div id = "q3-b2" style = "width: 40%"></div>
+					</div>
+					<p><span id = "q3-b2-span">40</span>% of respondents answered no :(</p>
+				</article>
+				<article role = "tabpanel">
+					<h4>Do you know what the GDPR is?</h4>
+
+					<div role = "progressbar" class = "animate">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div id = "q4-b0" style = "width: 60%"></div>
+					</div>
+					<p><span id = "q4-b0-span">60</span>% of respondents answered yes!</p>
+					<div role = "progressbar" class = "animate paused">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div id = "q4-b1" style = "width: 20%"></div>
+					</div>
+					<p><span id = "q4-b1-span">20</span>% of respondents answered they'd heard if them...</p>
+					<div role = "progressbar" class = "animate error ">
+						<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+						<div id = "q4-b2" style = "width: 40%"></div>
+					</div>
+					<p><span id = "q4-b2-span">40</span>% of respondents answered no :(</p>
+				</article>
 			</div>
 		</div>
 
@@ -653,8 +708,7 @@ Loading the GREAT BRICHANT...
 				}
 			}
 
-			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did)
-			// MARKER: le javascript moche de noa
+			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did and its the most beautiful code ive ever seen :o )
 
 			document.getElementById("survey").addEventListener("submit", async () => {
 				document.getElementById('ie-window').hidden = false;
@@ -673,7 +727,7 @@ Loading the GREAT BRICHANT...
 									// Adds an "answer" value in db
 									let bodyRadios = {};
 									bodyRadios["answer"] = j;
-									await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/${ip}/q${i}.json`, {
+									await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey/${ip}/q${i}.json`, {
 										method: "PUT",
 										body: JSON.stringify(bodyRadios)
 									});
@@ -682,7 +736,7 @@ Loading the GREAT BRICHANT...
 									if(qTextValue !== ""){
 										let bodyText = {};
 										bodyText["text"] = qTextValue;
-										await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/${ip}/q${i}.json`, {
+										await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey/${ip}/q${i}.json`, {
 											method: "PATCH",
 											body: JSON.stringify(bodyText)
 										});
@@ -695,6 +749,45 @@ Loading the GREAT BRICHANT...
 					// Prevent people from redoing the survey
 					localStorage.setItem("alreadySent", true);
 				}else info_dialog("WARNING!", "You've already sent your answers. DO NOT TRY TO CHEAT LITTLE BOI. The Great Brichant is watching you...");
+			});
+
+			// Returns a promise with percentage
+			async function fetchResults(question, answer){
+				let total, r = 0;
+				question = parseInt(question);
+				await fetch("https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey.json", {
+					method: "GET"
+				}).then((response) => {
+					return response.json();
+				}).then((data) => {
+					if(data === null){
+						return total = 0;
+					}
+					total = Object.keys(data).length;
+					let array = Object.values(data); // Transforms the JSON into array (easier)
+					for(let i = 0; i < array.length; i++){
+						let dbAnswer = eval(`array[${i}].q${question}.answer`);
+						if(answer === dbAnswer) r++
+					}
+				});
+				if(total === 0){
+					return false
+				}else return r / total * 100;
+			}
+
+			document.getElementById("view-button").addEventListener("click", () => {
+				for(let i = 1; i < 4; i++){
+					for(let j = 0; j < 3; j++){
+						fetchResults(i, j).then((results) => {
+							if(!results){
+								document.getElementById(`q${i}-b${j}`).setAttribute("style", `width: 0%`);
+							}else{
+								document.getElementById(`q${i}-b${j}`).setAttribute("style", `width: ${results}%`);
+								document.getElementById(`q${i}-b${j}-span`).innerText = results;
+							}
+						})
+					}
+				}
 			});
 
 			// html5 video stuff
