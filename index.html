@@ -408,7 +408,7 @@
 					</div>
 					<p><span id = "q1-b2-span">40</span>% of respondents answered no :(</p>
 					<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-					<div id = "jeff"></div>
+					<div id = "jeff1"></div>
 					
 				</article>
 				<article role = "tabpanel">
@@ -429,6 +429,8 @@
 						<div id = "q2-b2" style = "width: 40%"></div>
 					</div>
 					<p><span id = "q2-b2-span">40</span>% of respondents answered no :(</p>
+					<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+					<div id = "jeff2"></div>
 				</article>
 				<article role = "tabpanel">
 					<h4>Do you know what your personal data is used for?</h4>
@@ -448,6 +450,8 @@
 						<div id = "q3-b2" style = "width: 40%"></div>
 					</div>
 					<p><span id = "q3-b2-span">40</span>% of respondents answered no :(</p>
+					<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+					<div id = "jeff3"></div>
 				</article>
 				<article role = "tabpanel">
 					<h4>Do you know what the GDPR is?</h4>
@@ -467,6 +471,8 @@
 						<div id = "q4-b2" style = "width: 40%"></div>
 					</div>
 					<p><span id = "q4-b2-span">40</span>% of respondents answered no :(</p>
+					<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+					<div id = "jeff4"></div>
 				</article>
 			</div>
 		</div>
@@ -779,30 +785,45 @@ Loading the GREAT BRICHANT...
 			}
 
 			async function fetchTexts(question){
-				let dbText;
+				let dbText, dbAnswer, total;
 				question = parseInt(question);
 				await fetch("https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey.json", {
 					method: "GET"
 				}).then((response) => {
 					return response.json();
 				}).then((data) => {
+					if(data === null){
+						return total = 0;
+					}
 					let array = Object.values(data); // Transforms the JSON into array (easier)
 					for(let i = 0; i < array.length; i++){
 						dbText = eval(`array[${i}].q${question}?.text`);
+						switch(eval(`array[${i}].q${question}.answer`)){
+							case 0:
+								dbAnswer = "Yes I do!";
+								break;
+							case 1:
+								dbAnswer = "I think I do...";
+								break;
+							default:
+								dbAnswer = "🤔";
+								break;
+						}
 					}
 				});
-				return dbText;
+				if(total === 0){
+					return "noa <3"
+				}else return [dbText, dbAnswer];
 			}
 
 			document.getElementById("view-button").addEventListener("click", () => {
 				// Answers
-				let martha = document.getElementById("jeff");
-				let kentin, smith = "";
 				for(let k = 1; k < 4; k++){
 					for(let l = 0; l < 3; l++){
 						fetchResults(k, l).then((results) => {
 							if(results === "aymeric <3"){
 								document.getElementById(`q${k}-b${l}`).setAttribute("style", `width: 0%`);
+								document.getElementById(`q${k}-b${l}-span`).innerText = "0";
 							}else{
 								document.getElementById(`q${k}-b${l}`).setAttribute("style", `width: ${results}%`);
 								document.getElementById(`q${k}-b${l}-span`).innerText = results;
@@ -813,10 +834,13 @@ Loading the GREAT BRICHANT...
 				// Text
 				for(let m = 1; m < 5; m++){
 					fetchTexts(m).then((text) => {
-						if(text !== undefined){
-							console.log("mdr");
-							smith += `<input class = "excel" type = "text" value = "no genré" readonly><input class = "excel" type = "text" value = "${text}" readonly><br>`
-							martha.innerHTML = smith; // yes
+						let kentin = "";
+						let martha = document.getElementById(`jeff${m}`);
+						if(text[0] !== undefined && text !== "noa <3"){
+							kentin += `<input class = "excel" type = "text" value = "${text[1]}" readonly><input class = "excel" type = "text" value = "${text[0]}" readonly><br>`
+							martha.innerHTML = kentin; // yes
+						}else if(text === "noa <3"){
+							martha.innerHTML = `<input class = "excel" type = "text" value = "No one has answered" readonly><input class = "excel" type = "text" value = "There is nothing to see here" readonly><br>`
 						}
 					});
 				}
