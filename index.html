@@ -114,7 +114,7 @@
 				<p>In this little survey, find out how much you <i>really</i> know about the GDPR, and more!</p>
 				<p>Just kidding, you'll only find out about how much you know about the GDPR, nothing else.</p>
 
-				<form onsubmit = "return false" id = "survey">
+				<form onsubmit = "return false" id = "survey1">
 					<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
 					<fieldset>
 						<legend>Please select your answer</legend>
@@ -600,7 +600,7 @@ Loading the GREAT BRICHANT...
 
 			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did and its the most beautiful code ive ever seen this is not sarcastic :thumbs_up:)
 
-			document.getElementById("survey").addEventListener("submit", async () => {
+			document.getElementById("survey1").addEventListener("submit", async () => {
 				document.getElementById('ie-window').hidden = false;
 				if(!localStorage.getItem("alreadySent")){
 					// Get IP address
@@ -617,7 +617,7 @@ Loading the GREAT BRICHANT...
 									// Adds an "answer" value in db
 									let bodyRadios = {};
 									bodyRadios["answer"] = j;
-									await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey/${ip}/q${i}.json`, {
+									await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey1/${ip}/q${i}.json`, {
 										method: "PUT",
 										body: JSON.stringify(bodyRadios)
 									});
@@ -626,7 +626,7 @@ Loading the GREAT BRICHANT...
 									if(qTextValue !== ""){
 										let bodyText = {};
 										bodyText["text"] = qTextValue;
-										await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey/${ip}/q${i}.json`, {
+										await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey1/${ip}/q${i}.json`, {
 											method: "PATCH",
 											body: JSON.stringify(bodyText)
 										});
@@ -642,10 +642,10 @@ Loading the GREAT BRICHANT...
 			});
 
 			// Returns a promise with percentage
-			async function fetchResults(question, answer){
+			async function fetchResults(question, answer, survey){
 				let total, r = 0;
 				question = parseInt(question);
-				await fetch("https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey.json", {
+				await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey${survey}.json`, {
 					method: "GET"
 				}).then((response) => {
 					return response.json();
@@ -665,10 +665,10 @@ Loading the GREAT BRICHANT...
 				}else return r / total * 100;
 			}
 
-			async function fetchTexts(question){
+			async function fetchTexts(question, survey){
 				let dbText, dbAnswer, total;
 				question = parseInt(question);
-				await fetch("https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey.json", {
+				await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey${survey}.json`, {
 					method: "GET"
 				}).then((response) => {
 					return response.json();
@@ -701,7 +701,7 @@ Loading the GREAT BRICHANT...
 				// Answers
 				for(let k = 1; k < 5; k++){
 					for(let l = 0; l < 3; l++){
-						fetchResults(k, l).then((results) => {
+						fetchResults(k, l, 1).then((results) => {
 							if(results === "aymeric <3"){
 								document.getElementById(`q${k}-b${l}`).setAttribute("style", `width: 0%`);
 								document.getElementById(`q${k}-b${l}-span`).innerText = "0";
@@ -714,7 +714,7 @@ Loading the GREAT BRICHANT...
 				}
 				// Text
 				for(let m = 1; m < 5; m++){
-					fetchTexts(m).then((text) => {
+					fetchTexts(m, 1).then((text) => {
 						let kentin = "";
 						let martha = document.getElementById(`jeff${m}`);
 						if(text[0] !== undefined && text !== "noa <3"){
