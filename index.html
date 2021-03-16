@@ -391,7 +391,7 @@ Loading the GREAT BRICHANT...
 				<div class = "title-bar-controls">
 					<button aria-label = "Minimize"></button>
 					<button aria-label = "Maximize"></button>
-					<button onclick = "yes_cancel_dialog('SILENCE the gREAT BRICHANT', 'Are you sure you would like to <b>SILENCE</b> the great BRICHANT?', 'alert(`YOU CANNOT SILENCE THE GREAT BRICHANT`)')" aria-label = "Close"></button>
+					<button onclick = "yes_cancel_dialog('SILENCE the GREAT BRICHANT', 'Are you sure you would like to <b>SILENCE</b> the great BRICHANT?', 'alert(`YOU CANNOT SILENCE THE GREAT BRICHANT`)')" aria-label = "Close"></button>
 				</div>
 			</div>
 			<div style = "padding: 0" class = "window-body">
@@ -699,7 +699,7 @@ Loading the GREAT BRICHANT...
 
 			document.getElementById("view-button").addEventListener("click", () => {
 				// Answers
-				for(let k = 1; k < 4; k++){
+				for(let k = 1; k < 5; k++){
 					for(let l = 0; l < 3; l++){
 						fetchResults(k, l).then((results) => {
 							if(results === "aymeric <3"){
@@ -730,6 +730,7 @@ Loading the GREAT BRICHANT...
 			// from khang-nd.github.io/7.cs
 			// again, I didn't write this ugly-ass shit
 			// I did change the spaces into tabs though, I just couldn't leave it as it was
+			// Yeah I agree, I cant understand people who use spaces
 
 			const tabButtons = document.querySelectorAll("[role=tab]");
 			tabButtons.forEach((tabButton) => {
