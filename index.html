@@ -218,7 +218,7 @@
 			</div>
 		</div>
 		
-		<div id = "results-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+		<div id = "results-window" class = "draggable window glass" style = "position: absolute; min-width: 400px" hidden>
 			<div class = "title-bar">
 				<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
 				<div class = "title-bar-controls">
@@ -399,7 +399,7 @@ Loading the GREAT BRICHANT...
 			</div>
 		</div>
 
-		<div id = "ie-window" class = "draggable window glass" style = "position: absolute; width: 553px">
+		<div id = "ie-window" class = "draggable window glass" style = "position: absolute; width: 553px" hidden>
 			<div class = "title-bar">
 				<div class = "title-bar-text">Internet Explorer 2.0</div>
 				<div class = "title-bar-controls">
@@ -426,6 +426,30 @@ Loading the GREAT BRICHANT...
 		</div>
 
 		<script type = "text/javascript">
+			// fuck css. seriously. die.
+			// it's fucking incredible that there's no fucking way to reliably *centre* elements with just css
+			// like one of the most basic and essential things you could want to do
+			// you have to start by positioning 50% relative to the top edge and 50% relative to the left edge
+			// up to now everything is fine
+			// problem is, you have no way of changing the anchor, it's always gonna be top-left if you position relative to top/left
+			// so you need to use negative fucking margins, with the size of your element divided by 2
+			// but what if you're making something responsive, and you don't know what the size of your element is going to be in advance?
+			// and what if you're not a complete incompetent coder, who doesn't want to resort to fucking hardcoding values?
+			// well you're gonna have to use something like grids or a flexbox
+			// but what your elements need to use absolute positioning?
+			// well fuck you, we're not gonna give you any alternative solutions, just use fucking javashit and make your webpage less compatible, slower, and shittier overall
+			// fuck you css, this is bullshit
+			// and that's where we are now, fucking centring stuff in javashit because of how incompetent w3c and how shit a language css are
+			// 24 years of evolution and it still feels and acts like a language built by a five year old on meth who failed fucking kindergarten
+			// fuck
+
+			{ // scoping bc i don't wanna deal with conflicts rn
+				var x = document.getElementById("intro-window");
+
+				x.style.left = window.innerWidth  / 2 - x.offsetWidth  / 2 + "px";
+				x.style.top  = window.innerHeight / 2 - x.offsetHeight / 2 + "px";
+			}
+
 			// misc
 
 			var uuid = 0;
