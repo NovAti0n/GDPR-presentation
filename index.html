@@ -465,6 +465,13 @@ Loading the GREAT BRICHANT...
 				}
 			}
 
+			window.onresize = function() {
+				for (_ of document.getElementsByClassName("draggable")) {
+					if (_.offsetWidth  + _.getBoundingClientRect().left > window.innerWidth ) _.style.left = window.innerWidth  - _.offsetWidth  + "px";
+					if (_.offsetHeight + _.getBoundingClientRect().top  > window.innerHeight) _.style.top  = window.innerHeight - _.offsetHeight + "px";
+				}
+			};
+
 			// window.onerror = function(message, url, line) {
 			// 	console.log(`%c${url}:${line} %c${message}`, "font-weight: bold", "color: green");
 			// 	return true;
