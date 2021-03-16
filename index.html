@@ -199,7 +199,7 @@
 					</fieldset>
 					
 					<input class = "button" type = "submit" value = "Submit">
-					<button onclick = "document.getElementById('results-window').hidden = false">View results</button>
+					<button id = "view-button" onclick = "document.getElementById('results-window').hidden = false">View results</button>
 				</form>
 			</div>
 		</div>
@@ -237,53 +237,92 @@
 						<button role = "tab" aria-controls = "tab2">Question 2</button>
 						<button role = "tab" aria-controls = "tab3">Question 3</button>
 						<button role = "tab" aria-controls = "tab4">Question 4</button>
-					</menu>
-					
+						</menu>
+
+					<!-- TODO faudra peut-être enlever la classe 'animate' pcq elle est lente as fuck -->
+
 					<article role = "tabpanel" id = "tab1">
-						<h4>Do you know what cookies are?</h4>
-						
-						<!-- TODO faudra peut-être enlever la classe 'animate' pcq elle est lente as fuck -->
+						<div role = "progressbar" class = "" id = "tab1">
+							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+							<div id = "q1-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "q1-b0-span">60</span>% of respondents answered yes!</p>
+						<div role = "progressbar" class = "paused">
+							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+							<div id = "q1-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "q1-b1-span">20</span>% of respondents answered they'd heard if them...</p>
+						<div role = "progressbar" class = "error">
+							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+							<div id = "q1-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "q1-b2-span">40</span>% of respondents answered no :(</p>
+						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+						<div id = "jeff1"></div>
+					</article>
+					<article role = "tabpanel" id = "tab2">
+						<h4>Do you know what they are used for?</h4>
 
 						<div role = "progressbar" class = "">
 							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div style = "width: 60%"></div>
+							<div id = "q2-b0" style = "width: 60%"></div>
 						</div>
-						<p>60% of respondents answered yes!</p>
+						<p><span id = "q2-b0-span">60</span>% of respondents answered yes!</p>
 						<div role = "progressbar" class = "paused">
 							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div style = "width: 20%"></div>
+							<div id = "q2-b1" style = "width: 20%"></div>
 						</div>
-						<p>20% of respondents answered they'd heard if them...</p>
-						<div role = "progressbar" class = "error ">
+						<p><span id = "q2-b1-span">20</span>% of respondents answered they'd heard if them...</p>
+						<div role = "progressbar" class = "error">
 							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div style = "width: 40%"></div>
+							<div id = "q2-b2" style = "width: 40%"></div>
 						</div>
-						<p>40% of respondents answered no :(</p>
+						<p><span id = "q2-b2-span">40</span>% of respondents answered no :(</p>
+						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+						<div id = "jeff2"></div>
 					</article>
-
-					<article role = "tabpanel" id = "tab2" hidden>
-						<h4>Do you know what cookies are?</h4>
-						
-						<!-- TODO faudra peut-être enlever la classe 'animate' pcq elle est lente as fuck -->
+					<article role = "tabpanel" id = "tab3">
+						<h4>Do you know what your personal data is used for?</h4>
 
 						<div role = "progressbar" class = "">
 							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div style = "width: 60%"></div>
+							<div id = "q3-b0" style = "width: 60%"></div>
 						</div>
-						<p>60% of respondents answered yes!</p>
+						<p><span id = "q3-b0-span">60</span>% of respondents answered yes!</p>
 						<div role = "progressbar" class = "paused">
 							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div style = "width: 20%"></div>
+							<div id = "q3-b1" style = "width: 20%"></div>
 						</div>
-						<p>20% of respondents answered they'd heard if them...</p>
-						<div role = "progressbar" class = "error ">
+						<p><span id = "q3-b1-span">20</span>% of respondents answered they'd heard if them...</p>
+						<div role = "progressbar" class = "error">
 							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div style = "width: 40%"></div>
+							<div id = "q3-b2" style = "width: 40%"></div>
 						</div>
-						<p>40% of respondents answered no :(</p>
+						<p><span id = "q3-b2-span">40</span>% of respondents answered no :(</p>
+						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+						<div id = "jeff3"></div>
 					</article>
+					<article role = "tabpanel" id = "tab4">
+						<h4>Do you know what the GDPR is?</h4>
 
-					<!-- faut repeter les <article> là pour chaque question -->
+						<div role = "progressbar" class = "">
+							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+							<div id = "q4-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "q4-b0-span">60</span>% of respondents answered yes!</p>
+						<div role = "progressbar" class = "paused">
+							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+							<div id = "q4-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "q4-b1-span">20</span>% of respondents answered they'd heard if them...</p>
+						<div role = "progressbar" class = "error">
+							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+							<div id = "q4-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "q4-b2-span">40</span>% of respondents answered no :(</p>
+						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+						<div id = "jeff4"></div>
+					</article>
 				</section>
 			</div>
 		</div>
@@ -526,8 +565,7 @@ Loading the GREAT BRICHANT...
 				}
 			}
 
-			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did)
-			// MARKER: le javascript moche de noa
+			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did and its the most beautiful code ive ever seen this is not sarcastic :thumbs_up:)
 
 			document.getElementById("survey").addEventListener("submit", async () => {
 				document.getElementById('ie-window').hidden = false;
@@ -546,7 +584,7 @@ Loading the GREAT BRICHANT...
 									// Adds an "answer" value in db
 									let bodyRadios = {};
 									bodyRadios["answer"] = j;
-									await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/${ip}/q${i}.json`, {
+									await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey/${ip}/q${i}.json`, {
 										method: "PUT",
 										body: JSON.stringify(bodyRadios)
 									});
@@ -555,7 +593,7 @@ Loading the GREAT BRICHANT...
 									if(qTextValue !== ""){
 										let bodyText = {};
 										bodyText["text"] = qTextValue;
-										await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/${ip}/q${i}.json`, {
+										await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey/${ip}/q${i}.json`, {
 											method: "PATCH",
 											body: JSON.stringify(bodyText)
 										});
@@ -568,6 +606,92 @@ Loading the GREAT BRICHANT...
 					// Prevent people from redoing the survey
 					localStorage.setItem("alreadySent", true);
 				}else info_dialog("WARNING!", "You've already sent your answers. DO NOT TRY TO CHEAT LITTLE BOI. The Great Brichant is watching you...");
+			});
+
+			// Returns a promise with percentage
+			async function fetchResults(question, answer){
+				let total, r = 0;
+				question = parseInt(question);
+				await fetch("https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey.json", {
+					method: "GET"
+				}).then((response) => {
+					return response.json();
+				}).then((data) => {
+					if(data === null){
+						return total = 0;
+					}
+					total = Object.keys(data).length;
+					let array = Object.values(data); // Transforms the JSON into array (easier)
+					for(let i = 0; i < array.length; i++){
+						let dbAnswer = eval(`array[${i}].q${question}.answer`);
+						if(answer === dbAnswer) r++
+					}
+				});
+				if(total === 0){
+					return "aymeric <3"
+				}else return r / total * 100;
+			}
+
+			async function fetchTexts(question){
+				let dbText, dbAnswer, total;
+				question = parseInt(question);
+				await fetch("https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey.json", {
+					method: "GET"
+				}).then((response) => {
+					return response.json();
+				}).then((data) => {
+					if(data === null){
+						return total = 0;
+					}
+					let array = Object.values(data); // Transforms the JSON into array (easier)
+					for(let i = 0; i < array.length; i++){
+						dbText = eval(`array[${i}].q${question}?.text`);
+						switch(eval(`array[${i}].q${question}.answer`)){
+							case 0:
+								dbAnswer = "Yes I do!";
+								break;
+							case 1:
+								dbAnswer = "I think I do...";
+								break;
+							default:
+								dbAnswer = "🤔";
+								break;
+						}
+					}
+				});
+				if(total === 0){
+					return "noa <3"
+				}else return [dbText, dbAnswer];
+			}
+
+			document.getElementById("view-button").addEventListener("click", () => {
+				// Answers
+				for(let k = 1; k < 4; k++){
+					for(let l = 0; l < 3; l++){
+						fetchResults(k, l).then((results) => {
+							if(results === "aymeric <3"){
+								document.getElementById(`q${k}-b${l}`).setAttribute("style", `width: 0%`);
+								document.getElementById(`q${k}-b${l}-span`).innerText = "0";
+							}else{
+								document.getElementById(`q${k}-b${l}`).setAttribute("style", `width: ${results}%`);
+								document.getElementById(`q${k}-b${l}-span`).innerText = results;
+							}
+						})
+					}
+				}
+				// Text
+				for(let m = 1; m < 5; m++){
+					fetchTexts(m).then((text) => {
+						let kentin = "";
+						let martha = document.getElementById(`jeff${m}`);
+						if(text[0] !== undefined && text !== "noa <3"){
+							kentin += `<input class = "excel" type = "text" value = "${text[1]}" readonly><input class = "excel" type = "text" value = "${text[0]}" readonly><br>`
+							martha.innerHTML = kentin; // yes
+						}else if(text === "noa <3"){
+							martha.innerHTML = `<input class = "excel" type = "text" value = "No one has answered" readonly><input class = "excel" type = "text" value = "There is nothing to see here" readonly><br>`
+						}
+					});
+				}
 			});
 
 			// from khang-nd.github.io/7.cs
