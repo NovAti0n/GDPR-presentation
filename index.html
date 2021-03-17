@@ -739,14 +739,13 @@ Loading the GREAT BRICHANT...
 			}
 
 			async function fetchTexts(question, survey){
-				let dbText, dbAnswer, total;
+				let dbText, dbAnswer, total, finalArray = [];
 				question = parseInt(question);
 				await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey${survey}.json`, {
 					method: "GET"
 				}).then((response) => {
 					return response.json();
 				}).then((data) => {
-					console.log(data);
 					if(data === null){
 						return total = 0;
 					}
@@ -758,19 +757,20 @@ Loading the GREAT BRICHANT...
 								dbAnswer = "Yes I do!";
 								break;
 							case 1:
-								dbAnswer = "I think I do...";
+								dbAnswer = "I think I know...";
 								break;
 							default:
 								dbAnswer = "🤔";
-								break;
+								break
 						}
+						finalArray.push([dbText, dbAnswer]);
+						console.log(finalArray);
 					}
 				});
 				if(total === 0){
-					return "noa <3"
-				}else return [dbText, dbAnswer];
+					return "noa <3";
+				}else return finalArray
 			}
-
 			document.getElementById("view-button").addEventListener("click", () => {
 				// Answers
 				for(let k = 1; k < 5; k++){
@@ -791,11 +791,13 @@ Loading the GREAT BRICHANT...
 				for(let m = 1; m < 5; m++){
 					fetchTexts(m, 1).then((text) => {
 						let martha = document.getElementById(`jeff${m}`);
-						if(text[0] !== undefined && text !== "noa <3"){
-							kentin += `<input class = "excel" type = "text" value = "${text[1]}" readonly><input class = "excel" type = "text" value = "${text[0]}" readonly><br>`
-							martha.innerHTML = kentin; // yes
-						}else if(text === "noa <3"){
-							martha.innerHTML = `<input class = "excel" type = "text" value = "No one has answered" readonly><input class = "excel" type = "text" value = "There is nothing to see here" readonly><br>`
+						for(let n = 0; n < text.length; n++){
+							if(text[n][0] !== undefined && text !== "noa <3"){
+								kentin += `<input class = "excel" type = "text" value = "${text[n][1]}" readonly><input class = "excel" type = "text" value = "${text[n][0]}" readonly><br>`
+								martha.innerHTML = kentin; // yes
+							}else if(text === "noa <3"){
+								martha.innerHTML = `<input class = "excel" type = "text" value = "No one has answered" readonly><input class = "excel" type = "text" value = "There is nothing to see here" readonly><br>`
+							}
 						}
 						kentin = "";
 					});
