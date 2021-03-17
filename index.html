@@ -1,3 +1,5 @@
+<!-- please don't press ctrl+b for the love of god, thanks, Aymeric -->
+
 <!DOCTYPE html>
 
 <html lang = "en">
@@ -99,6 +101,21 @@
 				<div class = "window-body">
 					<p>Cookies and GDPR are nowadays subjects. A lot of new scandals are emerging all around the world about private data.<br>We all believe that it is a very important subject to understand.</p>
 					<button onclick = "open_window('form-window')">Ok?</button>
+				</div>
+			</div>
+
+			<div id = "quiz-window" class = "draggable window glass" style = "position: absolute">
+				<div class = "title-bar">
+					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "notepad.png" style = "width: 16px; height: 16px; margin-right: 4px">Notepad</div>
+					<div class = "title-bar-text">Little quiz on the video...</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"></button>
+						<button aria-label = "Close" onclick = "close_window('quiz-window')"></button>
+					</div>
+				</div>
+				<div class = "window-body">
+					<h4>What impact did the Brexit have on the application of the GDPR in the UK?</h4>
+					<h4></h4>
 				</div>
 			</div>
 
