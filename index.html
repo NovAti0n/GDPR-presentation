@@ -83,7 +83,7 @@
 				</details>
 				<p>So, are you terrified now?</p>
 				<button onclick = "open_window('why-window')">Yes, I am!</button>
-				<button onclick = "info_dialog('Try Again', `That's the wrong answer! Try again by clicking on 'Yes, I am!'...`)">No...</button>
+				<button onclick = "info_dialog('Try Again', `That's the wrong answer! Try again by clicking on 'Yes, I am!'...`, 'Ok')">No...</button>
 			</div>
 		</div>
 
@@ -399,6 +399,19 @@ Loading the GREAT BRICHANT...
 			</div>
 		</div>
 
+		<div hidden id = "napster-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Limewire - Here come the Suns (beetels, 2009)</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"></button>
+					<button onclick = "close_window('napster-window')" aria-label = "Close"></button>
+				</div>
+			</div>
+			<div style = "padding: 0" class = "window-body">
+				<img src = "napster.png" style = "margin-bottom: -3px" onclick = "close_window('napster-window');info_dialog('FBI', 'What you are doing is copyright infringement and piracy, and I am here to inform you that this is, in fact, illegal activity, sir.<br><br><a href = `https:\/\/www.youtube.com/watch?v=qJK_9eyRQl8`>How would you feel if you were some multi-millionaire and some <i>&quot;people&quot;</i> decided to download your music for free?</a>', `I'm sorry :(`)"></img>
+			</div>
+		</div>
+
 		<div id = "ie-window" class = "draggable window glass" style = "position: absolute; width: 553px" hidden>
 			<div class = "title-bar">
 				<div class = "title-bar-text">Internet Explorer 2.0</div>
@@ -468,6 +481,7 @@ Loading the GREAT BRICHANT...
 
 			document.onkeyup = function(e) {
 				if (e.ctrlKey && e.which == 66) {
+					open_window("napster-window");
 					open_window("cmd-window");
 
 					var song = new Audio("brichant-song.mp3");
@@ -478,19 +492,20 @@ Loading the GREAT BRICHANT...
 					}, 15294); // lyrics start
 
 					setTimeout(function() {
-						document.body.style.background = "url(brichant2.jpg)"; // don't use 'backgroundImage', shitty tiling is funny
 						var brichant_window = document.getElementById("brichant-window");
-						brichant_window.style.transition = "transform, 800ms"
+						brichant_window.style.transition = "transform, 800ms";
 
-						setTimeout(function() {
-							setInterval(function() {
-								brichant_window.style.transform = "scale(5.0)";
+						setInterval(function() {
+							brichant_window.style.transform = "scale(5.0)";
 
-								setTimeout(function() {
-									brichant_window.style.transform = "scale(1.0)"
-								}, 100); // after like 100 ms so window has time to grow
-							}, 937.5);
-						}, 937.5 / 2 - 100); // half a beat minus growth time offset
+							setTimeout(function() {
+								brichant_window.style.transform = "scale(1.0)"
+							}, 100); // after like 100 ms so window has time to grow
+						}, 937.5);
+					}, 27656 - 3 * 937.5 / 2 - 100); // half a beat minus growth time offset
+
+					setTimeout(function() {
+						document.body.style.background = "url(brichant2.jpg)"; // don't use 'backgroundImage', shitty tiling is funny
 					}, 27656); // first verse start
 				}
 			}
@@ -516,7 +531,7 @@ Loading the GREAT BRICHANT...
 
 			// macro function things
 
-			function info_dialog(title, message) {
+			function info_dialog(title, message, btnmsg /* fuck vowels */) {
 				var big_dong = new Audio("erro.mp3");
 				big_dong.play();
 
@@ -529,7 +544,7 @@ Loading the GREAT BRICHANT...
 				+ "<div class='title-bar'><div class='title-bar-text'>" + title + "</div>"
 				+ "<div class='title-bar-controls'><button aria-label = 'Minimize'></button><button aria-label='Close' onclick='" + cancel + "'></button></div></div>"
 				+ "<div class='window-body'><p>" + message + "</p>"
-				+ "<button onclick='" + cancel + "'>Ok</button></div></div>";
+				+ "<button onclick='" + cancel + "'>" + btnmsg + "</button></div></div>";
 
 				// this doesn't work for some reason so fuck it
 				//make_element_draggable(document.getElementById(uuid));
@@ -693,7 +708,7 @@ Loading the GREAT BRICHANT...
 					});
 					// Prevent people from redoing the survey
 					localStorage.setItem("alreadySent", true);
-				}else info_dialog("WARNING!", "You've already sent your answers. DO NOT TRY TO CHEAT LITTLE BOI. The Great Brichant is watching you...");
+				}else info_dialog("WARNING!", "You've already sent your answers. DO NOT TRY TO CHEAT LITTLE BOI. The Great Brichant is watching you...", "Ok...");
 			});
 
 			// Returns a promise with percentage
