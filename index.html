@@ -99,7 +99,7 @@
 					</div>
 				</div>
 				<div class = "window-body">
-					<p>Sometimes, things do not have any explanation. Just deal with it.</p>
+					<p>Cookies and GDPR are nowadays subjects. A lot of new scandals are emerging all around the world about private data.<br>We all believe that it is a very important subject to understand.</p>
 					<button onclick = "open_window('form-window')">Ok?</button>
 				</div>
 			</div>
@@ -145,7 +145,7 @@
 					<p>In this little survey, find out how much you <i>really</i> know about the GDPR, and more!</p>
 					<p>Just kidding, you'll only find out about how much you know about the GDPR, nothing else.</p>
 
-					<form onsubmit = "return false">
+					<form id = "form1">
 						<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
 						<fieldset>
 							<legend>Please select your answer</legend>
@@ -728,7 +728,8 @@ Loading the GREAT BRICHANT...
 
 			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did and its the most beautiful code ive ever seen this is not sarcastic :thumbs_up:)
 
-			document.getElementById("survey1").onclick = async function(){
+			document.getElementById("form1").onsubmit = async function(e){
+				e.preventDefault();
 				open_window('ie-window');
 				if(!localStorage.getItem("alreadyDone")){
 					// Get IP address
