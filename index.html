@@ -1,4 +1,4 @@
-<!-- please don't press ctrl+b for the love of god, thanks, Aymeric -->
+<!-- please don't press ctrl+alt+b for the love of god, thanks, Aymeric -->
 
 <!DOCTYPE html>
 
@@ -36,6 +36,28 @@
 				user-select: none;
 
 				overflow: hidden;
+			}
+
+			@font-face {
+				font-family: bsod;
+				src: url(bsod.ttf);
+			}
+
+			.bsod {
+				height: 100vh;
+
+				font-family: 'bsod';
+				display: flex;
+
+				align-items: center;
+				justify-content: center;
+
+				color: white;
+				font-size: 32px;
+			}
+
+			.bsod a {
+				color: white;
 			}
 
 			@font-face {
@@ -101,19 +123,6 @@
 				<div class = "window-body">
 					<p>Cookies and GDPR are nowadays subjects. A lot of new scandals are emerging all around the world about private data.<br>We all believe that it is a very important subject to understand.</p>
 					<button onclick = "open_window('form-window')">Ok?</button>
-				</div>
-			</div>
-
-			<div id = "credits-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
-				<div class = "title-bar">
-					<div class = "title-bar-text">Thank you for your attention!</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"></button>
-						<button aria-label = "Close" onclick = "close_window('why-window')"></button>
-					</div>
-				</div>
-				<div class = "window-body">
-					<p>Now fuck off</p>
 				</div>
 			</div>
 
@@ -230,7 +239,7 @@
 						</fieldset>
 						
 						<input class = "button" id = "survey1" type = "submit" value = "Submit">
-						<button id = "view-button" onclick = "open_window('results-window')">View results</button>
+						<button type = "button" id = "view-button">View results</button>
 					</form>
 				</div>
 			</div>
@@ -249,7 +258,7 @@
 				</div>
 			</div>
 			
-			<div id = "results-window" class = "draggable window glass" style = "position: absolute; min-width: 400px" hidden>
+			<div hidden id = "results-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
 				<div class = "title-bar">
 					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
 					<div class = "title-bar-controls">
@@ -276,17 +285,14 @@
 							<h4>Do you know what cookies are?</h4>
 
 							<div role = "progressbar" class = "" id = "tab1">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q1-b0" style = "width: 60%"></div>
 							</div>
 							<p><span id = "q1-b0-span">60</span>% of respondents answered yes!</p>
 							<div role = "progressbar" class = "paused">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q1-b1" style = "width: 20%"></div>
 							</div>
 							<p><span id = "q1-b1-span">20</span>% of respondents answered they'd heard of them...</p>
 							<div role = "progressbar" class = "error">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q1-b2" style = "width: 40%"></div>
 							</div>
 							<p><span id = "q1-b2-span">40</span>% of respondents answered no :(</p>
@@ -297,17 +303,14 @@
 							<h4>Do you know what they are used for?</h4>
 
 							<div role = "progressbar" class = "">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q2-b0" style = "width: 60%"></div>
 							</div>
 							<p><span id = "q2-b0-span">60</span>% of respondents answered yes!</p>
 							<div role = "progressbar" class = "paused">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q2-b1" style = "width: 20%"></div>
 							</div>
 							<p><span id = "q2-b1-span">20</span>% of respondents answered they'd heard of them...</p>
 							<div role = "progressbar" class = "error">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q2-b2" style = "width: 40%"></div>
 							</div>
 							<p><span id = "q2-b2-span">40</span>% of respondents answered no :(</p>
@@ -318,17 +321,14 @@
 							<h4>Do you know what your personal data is used for?</h4>
 
 							<div role = "progressbar" class = "">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q3-b0" style = "width: 60%"></div>
 							</div>
 							<p><span id = "q3-b0-span">60</span>% of respondents answered yes!</p>
 							<div role = "progressbar" class = "paused">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q3-b1" style = "width: 20%"></div>
 							</div>
 							<p><span id = "q3-b1-span">20</span>% of respondents answered they'd heard of them...</p>
 							<div role = "progressbar" class = "error">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q3-b2" style = "width: 40%"></div>
 							</div>
 							<p><span id = "q3-b2-span">40</span>% of respondents answered no :(</p>
@@ -339,17 +339,14 @@
 							<h4>Do you know what the GDPR is?</h4>
 
 							<div role = "progressbar" class = "">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q4-b0" style = "width: 60%"></div>
 							</div>
 							<p><span id = "q4-b0-span">60</span>% of respondents answered yes!</p>
 							<div role = "progressbar" class = "paused">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q4-b1" style = "width: 20%"></div>
 							</div>
 							<p><span id = "q4-b1-span">20</span>% of respondents answered they'd heard of them...</p>
 							<div role = "progressbar" class = "error">
-								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
 								<div id = "q4-b2" style = "width: 40%"></div>
 							</div>
 							<p><span id = "q4-b2-span">40</span>% of respondents answered no :(</p>
@@ -531,7 +528,7 @@ Loading the GREAT BRICHANT...
 			var uuid = 0;
 
 			document.onkeyup = function(e) {
-				if (e.ctrlKey && e.which == 66) {
+				if (e.ctrlKey && e.altKey && e.which == 66) {
 					open_window("napster-window");
 					open_window("cmd-window");
 
@@ -559,7 +556,10 @@ Loading the GREAT BRICHANT...
 						document.body.style.background = "url(brichant2.jpg)"; // don't use 'backgroundImage', shitty tiling is funny
 					}, 27656); // first verse start
 				
-				} if (e.ctrlKey && e.which == 89) {
+				} if (e.ctrlKey && e.altKey && e.which == 68) {
+					bsod();
+
+				} if (e.ctrlKey && e.altKey && e.which == 89) {
 					console.log("localStorage.clear()");
 					localStorage.clear();
 				}
@@ -585,6 +585,23 @@ Loading the GREAT BRICHANT...
 			// }
 
 			// macro function things
+
+			function bsod() {
+				var big_dong = new Audio("erro.mp3");
+				big_dong.play();
+
+				var text = 
+					"A problem has been detected and Windows has been shut down to prevent damage to your computer.<br><br>" +
+					"TOO_MUCH_ATTENTION_GIVEN<br><br>" +
+					"Too much attention was given to our presentation and there was not enough thanks to go around. This caused a loopback exception in the flux capacitor which shut down the firewall which caused the detonation of all antivirus defenses.<br><br>" +
+					"To fix this, <a href = 'https://www.youtube.com/watch?v=tVQsxLfKPNI'>a gig of RAM should do the trick</a>.<br><br>" +
+					"Technical information:<br><br>" +
+					"*** THANKS: 0x000000AD (0x00000000, 0x00000000)<br><br>" +
+					"If the problem persists, please contact <a href = 'mailto:m.brichant@ccro.be'>m.brichant@ccro.be</a>.";
+
+				document.body.style.background = "#0000AD";
+				document.body.innerHTML = "<div class = 'bsod'><p style = 'max-width: 1280px; max-height: 960px'>" + text + "</p></div>";
+			}
 
 			function info_dialog(title, message, btnmsg /* fuck vowels */) {
 				var big_dong = new Audio("erro.mp3");
@@ -826,7 +843,8 @@ Loading the GREAT BRICHANT...
 					return "noa <3";
 				}else return finalArray
 			}
-			document.getElementById("view-button").addEventListener("click", () => {
+			document.getElementById("view-button").onclick = async function() {
+				open_window("results-window");
 				// Answers
 				for(let k = 1; k < 5; k++){
 					for(let l = 0; l < 3; l++){
@@ -857,7 +875,7 @@ Loading the GREAT BRICHANT...
 						kentin = "";
 					});
 				}
-			});
+			};
 
 			// from khang-nd.github.io/7.cs
 			// again, I didn't write this ugly-ass shit
