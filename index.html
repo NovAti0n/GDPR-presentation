@@ -698,43 +698,39 @@ Loading the GREAT BRICHANT...
 
 			document.getElementById("survey1").addEventListener("click", async () => {
 				open_window('ie-window');
-				if(!localStorage.getItem("alreadySent")){
-					// Get IP address
-					await fetch("https://ipv4.wtfismyip.com/json", {
-						method: "GET"
-					}).then((response) => {
-						return response.json();
-					}).then( async (data) => {
-						let ip = data.YourFuckingIPAddress.split(".").join(""); // Get rid of the stupids . between the numbers
-						for(let i = 1; i < 5; i++){
-							let qRadios = document.getElementsByName(`q${i}`);
-							for(let j = 0; j < qRadios.length; j++){
-								if(qRadios[j].checked){
-									// Adds an "answer" value in db
-									let bodyRadios = {};
-									bodyRadios["answer"] = j;
+				// Get IP address
+				await fetch("https://ipv4.wtfismyip.com/json", {
+					method: "GET"
+				}).then((response) => {
+					return response.json();
+				}).then( async (data) => {
+					let ip = data.YourFuckingIPAddress.split(".").join(""); // Get rid of the stupids . between the numbers
+					for(let i = 1; i < 5; i++){
+						let qRadios = document.getElementsByName(`q${i}`);
+						for(let j = 0; j < qRadios.length; j++){
+							if(qRadios[j].checked){
+								// Adds an "answer" value in db
+								let bodyRadios = {};
+								bodyRadios["answer"] = j;
+								await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey1/${ip}/q${i}.json`, {
+									method: "PUT",
+									body: JSON.stringify(bodyRadios)
+								});
+								// Adds a text value to answer if necessary
+								let qTextValue = document.getElementById(`q${i}-text`).value;
+								if(qTextValue !== ""){
+									let bodyText = {};
+									bodyText["text"] = qTextValue;
 									await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey1/${ip}/q${i}.json`, {
-										method: "PUT",
-										body: JSON.stringify(bodyRadios)
+										method: "PATCH",
+										body: JSON.stringify(bodyText)
 									});
-									// Adds a text value to answer if necessary
-									let qTextValue = document.getElementById(`q${i}-text`).value;
-									if(qTextValue !== ""){
-										let bodyText = {};
-										bodyText["text"] = qTextValue;
-										await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey1/${ip}/q${i}.json`, {
-											method: "PATCH",
-											body: JSON.stringify(bodyText)
-										});
-									}
-									break;
 								}
+								break;
 							}
 						}
-					});
-					// Prevent people from redoing the survey
-					localStorage.setItem("alreadySent", true);
-				}else info_dialog("WARNING!", "You've already sent your answers. DO NOT TRY TO CHEAT LITTLE BOI. The Great Brichant is watching you...", "Ok...");
+					}
+				});
 			});
 
 			// Returns a promise with percentage
