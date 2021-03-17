@@ -17,7 +17,7 @@
 
 		<style>
 			body {
-				background: url(https://wallpaperaccess.com/full/220742.jpg) no-repeat center center fixed;
+				background: url(wp.jpg) no-repeat center center fixed;
 				/* background: url(https://wallpapercave.com/wp/wp2754864.jpg) no-repeat center center fixed; */
 				/* background: #008080; */
 
@@ -82,7 +82,7 @@
 					</ul>
 				</details>
 				<p>So, are you terrified now?</p>
-				<button onclick = "document.getElementById('why-window').hidden = false">Yes, I am!</button>
+				<button onclick = "open_window('why-window')">Yes, I am!</button>
 				<button onclick = "info_dialog('Try Again', `That's the wrong answer! Try again by clicking on 'Yes, I am!'...`)">No...</button>
 			</div>
 		</div>
@@ -92,12 +92,12 @@
 				<div class = "title-bar-text">Why did we choose to work on this topic?</div>
 				<div class = "title-bar-controls">
 					<button aria-label = "Minimize"></button>
-					<button aria-label = "Close" onclick = "document.getElementById('why-window').hidden = true"></button>
+					<button aria-label = "Close" onclick = "close_window('why-window')"></button>
 				</div>
 			</div>
 			<div class = "window-body">
 				<p>Sometimes, things do not have any explanation. Just deal with it.</p>
-				<button onclick = "document.getElementById('form-window').hidden = false">Ok?</button>
+				<button onclick = "open_window('form-window')">Ok?</button>
 			</div>
 		</div>
 
@@ -106,7 +106,7 @@
 				<div class = "title-bar-text">Small survey</div>
 				<div class = "title-bar-controls">
 					<button aria-label = "Minimize"></button>
-					<button aria-label = "Close" onclick = "document.getElementById('form-window').hidden = true"></button>
+					<button aria-label = "Close" onclick = "close_window('form-window')"></button>
 				</div>
 			</div>
 			<div class = "window-body">
@@ -199,7 +199,7 @@
 					</fieldset>
 					
 					<input class = "button" type = "submit" value = "Submit">
-					<button id = "view-button" onclick = "document.getElementById('results-window').hidden = false">View results</button>
+					<button id = "view-button" onclick = "open_window('results-window')">View results</button>
 				</form>
 			</div>
 		</div>
@@ -210,7 +210,7 @@
 				<div class = "title-bar-controls">
 					<button aria-label = "Minimize"></button>
 					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "document.getElementById('notepad-window').hidden = true"></button>
+					<button aria-label = "Close" onclick = "close_window('notepad-window')"></button>
 				</div>
 			</div>
 			<div style = "padding: 0" class = "window-body">
@@ -224,7 +224,7 @@
 				<div class = "title-bar-controls">
 					<button aria-label = "Minimize"></button>
 					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "document.getElementById('results-window').hidden = true"></button>
+					<button aria-label = "Close" onclick = "close_window('results-window')"></button>
 				</div>
 			</div>
 			<div class = "window-body">
@@ -335,7 +335,7 @@
 				<div class = "title-bar-controls">
 					<button aria-label = "Minimize"></button>
 					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "document.getElementById('cmd-window').hidden = true"></button>
+					<button aria-label = "Close" onclick = "close_window('cmd-window')"></button>
 				</div>
 			</div>
 			<div style = "padding: 0" class = "window-body">
@@ -358,7 +358,7 @@ Loading the GREAT BRICHANT...
 				<div class = "title-bar-controls">
 					<button aria-label = "Minimize"></button>
 					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "document.getElementById('excel-window').hidden = true"></button>
+					<button aria-label = "Close" onclick = "close_window('excel-window')"></button>
 				</div>
 			</div>
 			<div style = "padding: 0" class = "window-body">
@@ -405,15 +405,15 @@ Loading the GREAT BRICHANT...
 				<div class = "title-bar-controls">
 					<button aria-label = "Minimize"></button>
 					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "document.getElementById('ie-window').hidden = true"></button>
+					<button aria-label = "Close" onclick = "close_window('ie-window')"></button>
 				</div>
 			</div>
 			<div class = "window-body">
 				<p>Watch this short video from Channel 4 to find out more about the GDPR!</p>
 				<p>You can use the vocabulary list to help you understand it if there are some words you don't understand. Click here to open up the vocabulary file in Microsoft Excel 2077:</p>
-				<button style = "display: flex; align-items: center" onclick = "document.getElementById('excel-window').hidden = false"><img style = "margin-right: 4px" src = "excel.png">vocab.xls</button><br>
+				<button style = "display: flex; align-items: center" onclick = "open_window('excel-window')"><img style = "margin-right: 4px" src = "excel.png">vocab.xls</button><br>
 				<p>You can also use the notepad application to take extra notes:</p>
-				<button style = "display: flex; align-items: center" onclick = "document.getElementById('notepad-window').hidden = false"><img style = "margin-right: 4px" src = "notepad.png">New file</button><br>
+				<button style = "display: flex; align-items: center" onclick = "open_window('notepad-window')"><img style = "margin-right: 4px" src = "notepad.png">New file</button><br>
 				<p>You can either view the video here using the TouYube &copy; client just below, or by clicking on <a href = "https://www.youtube.com/embed/acijNEErf-c">this link</a>.</p>
 				<p>If you need to download it for whatever reason, click <a href = "video.mp4">here</a>.</p>
 				
@@ -426,6 +426,18 @@ Loading the GREAT BRICHANT...
 		</div>
 
 		<script type = "text/javascript">
+			var mouse_x = window.innerWidth  / 2;
+			var mouse_y = window.innerHeight / 2;
+
+			function update_mouse_pos(event) {
+				event = event || window.event;
+				
+				mouse_x = event.clientX;
+				mouse_y = event.clientY;
+			}
+
+			document.onmousemove = update_mouse_pos;
+
 			// fuck css. seriously. die.
 			// it's fucking incredible that there's no fucking way to reliably *centre* elements with just css
 			// like one of the most basic and essential things you could want to do
@@ -446,8 +458,8 @@ Loading the GREAT BRICHANT...
 			{ // scoping bc i don't wanna deal with conflicts rn
 				var x = document.getElementById("intro-window");
 
-				x.style.left = window.innerWidth  / 2 - x.offsetWidth  / 2 + "px";
-				x.style.top  = window.innerHeight / 2 - x.offsetHeight / 2 + "px";
+				x.style.left = mouse_x - x.offsetWidth  / 2 + "px";
+				x.style.top  = mouse_y - x.offsetHeight / 2 + "px";
 			}
 
 			// misc
@@ -456,19 +468,44 @@ Loading the GREAT BRICHANT...
 
 			document.onkeyup = function(e) {
 				if (e.ctrlKey && e.which == 66) {
-					document.getElementById("cmd-window").hidden = false;
+					open_window("cmd-window");
+
+					var song = new Audio("brichant-song.mp3");
+					song.play();
 
 					setTimeout(function() {
-						document.getElementById("brichant-window").hidden = false;
-						document.body.style.backgroundImage = "url(brichant2.jpg)";
-					}, 1500);
+						open_window("brichant-window");
+					}, 15294); // lyrics start
+
+					setTimeout(function() {
+						document.body.style.background = "url(brichant2.jpg)"; // don't use 'backgroundImage', shitty tiling is funny
+						var brichant_window = document.getElementById("brichant-window");
+						brichant_window.style.transition = "transform, 800ms"
+
+						setTimeout(function() {
+							setInterval(function() {
+								brichant_window.style.transform = "scale(5.0)";
+
+								setTimeout(function() {
+									brichant_window.style.transform = "scale(1.0)"
+								}, 100); // after like 100 ms so window has time to grow
+							}, 937.5);
+						}, 937.5 / 2 - 100); // half a beat minus growth time offset
+					}, 27656); // first verse start
 				}
+			}
+
+			function restrict_window(_) {
+				if (_.getBoundingClientRect().right  > window.innerWidth ) _.style.left = window.innerWidth  - _.offsetWidth  + "px";
+				if (_.getBoundingClientRect().bottom > window.innerHeight) _.style.top  = window.innerHeight - _.offsetHeight + "px";
+
+				if (_.getBoundingClientRect().left < 0) _.style.left = "0px";
+				if (_.getBoundingClientRect().top  < 0) _.style.top  = "0px";
 			}
 
 			window.onresize = function() {
 				for (_ of document.getElementsByClassName("draggable")) {
-					if (_.offsetWidth  + _.getBoundingClientRect().left > window.innerWidth ) _.style.left = window.innerWidth  - _.offsetWidth  + "px";
-					if (_.offsetHeight + _.getBoundingClientRect().top  > window.innerHeight) _.style.top  = window.innerHeight - _.offsetHeight + "px";
+					restrict_window(_);
 				}
 			};
 
@@ -477,9 +514,7 @@ Loading the GREAT BRICHANT...
 			// 	return true;
 			// }
 
-			var survey_radio_buttons = document.getElementsByName
-
-			// macro elements
+			// macro function things
 
 			function info_dialog(title, message) {
 				var big_dong = new Audio("erro.mp3");
@@ -528,6 +563,28 @@ Loading the GREAT BRICHANT...
 				}
 			}
 
+			function focus_window(element) {
+				for (_ of document.getElementsByClassName("draggable")) _.style.zIndex -= 1;
+				element.style.zIndex = 0;
+			}
+
+			function open_window(id) {
+				var element = document.getElementById(id);
+
+				focus_window(element);
+				element.hidden = false;
+
+				element.style.left = mouse_x - element.offsetWidth  / 2 + "px";
+				element.style.top  = mouse_y - element.offsetHeight / 2 + "px";
+
+				restrict_window(element);
+			}
+
+			function close_window(id) {
+				var element = document.getElementById(id);
+				element.hidden = true;
+			}
+
 			// draggable logic
 
 			for (element of document.getElementsByClassName("draggable")) {
@@ -552,8 +609,7 @@ Loading the GREAT BRICHANT...
 				}
 
 				function focus(event) {
-					for (_ of document.getElementsByClassName("draggable")) _.style.zIndex -= 1;
-					element.style.zIndex = 0;
+					focus_window(element);
 
 					// for (_ of document.getElementsByClassName("window")) _.classList.remove("glass");
 					// element.classList.add("glass");
@@ -587,24 +643,23 @@ Loading the GREAT BRICHANT...
 					element.style.left = (element.offsetLeft - dx) + "px";
 					element.style.top  = (element.offsetTop  - dy) + "px";
 					
-					if (element.offsetTop - dy < 0) {
-						element.style.top = "0px";
-					}
+					restrict_window(element);
+					update_mouse_pos(event);
 				}
 
 				function stop_dragging() {
 					document.onmouseup = null;
-					document.onmousemove = null;
+					document.onmousemove = update_mouse_pos;
 				}
 			}
 
 			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did and its the most beautiful code ive ever seen this is not sarcastic :thumbs_up:)
 
 			document.getElementById("survey").addEventListener("submit", async () => {
-				document.getElementById('ie-window').hidden = false;
+				open_window('ie-window');
 				if(!localStorage.getItem("alreadySent")){
 					// Get IP address
-					await fetch("https://ipgeolocation.abstractapi.com/v1/?api_key=b1757f96f15848a2a15f014904d35868", {
+					await fetch("https://ipgeolocation.abstractapi.com/v1/?api_key=b1757f96f15848a2a15f014904d35868", { // "use wtfismyip dumbass" - Aymeric
 						method: "GET"
 					}).then((response) => {
 						return response.json();
