@@ -53,293 +53,294 @@
 	</head>
 
 	<body>
-		<div id = "intro-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
-			<div class = "title-bar">
-				<div class = "title-bar-text">Introduction to the GDPR</div>
-				<div class = "title-bar-controls">
-					<button aria-label = "Minimize"></button>
-					<button onclick = "yes_cancel_dialog('Exit Presentation', 'Are you sure you would like to exit the presentation?', 'alert(`no`)')" aria-label = "Close"></button>
+		<div id = "everything"> <!-- this div contains everything. why? because fuck you, innerHTML can't be changed without reloading all child videos, that's why -->
+			<div id = "intro-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
+				<div class = "title-bar">
+					<div class = "title-bar-text">Introduction to the GDPR</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"></button>
+						<button onclick = "yes_cancel_dialog('Exit Presentation', 'Are you sure you would like to exit the presentation?', 'alert(`no`)')" aria-label = "Close"></button>
+					</div>
+				</div>
+				<div class = "window-body">
+					<p>Internet is an incredible tool, but it has a dark side. Have you ever gone to a website and been assaulted by a lot of popups asking you to accept cookies? Have you ever received loads of emails about a thing that you were just searching for or talking about five minutes ago? How can evil companies retrieve all this data from you? Are they using black magic? This is what we will be trying to answer today.</p>
+					<p>From your lamp to your flip-flops, everything is connected to the Internet these days. No wonder Google is able to know every single thing about you. Let’s do an experiment, just follow these simple steps:</p>
+					<details close>
+						<summary>If you have an iPhone and are not using Google Maps:</summary>
+						<ul>
+							<li>Open settings.</li>
+							<li>Go to "Confidentialité", then "Services de localisation", then "Services système", then "Lieux importants".</li>
+							<li>You should see a list of places you've been. Click on one to see more!</li>
+						</ul>
+					</details>
+					<details close>
+						<summary>If you are using Google Maps:</summary>
+						<ul>
+							<li>Open Google Maps.</li>
+							<li>Click on your profile picture on the top-right corner.</li>
+							<li>Click on "Vos trajets".</li>
+							<li>You should see your recent paths.</li>
+						</ul>
+					</details>
+					<p>So, are you terrified now?</p>
+					<button onclick = "open_window('why-window')">Yes, I am!</button>
+					<button onclick = "info_dialog('Try Again', `That's the wrong answer! Try again by clicking on 'Yes, I am!'...`, 'Ok')">No...</button>
 				</div>
 			</div>
-			<div class = "window-body">
-				<p>Internet is an incredible tool, but it has a dark side. Have you ever gone to a website and been assaulted by a lot of popups asking you to accept cookies? Have you ever received loads of emails about a thing that you were just searching for or talking about five minutes ago? How can evil companies retrieve all this data from you? Are they using black magic? This is what we will be trying to answer today.</p>
-				<p>From your lamp to your flip-flops, everything is connected to the Internet these days. No wonder Google is able to know every single thing about you. Let’s do an experiment, just follow these simple steps:</p>
-				<details close>
-					<summary>If you have an iPhone and are not using Google Maps:</summary>
-					<ul>
-						<li>Open settings.</li>
-						<li>Go to "Confidentialité", then "Services de localisation", then "Services système", then "Lieux importants".</li>
-						<li>You should see a list of places you've been. Click on one to see more!</li>
-					</ul>
-				</details>
-				<details close>
-					<summary>If you are using Google Maps:</summary>
-					<ul>
-						<li>Open Google Maps.</li>
-						<li>Click on your profile picture on the top-right corner.</li>
-						<li>Click on "Vos trajets".</li>
-						<li>You should see your recent paths.</li>
-					</ul>
-				</details>
-				<p>So, are you terrified now?</p>
-				<button onclick = "open_window('why-window')">Yes, I am!</button>
-				<button onclick = "info_dialog('Try Again', `That's the wrong answer! Try again by clicking on 'Yes, I am!'...`, 'Ok')">No...</button>
-			</div>
-		</div>
 
-		<div hidden id = "why-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
-			<div class = "title-bar">
-				<div class = "title-bar-text">Why did we choose to work on this topic?</div>
-				<div class = "title-bar-controls">
-					<button aria-label = "Minimize"></button>
-					<button aria-label = "Close" onclick = "close_window('why-window')"></button>
+			<div hidden id = "why-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+				<div class = "title-bar">
+					<div class = "title-bar-text">Why did we choose to work on this topic?</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"></button>
+						<button aria-label = "Close" onclick = "close_window('why-window')"></button>
+					</div>
+				</div>
+				<div class = "window-body">
+					<p>Sometimes, things do not have any explanation. Just deal with it.</p>
+					<button onclick = "open_window('form-window')">Ok?</button>
 				</div>
 			</div>
-			<div class = "window-body">
-				<p>Sometimes, things do not have any explanation. Just deal with it.</p>
-				<button onclick = "open_window('form-window')">Ok?</button>
-			</div>
-		</div>
 
-		<div hidden id = "form-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
-			<div class = "title-bar">
-				<div class = "title-bar-text">Small survey</div>
-				<div class = "title-bar-controls">
-					<button aria-label = "Minimize"></button>
-					<button aria-label = "Close" onclick = "close_window('form-window')"></button>
+			<div hidden id = "form-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+				<div class = "title-bar">
+					<div class = "title-bar-text">Small survey</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"></button>
+						<button aria-label = "Close" onclick = "close_window('form-window')"></button>
+					</div>
+				</div>
+				<div class = "window-body">
+					<h4>How much do you know about the GDPR?</h4>
+					<p>In this little survey, find out how much you <i>really</i> know about the GDPR, and more!</p>
+					<p>Just kidding, you'll only find out about how much you know about the GDPR, nothing else.</p>
+
+					<form onsubmit = "return false">
+						<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
+						<fieldset>
+							<legend>Please select your answer</legend>
+							<div class = "field-row">
+								<input required id = "q1-r0" type = "radio" name = "q1" value = "1" onclick = "document.getElementById('q1-text').hidden = false">
+								<label for = "q1-r0">Yes, absolutely</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "q1-r1" type = "radio" name = "q1" value = "2" onclick = "document.getElementById('q1-text').hidden = false">
+								<label for = "q1-r1">I think I've heard of it</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "q1-r2" type = "radio" name = "q1" value = "3" onclick = "document.getElementById('q1-text').hidden = true">
+								<label for = "q1-r2">Not at all</label>
+							</div>
+							<div class = "field-row">
+								<input style = "width: 300px" hidden id = "q1-text" type = "text" placeholder = "Explain what they are in a few words...">
+							</div>
+						</fieldset>
+
+						<h5>Do you know what they are used for?</h5>
+						<fieldset>
+							<legend>Please select your answer</legend>
+							<div class = "field-row">
+								<input required id = "q2-r0" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
+								<label for = "q2-r0">Yes, absolutely</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "q2-r1" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
+								<label for = "q2-r1">I think I do</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "q2-r2" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = true">
+								<label for = "q2-r2">Not at all</label>
+							</div>
+							<div class = "field-row">
+								<input style = "width: 300px" hidden id = "q2-text" type = "text" placeholder = "Explain what they are used for in a few words...">
+							</div>
+						</fieldset>
+
+						<h5>
+							Do you know what your personal data* is used for?<br>
+							<i>*e.g., conversations, search history, favourite books, movies, who your friends are, where you've been, &c</i>
+						</h5>
+						<fieldset>
+							<legend>Please select your answer</legend>
+							<div class = "field-row">
+								<input required id = "q3-r0" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
+								<label for = "q3-r0">Yes, absolutely</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "q3-r1" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
+								<label for = "q3-r1">I think I do</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "q3-r2" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = true">
+								<label for = "q3-r2">Not at all</label>
+							</div>
+							<div class = "field-row">
+								<input style = "width: 300px" hidden id = "q3-text" type = "text" placeholder = "Explain what it is used for in a few words...">
+							</div>
+						</fieldset>
+
+						<h5>Do you know what the GDPR is?</h5>
+						<fieldset>
+							<legend>Please select your answer</legend>
+							<div class = "field-row">
+								<input required id = "q4-r0" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
+								<label for = "q4-r0">Yes, absolutely</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "q4-r1" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
+								<label for = "q4-r1">I think I've heard of it</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "q4-r2" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = true">
+								<label for = "q4-r2">Not at all</label>
+							</div>
+							<div class = "field-row">
+								<input style = "width: 300px" hidden id = "q4-text" type = "text" placeholder = "Explain what it is in a few words...">
+							</div>
+						</fieldset>
+						
+						<input class = "button" id = "survey1" type = "submit" value = "Submit">
+						<button id = "view-button" onclick = "open_window('results-window')">View results</button>
+					</form>
 				</div>
 			</div>
-			<div class = "window-body">
-				<h4>How much do you know about the GDPR?</h4>
-				<p>In this little survey, find out how much you <i>really</i> know about the GDPR, and more!</p>
-				<p>Just kidding, you'll only find out about how much you know about the GDPR, nothing else.</p>
 
-				<form onsubmit = "return false">
-					<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
-					<fieldset>
-						<legend>Please select your answer</legend>
-						<div class = "field-row">
-							<input required id = "q1-r0" type = "radio" name = "q1" value = "1" onclick = "document.getElementById('q1-text').hidden = false">
-							<label for = "q1-r0">Yes, absolutely</label>
-						</div>
-						<div class = "field-row">
-							<input required id = "q1-r1" type = "radio" name = "q1" value = "2" onclick = "document.getElementById('q1-text').hidden = false">
-							<label for = "q1-r1">I think I've heard of it</label>
-						</div>
-						<div class = "field-row">
-							<input required id = "q1-r2" type = "radio" name = "q1" value = "3" onclick = "document.getElementById('q1-text').hidden = true">
-							<label for = "q1-r2">Not at all</label>
-						</div>
-						<div class = "field-row">
-							<input style = "width: 300px" hidden id = "q1-text" type = "text" placeholder = "Explain what they are in a few words...">
-						</div>
-					</fieldset>
-
-					<h5>Do you know what they are used for?</h5>
-					<fieldset>
-						<legend>Please select your answer</legend>
-						<div class = "field-row">
-							<input required id = "q2-r0" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
-							<label for = "q2-r0">Yes, absolutely</label>
-						</div>
-						<div class = "field-row">
-							<input required id = "q2-r1" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
-							<label for = "q2-r1">I think I do</label>
-						</div>
-						<div class = "field-row">
-							<input required id = "q2-r2" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = true">
-							<label for = "q2-r2">Not at all</label>
-						</div>
-						<div class = "field-row">
-							<input style = "width: 300px" hidden id = "q2-text" type = "text" placeholder = "Explain what they are used for in a few words...">
-						</div>
-					</fieldset>
-
-					<h5>
-						Do you know what your personal data* is used for?<br>
-						<i>*e.g., conversations, search history, favourite books, movies, who your friends are, where you've been, &c</i>
-					</h5>
-					<fieldset>
-						<legend>Please select your answer</legend>
-						<div class = "field-row">
-							<input required id = "q3-r0" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
-							<label for = "q3-r0">Yes, absolutely</label>
-						</div>
-						<div class = "field-row">
-							<input required id = "q3-r1" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
-							<label for = "q3-r1">I think I do</label>
-						</div>
-						<div class = "field-row">
-							<input required id = "q3-r2" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = true">
-							<label for = "q3-r2">Not at all</label>
-						</div>
-						<div class = "field-row">
-							<input style = "width: 300px" hidden id = "q3-text" type = "text" placeholder = "Explain what it is used for in a few words...">
-						</div>
-					</fieldset>
-
-					<h5>Do you know what the GDPR is?</h5>
-					<fieldset>
-						<legend>Please select your answer</legend>
-						<div class = "field-row">
-							<input required id = "q4-r0" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
-							<label for = "q4-r0">Yes, absolutely</label>
-						</div>
-						<div class = "field-row">
-							<input required id = "q4-r1" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
-							<label for = "q4-r1">I think I've heard of it</label>
-						</div>
-						<div class = "field-row">
-							<input required id = "q4-r2" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = true">
-							<label for = "q4-r2">Not at all</label>
-						</div>
-						<div class = "field-row">
-							<input style = "width: 300px" hidden id = "q4-text" type = "text" placeholder = "Explain what it is in a few words...">
-						</div>
-					</fieldset>
-					
-					<input class = "button" id = "survey1" type = "submit" value = "Submit">
-					<button id = "view-button" onclick = "open_window('results-window')">View results</button>
-				</form>
-			</div>
-		</div>
-
-		<div hidden id = "notepad-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
-			<div class = "title-bar">
-				<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "notepad.png" style = "width: 16px; height: 16px; margin-right: 4px">Notepad</div>
-				<div class = "title-bar-controls">
-					<button aria-label = "Minimize"></button>
-					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "close_window('notepad-window')"></button>
+			<div hidden id = "notepad-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+				<div class = "title-bar">
+					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "notepad.png" style = "width: 16px; height: 16px; margin-right: 4px">Notepad</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"></button>
+						<button aria-label = "Maximize"></button>
+						<button aria-label = "Close" onclick = "close_window('notepad-window')"></button>
+					</div>
+				</div>
+				<div style = "padding: 0" class = "window-body">
+					<textarea style = "margin-bottom: -3px; min-width: 400px; min-height: 300px">tutoriel 2008 comment ouvrir son explorateur de fichier</textarea>
 				</div>
 			</div>
-			<div style = "padding: 0" class = "window-body">
-				<textarea style = "margin-bottom: -3px; min-width: 400px; min-height: 300px">tutoriel 2008 comment ouvrir son explorateur de fichier</textarea>
-			</div>
-		</div>
-		
-		<div id = "results-window" class = "draggable window glass" style = "position: absolute; min-width: 400px" hidden>
-			<div class = "title-bar">
-				<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
-				<div class = "title-bar-controls">
-					<button aria-label = "Minimize"></button>
-					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "close_window('results-window')"></button>
+			
+			<div id = "results-window" class = "draggable window glass" style = "position: absolute; min-width: 400px" hidden>
+				<div class = "title-bar">
+					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"></button>
+						<button aria-label = "Maximize"></button>
+						<button aria-label = "Close" onclick = "close_window('results-window')"></button>
+					</div>
+				</div>
+				<div class = "window-body">
+					<p>Here are the results of the first survey!</p>
+					<p>Click on each tab to see an overview of each question!!!!11</p>
+
+					<section class = "tabs">
+						<menu role = "tablist">
+							<button role = "tab" aria-controls = "tab1" aria-selected = "true">Question 1</button>
+							<button role = "tab" aria-controls = "tab2">Question 2</button>
+							<button role = "tab" aria-controls = "tab3">Question 3</button>
+							<button role = "tab" aria-controls = "tab4">Question 4</button>
+							</menu>
+
+						<!-- TODO faudra peut-être enlever la classe 'animate' pcq elle est lente as fuck -->
+
+						<article role = "tabpanel" id = "tab1">
+							<h4>Do you know what cookies are?</h4>
+
+							<div role = "progressbar" class = "" id = "tab1">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q1-b0" style = "width: 60%"></div>
+							</div>
+							<p><span id = "q1-b0-span">60</span>000000001% of respondents answered yes!</p>
+							<div role = "progressbar" class = "paused">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q1-b1" style = "width: 20%"></div>
+							</div>
+							<p><span id = "q1-b1-span">20</span>000000001% of respondents answered they'd heard of them...</p>
+							<div role = "progressbar" class = "error">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q1-b2" style = "width: 40%"></div>
+							</div>
+							<p><span id = "q1-b2-span">40</span>000000001% of respondents answered no :(</p>
+							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+							<div id = "jeff1"></div>
+						</article>
+						<article role = "tabpanel" id = "tab2" hidden>
+							<h4>Do you know what they are used for?</h4>
+
+							<div role = "progressbar" class = "">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q2-b0" style = "width: 60%"></div>
+							</div>
+							<p><span id = "q2-b0-span">60</span>000000001% of respondents answered yes!</p>
+							<div role = "progressbar" class = "paused">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q2-b1" style = "width: 20%"></div>
+							</div>
+							<p><span id = "q2-b1-span">20</span>000000001% of respondents answered they'd heard of them...</p>
+							<div role = "progressbar" class = "error">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q2-b2" style = "width: 40%"></div>
+							</div>
+							<p><span id = "q2-b2-span">40</span>000000001% of respondents answered no :(</p>
+							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+							<div id = "jeff2"></div>
+						</article>
+						<article role = "tabpanel" id = "tab3" hidden>
+							<h4>Do you know what your personal data is used for?</h4>
+
+							<div role = "progressbar" class = "">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q3-b0" style = "width: 60%"></div>
+							</div>
+							<p><span id = "q3-b0-span">60</span>000000001% of respondents answered yes!</p>
+							<div role = "progressbar" class = "paused">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q3-b1" style = "width: 20%"></div>
+							</div>
+							<p><span id = "q3-b1-span">20</span>000000001% of respondents answered they'd heard of them...</p>
+							<div role = "progressbar" class = "error">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q3-b2" style = "width: 40%"></div>
+							</div>
+							<p><span id = "q3-b2-span">40</span>000000001% of respondents answered no :(</p>
+							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+							<div id = "jeff3"></div>
+						</article>
+						<article role = "tabpanel" id = "tab4" hidden>
+							<h4>Do you know what the GDPR is?</h4>
+
+							<div role = "progressbar" class = "">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q4-b0" style = "width: 60%"></div>
+							</div>
+							<p><span id = "q4-b0-span">60</span>000000001% of respondents answered yes!</p>
+							<div role = "progressbar" class = "paused">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q4-b1" style = "width: 20%"></div>
+							</div>
+							<p><span id = "q4-b1-span">20</span>000000001% of respondents answered they'd heard of them...</p>
+							<div role = "progressbar" class = "error">
+								<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
+								<div id = "q4-b2" style = "width: 40%"></div>
+							</div>
+							<p><span id = "q4-b2-span">40</span>000000001% of respondents answered no :(</p>
+							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+							<div id = "jeff4"></div>
+						</article>
+					</section>
 				</div>
 			</div>
-			<div class = "window-body">
-				<p>Here are the results of the first survey!</p>
-				<p>Click on each tab to see an overview of each question!!!!11</p>
 
-				<section class = "tabs">
-					<menu role = "tablist">
-						<button role = "tab" aria-controls = "tab1" aria-selected = "true">Question 1</button>
-						<button role = "tab" aria-controls = "tab2">Question 2</button>
-						<button role = "tab" aria-controls = "tab3">Question 3</button>
-						<button role = "tab" aria-controls = "tab4">Question 4</button>
-						</menu>
-
-					<!-- TODO faudra peut-être enlever la classe 'animate' pcq elle est lente as fuck -->
-
-					<article role = "tabpanel" id = "tab1">
-						<h4>Do you know what cookies are?</h4>
-
-						<div role = "progressbar" class = "" id = "tab1">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q1-b0" style = "width: 60%"></div>
-						</div>
-						<p><span id = "q1-b0-span">60</span>000000001% of respondents answered yes!</p>
-						<div role = "progressbar" class = "paused">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q1-b1" style = "width: 20%"></div>
-						</div>
-						<p><span id = "q1-b1-span">20</span>000000001% of respondents answered they'd heard of them...</p>
-						<div role = "progressbar" class = "error">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q1-b2" style = "width: 40%"></div>
-						</div>
-						<p><span id = "q1-b2-span">40</span>000000001% of respondents answered no :(</p>
-						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-						<div id = "jeff1"></div>
-					</article>
-					<article role = "tabpanel" id = "tab2" hidden>
-						<h4>Do you know what they are used for?</h4>
-
-						<div role = "progressbar" class = "">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q2-b0" style = "width: 60%"></div>
-						</div>
-						<p><span id = "q2-b0-span">60</span>000000001% of respondents answered yes!</p>
-						<div role = "progressbar" class = "paused">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q2-b1" style = "width: 20%"></div>
-						</div>
-						<p><span id = "q2-b1-span">20</span>000000001% of respondents answered they'd heard of them...</p>
-						<div role = "progressbar" class = "error">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q2-b2" style = "width: 40%"></div>
-						</div>
-						<p><span id = "q2-b2-span">40</span>000000001% of respondents answered no :(</p>
-						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-						<div id = "jeff2"></div>
-					</article>
-					<article role = "tabpanel" id = "tab3" hidden>
-						<h4>Do you know what your personal data is used for?</h4>
-
-						<div role = "progressbar" class = "">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q3-b0" style = "width: 60%"></div>
-						</div>
-						<p><span id = "q3-b0-span">60</span>000000001% of respondents answered yes!</p>
-						<div role = "progressbar" class = "paused">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q3-b1" style = "width: 20%"></div>
-						</div>
-						<p><span id = "q3-b1-span">20</span>000000001% of respondents answered they'd heard of them...</p>
-						<div role = "progressbar" class = "error">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q3-b2" style = "width: 40%"></div>
-						</div>
-						<p><span id = "q3-b2-span">40</span>000000001% of respondents answered no :(</p>
-						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-						<div id = "jeff3"></div>
-					</article>
-					<article role = "tabpanel" id = "tab4" hidden>
-						<h4>Do you know what the GDPR is?</h4>
-
-						<div role = "progressbar" class = "">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q4-b0" style = "width: 60%"></div>
-						</div>
-						<p><span id = "q4-b0-span">60</span>000000001% of respondents answered yes!</p>
-						<div role = "progressbar" class = "paused">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q4-b1" style = "width: 20%"></div>
-						</div>
-						<p><span id = "q4-b1-span">20</span>000000001% of respondents answered they'd heard of them...</p>
-						<div role = "progressbar" class = "error">
-							<!-- c'est ici que tu dois changer la remplititude de la barre noa -->
-							<div id = "q4-b2" style = "width: 40%"></div>
-						</div>
-						<p><span id = "q4-b2-span">40</span>000000001% of respondents answered no :(</p>
-						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-						<div id = "jeff4"></div>
-					</article>
-				</section>
-			</div>
-		</div>
-
-		<div hidden id = "cmd-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
-			<div class = "title-bar">
-				<div class = "title-bar-text">Command Prompt</div>
-				<div class = "title-bar-controls">
-					<button aria-label = "Minimize"></button>
-					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "close_window('cmd-window')"></button>
+			<div hidden id = "cmd-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+				<div class = "title-bar">
+					<div class = "title-bar-text">Command Prompt</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"></button>
+						<button aria-label = "Maximize"></button>
+						<button aria-label = "Close" onclick = "close_window('cmd-window')"></button>
+					</div>
 				</div>
-			</div>
-			<div style = "padding: 0" class = "window-body">
-				<pre style = "background-color: black; color: white">
+				<div style = "padding: 0" class = "window-body">
+					<pre style = "background-color: black; color: white">
 Microsoft&#10094;R&#10095; Windows DOS
 &#10094;C&#10095; Copyright Microsoft Corp 1990-2001.
 <br>C:&#92;WINDOWS&#92;SYSTEM32> brichant.exe
@@ -348,67 +349,68 @@ He will grant you thre--
 I have just been informed tha--
 Ok the great Brichant will grant you NO wishes!<br>
 Loading the GREAT BRICHANT...
-				</pre>
-			</div>
-		</div>
-
-		<div hidden id = "excel-window" class = "draggable window glass" style = "position: absolute">
-			<div class = "title-bar">
-				<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Microsoft Excel 2077 - vocab.xls</div>
-				<div class = "title-bar-controls">
-					<button aria-label = "Minimize"></button>
-					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "close_window('excel-window')"></button>
+					</pre>
 				</div>
 			</div>
-			<div style = "padding: 0" class = "window-body">
-				<input class = "excel" style = "font-weight: bold;" type = "text" value = "English" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "French" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Additional notes" readonly><br>
-				<input class = "excel" type = "text" value = "GDPR (General Data Protection Regulation)" readonly><input class = "excel" type = "text" value = "RGPD (Réglement Général sur la Protection des Données)" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Data" readonly><input class = "excel" type = "text" value = "Données" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "To reply to" readonly><input class = "excel" type = "text" value = "Répondre à" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Turnover" readonly><input class = "excel" type = "text" value = "Chiffres d'affaires" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "To stalk / to track" readonly><input class = "excel" type = "text" value = "Traquer" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "To act" readonly><input class = "excel" type = "text" value = "Agir" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Database" readonly><input class = "excel" type = "text" value = "Base de données" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "To involve" readonly><input class = "excel" type = "text" value = "Impliquer" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Loopholes" readonly><input class = "excel" type = "text" value = "Failles" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "To hold" readonly><input class = "excel" type = "text" value = "Conserver" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Burden" readonly><input class = "excel" type = "text" value = "Fardeau" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "To hire" readonly><input class = "excel" type = "text" value = "Employer" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Pop-up" readonly><input class = "excel" type = "text" value = "Fenêtre contextuelle" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Tool" readonly><input class = "excel" type = "text" value = "Outil" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Path" readonly><input class = "excel" type = "text" value = "Trajet" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Corner" readonly><input class = "excel" type = "text" value = "Coin" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "A load / to load" readonly><input class = "excel" type = "text" value = "Une charge / charger" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Settings" readonly><input class = "excel" type = "text" value = "Réglages" readonly><input class = "excel" type = "text"><br>
-				<input class = "excel" type = "text" value = "Cookie" readonly><input class = "excel" type = "text" value = "Témoin de connexion" readonly><input class = "excel" type = "text"><br>
-			</div>
-		</div>
 
-		<div hidden id = "brichant-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
-			<div class = "title-bar">
-				<div class = "title-bar-text">THE GREAT BRICHANT!!!</div>
-				<div class = "title-bar-controls">
-					<button aria-label = "Minimize"></button>
-					<button aria-label = "Maximize"></button>
-					<button onclick = "yes_cancel_dialog('SILENCE the GREAT BRICHANT', 'Are you sure you would like to <b>SILENCE</b> the great BRICHANT?', 'alert(`YOU CANNOT SILENCE THE GREAT BRICHANT`)')" aria-label = "Close"></button>
+			<div hidden id = "excel-window" class = "draggable window glass" style = "position: absolute">
+				<div class = "title-bar">
+					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Microsoft Excel 2077 - vocab.xls</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"></button>
+						<button aria-label = "Maximize"></button>
+						<button aria-label = "Close" onclick = "close_window('excel-window')"></button>
+					</div>
+				</div>
+				<div style = "padding: 0" class = "window-body">
+					<input class = "excel" style = "font-weight: bold;" type = "text" value = "English" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "French" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Additional notes" readonly><br>
+					<input class = "excel" type = "text" value = "GDPR (General Data Protection Regulation)" readonly><input class = "excel" type = "text" value = "RGPD (Réglement Général sur la Protection des Données)" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Data" readonly><input class = "excel" type = "text" value = "Données" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To reply to" readonly><input class = "excel" type = "text" value = "Répondre à" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Turnover" readonly><input class = "excel" type = "text" value = "Chiffres d'affaires" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To stalk / to track" readonly><input class = "excel" type = "text" value = "Traquer" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To act" readonly><input class = "excel" type = "text" value = "Agir" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Database" readonly><input class = "excel" type = "text" value = "Base de données" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To involve" readonly><input class = "excel" type = "text" value = "Impliquer" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Loopholes" readonly><input class = "excel" type = "text" value = "Failles" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To hold" readonly><input class = "excel" type = "text" value = "Conserver" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Burden" readonly><input class = "excel" type = "text" value = "Fardeau" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To hire" readonly><input class = "excel" type = "text" value = "Employer" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Pop-up" readonly><input class = "excel" type = "text" value = "Fenêtre contextuelle" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Tool" readonly><input class = "excel" type = "text" value = "Outil" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Path" readonly><input class = "excel" type = "text" value = "Trajet" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Corner" readonly><input class = "excel" type = "text" value = "Coin" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "A load / to load" readonly><input class = "excel" type = "text" value = "Une charge / charger" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Settings" readonly><input class = "excel" type = "text" value = "Réglages" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Cookie" readonly><input class = "excel" type = "text" value = "Témoin de connexion" readonly><input class = "excel" type = "text"><br>
 				</div>
 			</div>
-			<div style = "padding: 0" class = "window-body">
-				<img src = "brichant.jpg" style = "margin-bottom: -3px"></img>
-			</div>
-		</div>
 
-		<div hidden id = "napster-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
-			<div class = "title-bar">
-				<div class = "title-bar-text">Limewire - Here come the Suns (beetels, 2009)</div>
-				<div class = "title-bar-controls">
-					<button aria-label = "Minimize"></button>
-					<button onclick = "close_window('napster-window')" aria-label = "Close"></button>
+			<div hidden id = "brichant-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+				<div class = "title-bar">
+					<div class = "title-bar-text">THE GREAT BRICHANT!!!</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"></button>
+						<button aria-label = "Maximize"></button>
+						<button onclick = "yes_cancel_dialog('SILENCE the GREAT BRICHANT', 'Are you sure you would like to <b>SILENCE</b> the great BRICHANT?', 'alert(`YOU CANNOT SILENCE THE GREAT BRICHANT`)')" aria-label = "Close"></button>
+					</div>
+				</div>
+				<div style = "padding: 0" class = "window-body">
+					<img src = "brichant.jpg" style = "margin-bottom: -3px"></img>
 				</div>
 			</div>
-			<div style = "padding: 0" class = "window-body">
-				<img src = "napster.png" style = "margin-bottom: -3px" onclick = "close_window('napster-window');info_dialog('FBI', 'What you are doing is copyright infringement and piracy, and I am here to inform you that this is, in fact, illegal activity, sir.<br><br><a href = \'https:\/\/www.youtube.com/watch?v=qJK_9eyRQl8\'>How would you feel if you were some multi-millionaire and some <i>&quot;people&quot;</i> decided to download your music for free?</a>', `I'm sorry :(`)"></img>
+
+			<div hidden id = "napster-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+				<div class = "title-bar">
+					<div class = "title-bar-text">Limewire - Here come the Suns (beetels, 2009)</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"></button>
+						<button onclick = "close_window('napster-window')" aria-label = "Close"></button>
+					</div>
+				</div>
+				<div style = "padding: 0" class = "window-body">
+					<img src = "napster.png" style = "margin-bottom: -3px" onclick = "close_window('napster-window');info_dialog('FBI', 'What you are doing is copyright infringement and piracy, and I am here to inform you that this is, in fact, illegal activity, sir.<br><br><a href = \'https:\/\/www.youtube.com/watch?v=qJK_9eyRQl8\'>How would you feel if you were some multi-millionaire and some <i>&quot;people&quot;</i> decided to download your music for free?</a>', `I'm sorry :(`)"></img>
+				</div>
 			</div>
 		</div>
 
@@ -418,7 +420,7 @@ Loading the GREAT BRICHANT...
 				<div class = "title-bar-controls">
 					<button aria-label = "Minimize"></button>
 					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "close_window('ie-window')"></button>
+					<button aria-label = "Close" onclick = "close_window('ie-window');document.querySelector('#video').pause()"></button>
 				</div>
 			</div>
 			<div class = "window-body">
@@ -429,8 +431,7 @@ Loading the GREAT BRICHANT...
 				<button style = "display: flex; align-items: center" onclick = "open_window('notepad-window')"><img style = "margin-right: 4px" src = "notepad.png">New file</button><br>
 				<p>You can either view the video here using the TouYube &copy; client just below, or by clicking on <a href = "https://www.youtube.com/embed/acijNEErf-c">this link</a>.</p>
 				<p>If you need to download it for whatever reason, click <a href = "video.mp4">here</a>.</p>
-				
-				<video id = "video" width = "100%" controls preload = "metadata">
+				<video id = "video" width = "100%" controls preload = "metadata" ontimeupdate = "video_ontimeupdate()">
 					<source src = "video.mp4" type = "video/mp4">
 					<p>Your browser doesn't support videos :(</p>
 					<p>Use the link above...</p>
@@ -476,6 +477,24 @@ Loading the GREAT BRICHANT...
 			}
 
 			// misc
+
+			var lock_liar_popup = false;
+
+			function video_ontimeupdate() { // need to do this in HTML for whatever reason
+				var video_element = document.querySelector("#video");
+				var seconds = Math.round(video_element.currentTime);
+
+				if (seconds == 266) { // facebook has already said...
+					if (!lock_liar_popup) {
+						info_dialog("Watch out! Liars!", "Facebook's pledge to apply the GDPR to all its users inside <i>and</i> outside of Europe? Yeah, that was a complete lie. They don't even follow the rules in the EU, let alone anywhere else.<br><br>Never trust anything Facebook and other <a href = 'https://www.investopedia.com/terms/f/faang-stocks.asp'>FAANG</a>s say!", "I promise!");
+					}
+
+					lock_liar_popup = true;
+
+				} else {
+					lock_liar_popup = false;
+				}
+			}
 
 			var uuid = 0;
 
@@ -544,7 +563,7 @@ Loading the GREAT BRICHANT...
 				var cancel = "document.getElementById(" + uuid + ").remove()";
 				var offset = uuid * 10 % 500;
 
-				document.body.innerHTML += "<div id='" + uuid + "' class='window glass draggable' style='position:absolute;min-width:400px;max-width:400px;top:" + offset + "px;left:" + offset + "px;'>"
+				document.querySelector("#everything").innerHTML += "<div id='" + uuid + "' class='window glass draggable' style='position:absolute;min-width:400px;max-width:400px;top:" + offset + "px;left:" + offset + "px;'>"
 				+ "<div class='title-bar'><div class='title-bar-text'>" + title + "</div>"
 				+ "<div class='title-bar-controls'><button aria-label = 'Minimize'></button><button aria-label='Close' onclick='" + cancel + "'></button></div></div>"
 				+ "<div class='window-body'><p>" + message + "</p>"
@@ -567,7 +586,7 @@ Loading the GREAT BRICHANT...
 				var cancel = "document.getElementById(" + uuid + ").remove()";
 				var offset = uuid * 10 % 500;
 
-				document.body.innerHTML += "<div id='" + uuid + "' class='window glass draggable' style='position:absolute;min-width:400px;max-width:400px;top:" + offset + "px;left:" + offset + "px;'>"
+				document.querySelector("#everything").innerHTML += "<div id='" + uuid + "' class='window glass draggable' style='position:absolute;min-width:400px;max-width:400px;top:" + offset + "px;left:" + offset + "px;'>"
 				+ "<div class='title-bar'><div class='title-bar-text'>" + title + "</div>"
 				+ "<div class='title-bar-controls'><button aria-label = 'Minimize'></button><button aria-label='Close' onclick='" + cancel + "'></button></div></div>"
 				+ "<div class='window-body'><p>" + message + "</p>"
@@ -611,6 +630,9 @@ Loading the GREAT BRICHANT...
 			}
 
 			function make_element_draggable(element) {
+				if (element._draggable) return; // 'draggable' already exists
+				element._draggable = true;
+
 				var px, py = 0;
 				var dx, dy = 0;
 				
