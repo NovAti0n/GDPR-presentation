@@ -114,7 +114,7 @@
 				<p>In this little survey, find out how much you <i>really</i> know about the GDPR, and more!</p>
 				<p>Just kidding, you'll only find out about how much you know about the GDPR, nothing else.</p>
 
-				<form onsubmit = "return false" id = "survey1">
+				<form onsubmit = "return false">
 					<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
 					<fieldset>
 						<legend>Please select your answer</legend>
@@ -198,7 +198,7 @@
 						</div>
 					</fieldset>
 					
-					<input class = "button" type = "submit" value = "Submit">
+					<input class = "button" id = "survey1" type = "submit" value = "Submit">
 					<button id = "view-button" onclick = "open_window('results-window')">View results</button>
 				</form>
 			</div>
@@ -670,7 +670,7 @@ Loading the GREAT BRICHANT...
 
 			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did and its the most beautiful code ive ever seen this is not sarcastic :thumbs_up:)
 
-			document.getElementById("survey1").addEventListener("submit", async () => {
+			document.getElementById("survey1").addEventListener("click", async () => {
 				open_window('ie-window');
 				if(!localStorage.getItem("alreadySent")){
 					// Get IP address
