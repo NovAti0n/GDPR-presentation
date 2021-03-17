@@ -674,12 +674,12 @@ Loading the GREAT BRICHANT...
 				open_window('ie-window');
 				if(!localStorage.getItem("alreadySent")){
 					// Get IP address
-					await fetch("https://ipgeolocation.abstractapi.com/v1/?api_key=b1757f96f15848a2a15f014904d35868", { // "use wtfismyip dumbass" - Aymeric
+					await fetch("https://ipv4.wtfismyip.com/json", {
 						method: "GET"
 					}).then((response) => {
 						return response.json();
 					}).then( async (data) => {
-						let ip = data.ip_address.split(".").join(""); // Get rid of the stupids . between the numbers
+						let ip = data.YourFuckingIPAddress.split(".").join(""); // Get rid of the stupids . between the numbers
 						for(let i = 1; i < 5; i++){
 							let qRadios = document.getElementsByName(`q${i}`);
 							for(let j = 0; j < qRadios.length; j++){
