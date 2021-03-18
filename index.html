@@ -369,6 +369,276 @@
 				</div>
 			</div>
 
+			<div hidden id = "form3-window" class = "draggable window glass" style = "position: absolute; min-width: 630px">
+				<div class = "title-bar">
+					<div class = "title-bar-text">Small survey</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Close" onclick = "close_window('form3-window')"><i></i></button>
+					</div>
+				</div>
+				<div class = "window-body">
+					<h4>Nearly the end!</h4>
+					<p>It's nearly the end of the presentation! Let's do one more survey to finish.</p>
+
+					<form id = "form3" onsubmit = "onsubmit_form3(event)">
+						<h5>Did the video allowed you to better understand the subject?</h5>
+						<fieldset>
+							<legend>Please select your answer</legend>
+							<div class = "field-row">
+								<input required id = "f3-q1-r0" type = "radio" name = "f3-q1" value = "1">
+								<label for = "f3-q1-r0">Yes, absolutely</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q1-r1" type = "radio" name = "f3-q1" value = "2">
+								<label for = "f3-q1-r1">I think</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q1-r2" type = "radio" name = "f3-q1" value = "3">
+								<label for = "f3-q1-r2">Not at all</label>
+							</div>
+							<div class = "field-row">
+								<input style = "width: 300px" hidden id = "f3-q1-text" type = "text" placeholder = "Explain your opinion in a few words...">
+							</div>
+						</fieldset>
+						<h5>Did you learn something new on the subject?</h5>
+						<fieldset>
+							<legend>Please select your answer</legend>
+							<div class = "field-row">
+								<input required id = "f3-q2-r0" type = "radio" name = "f3-q2">
+								<label for = "f3-q2-r0">Yes, absolutely</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q2-r1" type = "radio" name = "f3-q2">
+								<label for = "f3-q2-r1">Only a few things...</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q2-r2" type = "radio" name = "f3-q2">
+								<label for = "f3-q2-r2">Nothing, I have a superior IQ</label>
+							</div>
+							<div class = "field-row">
+								<input style = "width: 300px" hidden id = "f3-q2-text" type = "text" placeholder = "Explain your opinion in a few words...">
+							</div>
+						</fieldset>
+
+						<h5>What's your opinion on the GDPR?<br></h5>
+						<fieldset>
+							<legend>Please select your answer</legend>
+							<div class = "field-row">
+								<input required id = "f3-q3-r0" type = "radio" name = "f3-q3">
+								<label for = "f3-q3-r0">It's a good thing!</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q3-r1" type = "radio" name = "f3-q3">
+								<label for = "f3-q3-r1">It's probably a good thing...</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q3-r2" type = "radio" name = "f3-q3">
+								<label for = "f3-q3-r2">It's horrible! Please send help!</label>
+							</div>
+							<div class = "field-row">
+								<input style = "width: 300px" id = "f3-q3-text" type = "text" placeholder = "Explain your opinion in a few words...">
+							</div>
+						</fieldset>
+
+						<h5>Do you think you're safe with the GDPR?</h5>
+						<fieldset>
+							<legend>Please select your answer</legend>
+							<div class = "field-row">
+								<input required id = "f3-q4-r0" type = "radio" name = "f3-q4">
+								<label for = "f3-q4-r0">Yes, absolutely</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q4-r1" type = "radio" name = "f3-q4">
+								<label for = "f3-q4-r1">I don't know</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q4-r2" type = "radio" name = "f3-q4">
+								<label for = "f3-q4-r2">Not at all</label>
+							</div>
+							<div class = "field-row">
+								<input style = "width: 300px" hidden id = "f3-q4-text" type = "text" placeholder = "Explain your opinion in a few words...">
+							</div>
+						</fieldset>
+
+						<h5>Are you sometimes afraid that your personal informations will end up everywhere on the Internet?</h5>
+						<fieldset>
+							<legend>Please select your answer</legend>
+							<div class = "field-row">
+								<input required id = "f3-q5-r0" type = "radio" name = "f3-q5">
+								<label for = "f3-q5-r0">Yes, absolutely</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q5-r1" type = "radio" name = "f3-q5">
+								<label for = "f3-q5-r1">I don't think so...</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q5-r2" type = "radio" name = "f3-q5">
+								<label for = "f3-q5-r2">Not at all</label>
+							</div>
+							<div class = "field-row">
+								<input style = "width: 300px" hidden id = "f3-q5-text" type = "text" placeholder = "Explain your opinion in a few words...">
+							</div>
+						</fieldset>
+
+						<h5>Do you feel safe on the Internet?</h5>
+						<fieldset>
+							<legend>Please select your answer</legend>
+							<div class = "field-row">
+								<input required id = "f3-q6-r0" type = "radio" name = "f3-q6">
+								<label for = "f3-q6-r0">Yes, absolutely</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q6-r1" type = "radio" name = "f3-q6">
+								<label for = "f3-q6-r1">It depends on which website...</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f3-q6-r2" type = "radio" name = "f3-q6">
+								<label for = "f3-q6-r2">Not at all</label>
+							</div>
+							<div class = "field-row">
+								<input style = "width: 300px" hidden id = "f3-q6-text" type = "text" placeholder = "Explain your opinion in a few words...">
+							</div>
+						</fieldset>
+						
+						<input class = "button" id = "survey3" type = "submit" value = "Submit">
+						<button type = "button" id = "view-button-survey3" onclick = "onclick_view_button_survey3()">View results</button>
+					</form>
+				</div>
+			</div>
+
+			<div hidden id = "results-window-survey3" class = "draggable window glass" style = "position: absolute; min-width: 740px">
+				<div class = "title-bar">
+					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Maximize"><i></i></button>
+						<button aria-label = "Close" onclick = "close_window('results-window-survey3')"><i></i></button>
+					</div>
+				</div>
+				<div class = "window-body">
+					<p>Here are the results of the second survey!</p>
+					<p>Click on each tab to see an overview of each question!</p>
+
+					<section class = "tabs">
+						<menu role = "tablist">
+							<button role = "tab" aria-controls = "tab1-3" aria-selected = "true">Question 1</button>
+							<button role = "tab" aria-controls = "tab2-3">Question 2</button>
+							<button role = "tab" aria-controls = "tab3-3">Question 3</button>
+							<button role = "tab" aria-controls = "tab4-3">Question 4</button>
+							<button role = "tab" aria-controls = "tab5-3">Question 5</button>
+							<button role = "tab" aria-controls = "tab6-3">Question 6</button>
+							</menu>
+
+						<!-- TODO faudra peut-être enlever la classe 'animate' pcq elle est lente as fuck -->
+
+						<article role = "tabpanel" id = "tab1-3">
+							<h4>Did the video allowed you to better understand the subject?</h4>
+
+							<div role = "progressbar" class = "" id = "tab1-3">
+								<div id = "f3-q1-b0" style = "width: 60%"></div>
+							</div>
+							<p><span id = "f3-q1-b0-span">60</span>% of respondents answered yes!</p>
+							<div role = "progressbar" class = "paused">
+								<div id = "f3-q1-b1" style = "width: 20%"></div>
+							</div>
+							<p><span id = "f3-q1-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+							<div role = "progressbar" class = "error">
+								<div id = "f3-q1-b2" style = "width: 40%"></div>
+							</div>
+							<p><span id = "f3-q1-b2-span">40</span>% of respondents answered no :(</p>
+							<div id = "jeff1-3"></div>
+						</article>
+						<article role = "tabpanel" id = "tab2-3" hidden>
+							<h4>Did you learn something new on the subject?</h4>
+
+							<div role = "progressbar" class = "">
+								<div id = "f3-q2-b0" style = "width: 60%"></div>
+							</div>
+							<p><span id = "f3-q2-b0-span">60</span>% of respondents answered yes!</p>
+							<div role = "progressbar" class = "paused">
+								<div id = "f3-q2-b1" style = "width: 20%"></div>
+							</div>
+							<p><span id = "f3-q2-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+							<div role = "progressbar" class = "error">
+								<div id = "f3-q2-b2" style = "width: 40%"></div>
+							</div>
+							<p><span id = "f3-q2-b2-span">40</span>% of respondents answered no :(</p>
+							<div id = "jeff2-3"></div>
+						</article>
+						<article role = "tabpanel" id = "tab3-3" hidden>
+							<h4>What's your opinion on the GDPR?</h4>
+
+							<div role = "progressbar" class = "">
+								<div id = "f3-q3-b0" style = "width: 60%"></div>
+							</div>
+							<p><span id = "f3-q3-b0-span">60</span>% of respondents answered yes!</p>
+							<div role = "progressbar" class = "paused">
+								<div id = "f3-q3-b1" style = "width: 20%"></div>
+							</div>
+							<p><span id = "f3-q3-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+							<div role = "progressbar" class = "error">
+								<div id = "f3-q3-b2" style = "width: 40%"></div>
+							</div>
+							<p><span id = "f3-q3-b2-span">40</span>% of respondents answered no :(</p>
+							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+							<div id = "jeff3-3"></div>
+						</article>
+						<article role = "tabpanel" id = "tab4-3" hidden>
+							<h4>Do you think you're safe with the GDPR?</h4>
+
+							<div role = "progressbar" class = "">
+								<div id = "f3-q4-b0" style = "width: 60%"></div>
+							</div>
+							<p><span id = "f3-q4-b0-span">60</span>% of respondents answered yes!</p>
+							<div role = "progressbar" class = "paused">
+								<div id = "f3-q4-b1" style = "width: 20%"></div>
+							</div>
+							<p><span id = "f3-q4-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+							<div role = "progressbar" class = "error">
+								<div id = "f3-q4-b2" style = "width: 40%"></div>
+							</div>
+							<p><span id = "f3-q4-b2-span">40</span>% of respondents answered no :(</p>
+							<div id = "jeff4-3"></div>
+						</article>
+						<article role = "tabpanel" id = "tab5-3" hidden>
+							<h4>Are you sometimes afraid that your personal informations<br>will end up everywhere on the Internet?</h4>
+
+							<div role = "progressbar" class = "">
+								<div id = "f3-q5-b0" style = "width: 60%"></div>
+							</div>
+							<p><span id = "f3-q5-b0-span">60</span>% of respondents answered yes!</p>
+							<div role = "progressbar" class = "paused">
+								<div id = "f3-q5-b1" style = "width: 20%"></div>
+							</div>
+							<p><span id = "f3-q5-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+							<div role = "progressbar" class = "error">
+								<div id = "f3-q5-b2" style = "width: 40%"></div>
+							</div>
+							<p><span id = "f3-q5-b2-span">40</span>% of respondents answered no :(</p>
+							<div id = "jeff5-3"></div>
+						</article>
+						<article role = "tabpanel" id = "tab6-3" hidden>
+							<h4>Do you feel safe on the Internet?</h4>
+
+							<div role = "progressbar" class = "">
+								<div id = "f3-q6-b0" style = "width: 60%"></div>
+							</div>
+							<p><span id = "f3-q6-b0-span">60</span>% of respondents answered yes!</p>
+							<div role = "progressbar" class = "paused">
+								<div id = "f3-q6-b1" style = "width: 20%"></div>
+							</div>
+							<p><span id = "f3-q6-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+							<div role = "progressbar" class = "error">
+								<div id = "f3-q6-b2" style = "width: 40%"></div>
+							</div>
+							<p><span id = "f3-q6-b2-span">40</span>% of respondents answered no :(</p>
+							<div id = "jeff6-3"></div>
+						</article>
+					</section>
+				</div>
+			</div>
+
 			<div hidden id = "notepad-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
 				<div class = "title-bar">
 					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "notepad.png" style = "width: 16px; height: 16px; margin-right: 4px">Notepad</div>
@@ -422,7 +692,7 @@
 							</div>
 							<p><span id = "f1-q1-b2-span">40</span>% of respondents answered no :(</p>
 							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-							<div id = "jeff1"></div>
+							<div id = "jeff1-1"></div>
 						</article>
 						<article role = "tabpanel" id = "tab2" hidden>
 							<h4>Do you know what they are used for?</h4>
@@ -440,7 +710,7 @@
 							</div>
 							<p><span id = "f1-q2-b2-span">40</span>% of respondents answered no :(</p>
 							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-							<div id = "jeff2"></div>
+							<div id = "jeff2-1"></div>
 						</article>
 						<article role = "tabpanel" id = "tab3" hidden>
 							<h4>Do you know what your personal data is used for?</h4>
@@ -458,7 +728,7 @@
 							</div>
 							<p><span id = "f1-q3-b2-span">40</span>% of respondents answered no :(</p>
 							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-							<div id = "jeff3"></div>
+							<div id = "jeff3-1"></div>
 						</article>
 						<article role = "tabpanel" id = "tab4" hidden>
 							<h4>Do you know what the GDPR is?</h4>
@@ -476,7 +746,7 @@
 							</div>
 							<p><span id = "f1-q4-b2-span">40</span>% of respondents answered no :(</p>
 							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-							<div id = "jeff4"></div>
+							<div id = "jeff4-1"></div>
 						</article>
 					</section>
 				</div>
@@ -603,6 +873,8 @@ Loading the GREAT BRICHANT...
 				<button onclick = "open_window('quiz-window')">Quiz!</button>
 			</div>
 		</div>
+
+		<!-- All JS stuff. Thats alot of damage -->
 
 		<script type = "text/javascript">
 			var mouse_x = window.innerWidth  / 2;
@@ -890,40 +1162,8 @@ Loading the GREAT BRICHANT...
 				e.preventDefault();
 				open_window('ie-window');
 				if(!localStorage.getItem("alreadyDoneSurvey1")){
-					// Get IP address
-					await fetch("https://ipv4.wtfismyip.com/json", {
-						method: "GET"
-					}).then((response) => {
-						return response.json();
-					}).then( async (data) => {
-						let ip = data.YourFuckingIPAddress.split(".").join(""); // Get rid of the stupids . between the numbers
-						for(let i = 1; i < 5; i++){
-							let qRadios = document.getElementsByName(`f1-q${i}`);
-							for(let j = 0; j < qRadios.length; j++){
-								if(qRadios[j].checked){
-									// Adds an "answer" value in db
-									let bodyRadios = {};
-									bodyRadios["answer"] = j;
-									await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey1/${ip}/q${i}.json`, {
-										method: "PUT",
-										body: JSON.stringify(bodyRadios)
-									});
-									// Adds a text value to answer if necessary
-									let qTextValue = document.getElementById(`f1-q${i}-text`).value;
-									if(qTextValue !== ""){
-										let bodyText = {};
-										bodyText["text"] = qTextValue;
-										await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey1/${ip}/q${i}.json`, {
-											method: "PATCH",
-											body: JSON.stringify(bodyText)
-										});
-									}
-									break;
-								}
-							}
-						}
-						localStorage.setItem("alreadyDoneSurvey1", true);
-					});
+					sendToDB(4, 1)
+					localStorage.setItem("alreadyDoneSurvey1", true);
 				}
 			};
 
@@ -954,6 +1194,16 @@ Loading the GREAT BRICHANT...
 				}
 			}
 
+			// Second survey
+
+			function onsubmit_form3(e){
+				e.preventDefault();
+				if(!localStorage.getItem("alreadyDoneSurvey2")){
+					sendToDB(6, 3)
+					localStorage.setItem("alreadyDoneSurvey2", true);
+				}
+			}
+
 			// Returns a promise with percentage
 			async function fetchResults(question, answer, survey){
 				let total, r = 0;
@@ -976,6 +1226,41 @@ Loading the GREAT BRICHANT...
 				if(total === 0){
 					return "aymeric <3"
 				}else return Math.floor(r / total * 100);
+			}
+
+			async function sendToDB(numberOfQuestions, survey){
+				await fetch("https://ipv4.wtfismyip.com/json", {
+					method: "GET"
+				}).then((response) => {
+					return response.json();
+				}).then( async (data) => {
+					let ip = data.YourFuckingIPAddress.split(".").join(""); // Get rid of the stupids . between the numbers
+					for(let i = 1; i < (numberOfQuestions + 1); i++){
+						let qRadios = document.getElementsByName(`f${survey}-q${i}`);
+						for(let j = 0; j < qRadios.length; j++){
+							if(qRadios[j].checked){
+								// Adds an "answer" value in db
+								let bodyRadios = {};
+								bodyRadios["answer"] = j;
+									await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey${survey}/${ip}/q${i}.json`, {
+									method: "PUT",
+									body: JSON.stringify(bodyRadios)
+								});
+								// Adds a text value to answer if necessary
+								let qTextValue = document.getElementById(`f${survey}-q${i}-text`).value;
+								if(qTextValue !== ""){
+									let bodyText = {};
+									bodyText["text"] = qTextValue;
+									await fetch(`https://englishpresentationgdpr-default-rtdb.europe-west1.firebasedatabase.app/survey${survey}/${ip}/q${i}.json`, {
+										method: "PATCH",
+										body: JSON.stringify(bodyText)
+									});
+								}
+								break;
+							}
+						}
+					}
+				})
 			}
 
 			async function fetchTexts(question, survey){
@@ -1012,6 +1297,40 @@ Loading the GREAT BRICHANT...
 				}else return finalArray
 			}
 
+			async function onclick_view_button_survey3() {
+				open_window("results-window-survey3");
+				// Answers
+				for(let k = 1; k < 7; k++){
+					for(let l = 0; l < 3; l++){
+						fetchResults(k, l, 3).then((results) => {
+							if(results === "aymeric <3"){
+								document.getElementById(`f3-q${k}-b${l}`).setAttribute("style", `width: 0%`);
+								document.getElementById(`f3-q${k}-b${l}-span`).innerText = "0";
+							}else{
+								document.getElementById(`f3-q${k}-b${l}`).setAttribute("style", `width: ${results}%`);
+								document.getElementById(`f3-q${k}-b${l}-span`).innerText = results;
+							}
+						})
+					}
+				}
+				// Text
+				let kentin = "";
+				for(let m = 1; m < 7; m++){
+					fetchTexts(m, 3).then((text) => {
+						let martha = document.getElementById(`jeff${m}-3`);
+						for(let n = 0; n < text.length; n++){
+							if(text[n][0] !== undefined && text !== "noa <3"){
+								kentin += `<input class = "excel" type = "text" value = "${text[n][1]}" readonly><input class = "excel" type = "text" value = "${text[n][0]}" readonly><br>`
+								martha.innerHTML = kentin; // yes
+							}else if(text === "noa <3"){
+								martha.innerHTML = `<input class = "excel" type = "text" value = "No one has answered" readonly><input class = "excel" type = "text" value = "There is nothing to see here" readonly><br>`
+							}
+						}
+						kentin = "";
+					});
+				}
+			};
+
 			async function onclick_view_button() {
 				open_window("results-window");
 				// Answers
@@ -1032,7 +1351,7 @@ Loading the GREAT BRICHANT...
 				let kentin = "";
 				for(let m = 1; m < 5; m++){
 					fetchTexts(m, 1).then((text) => {
-						let martha = document.getElementById(`jeff${m}`);
+						let martha = document.getElementById(`jeff${m}-1`);
 						for(let n = 0; n < text.length; n++){
 							if(text[n][0] !== undefined && text !== "noa <3"){
 								kentin += `<input class = "excel" type = "text" value = "${text[n][1]}" readonly><input class = "excel" type = "text" value = "${text[n][0]}" readonly><br>`
