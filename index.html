@@ -756,9 +756,9 @@
 				<div class = "title-bar">
 					<div class = "title-bar-text">Command Prompt</div>
 					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"></button>
-						<button aria-label = "Maximize"></button>
-						<button aria-label = "Close" onclick = "close_window('cmd-window')"></button>
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Maximize"><i></i></button>
+						<button aria-label = "Close" onclick = "close_window('cmd-window')"><i></i></button>
 					</div>
 				</div>
 				<div style = "padding: 0" class = "window-body">
@@ -775,7 +775,7 @@ Loading the GREAT BRICHANT...
 				</div>
 			</div>
 
-			<div id = "excel-window" class = "draggable window glass" style = "position: absolute; min-width: 612px"> <!-- 200 * 3 + 12 = 612-->
+			<div hidden id = "excel-window" class = "draggable window glass" style = "position: absolute; min-width: 630px; max-width: 630px"> <!-- 200 * 3 + 12 + 24 = 612-->
 				<div class = "title-bar">
 					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Microsoft Excel 2077 - vocab.xls</div>
 					<div class = "title-bar-controls">
@@ -784,38 +784,38 @@ Loading the GREAT BRICHANT...
 						<button aria-label = "Close" onclick = "close_window('excel-window')"><i></i></button>
 					</div>
 				</div>
-				<div style = "padding: 0" class = "window-body">
-					<input class = "excel" style = "font-weight: bold;" type = "text" value = "English" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "French" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Additional notes" readonly><br>
+				<div style = "padding: 0; overflow-y: scroll" class = "window-body">
+					<input class = "excel" style = "font-weight: bold;" type = "text" value = "English" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "French" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Additional notes" readonly>
 					
-					<input class = "excel" type = "text" value = "To act" readonly><input class = "excel" type = "text" value = "Agir" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Burden" readonly><input class = "excel" type = "text" value = "Fardeau" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To comply" readonly><input class = "excel" type = "text" value = "Se conformer" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Cookie" readonly><input class = "excel" type = "text" value = "Témoin de connexion" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Corner" readonly><input class = "excel" type = "text" value = "Coin" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Data" readonly><input class = "excel" type = "text" value = "Données" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Database" readonly><input class = "excel" type = "text" value = "Base de données" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Data processing" readonly><input class = "excel" type = "text" value = "Traitement des données" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Exempt from" readonly><input class = "excel" type = "text" value = "Dispensé de" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "GDPR" readonly><input class = "excel" type = "text" value = "RGPD" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To hire" readonly><input class = "excel" type = "text" value = "Employer" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To hold" readonly><input class = "excel" type = "text" value = "Conserver" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To infringe upon" readonly><input class = "excel" type = "text" value = "Enfreindre" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To involve" readonly><input class = "excel" type = "text" value = "Impliquer" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Lawful" readonly><input class = "excel" type = "text" value = "Dans la légalité" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Legitimate interests" readonly><input class = "excel" type = "text" value = "Intérêts légitimes" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "A load / to load" readonly><input class = "excel" type = "text" value = "Une charge / charger" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Loopholes" readonly><input class = "excel" type = "text" value = "Failles" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Medical records" readonly><input class = "excel" type = "text" value = "Dossiers médicaux" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Path" readonly><input class = "excel" type = "text" value = "Trajet" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Pénalité" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Pop-up" readonly><input class = "excel" type = "text" value = "Fenêtre contextuelle" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To reply to" readonly><input class = "excel" type = "text" value = "Répondre à" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Search engine" readonly><input class = "excel" type = "text" value = "Moteur de recherche" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Settings" readonly><input class = "excel" type = "text" value = "Réglages" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Spanking" readonly><input class = "excel" type = "text" value = "Fessée" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To stalk / to track" readonly><input class = "excel" type = "text" value = "Traquer" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Tool" readonly><input class = "excel" type = "text" value = "Outil" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Turnover" readonly><input class = "excel" type = "text" value = "Chiffres d'affaires" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To act" readonly><input class = "excel" type = "text" value = "Agir" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Burden" readonly><input class = "excel" type = "text" value = "Fardeau" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "To comply" readonly><input class = "excel" type = "text" value = "Se conformer" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Cookie" readonly><input class = "excel" type = "text" value = "Témoin de connexion" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Corner" readonly><input class = "excel" type = "text" value = "Coin" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Data" readonly><input class = "excel" type = "text" value = "Données" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Database" readonly><input class = "excel" type = "text" value = "Base de données" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Data processing" readonly><input class = "excel" type = "text" value = "Traitement des données" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Exempt from" readonly><input class = "excel" type = "text" value = "Dispensé de" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "GDPR" readonly><input class = "excel" type = "text" value = "RGPD" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "To hire" readonly><input class = "excel" type = "text" value = "Employer" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "To hold" readonly><input class = "excel" type = "text" value = "Conserver" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "To infringe upon" readonly><input class = "excel" type = "text" value = "Enfreindre" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "To involve" readonly><input class = "excel" type = "text" value = "Impliquer" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Lawful" readonly><input class = "excel" type = "text" value = "Dans la légalité" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Legitimate interests" readonly><input class = "excel" type = "text" value = "Intérêts légitimes" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "A load / to load" readonly><input class = "excel" type = "text" value = "Une charge / charger" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Loopholes" readonly><input class = "excel" type = "text" value = "Failles" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Medical records" readonly><input class = "excel" type = "text" value = "Dossiers médicaux" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Path" readonly><input class = "excel" type = "text" value = "Trajet" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Pénalité" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Pop-up" readonly><input class = "excel" type = "text" value = "Fenêtre contextuelle" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "To reply to" readonly><input class = "excel" type = "text" value = "Répondre à" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Search engine" readonly><input class = "excel" type = "text" value = "Moteur de recherche" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Settings" readonly><input class = "excel" type = "text" value = "Réglages" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Spanking" readonly><input class = "excel" type = "text" value = "Fessée" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "To stalk / to track" readonly><input class = "excel" type = "text" value = "Traquer" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Tool" readonly><input class = "excel" type = "text" value = "Outil" readonly><input class = "excel" type = "text">
+					<input class = "excel" type = "text" value = "Turnover" readonly><input class = "excel" type = "text" value = "Chiffres d'affaires" readonly><input class = "excel" type = "text">
 				</div>
 			</div>
 
@@ -837,8 +837,8 @@ Loading the GREAT BRICHANT...
 				<div class = "title-bar">
 					<div class = "title-bar-text">Limewire - Here come the Suns (beetels, 2009)</div>
 					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"></button>
-						<button onclick = "close_window('napster-window')" aria-label = "Close"></button>
+						<button aria-label = "Minimize"><i></i></button>
+						<button onclick = "close_window('napster-window')" aria-label = "Close"><i></i></button>
 					</div>
 				</div>
 				<div style = "padding: 0" class = "window-body">
@@ -869,6 +869,8 @@ Loading the GREAT BRICHANT...
 					<p>Your browser doesn't support videos :(</p>
 					<p>Use the link above...</p>
 				</video>
+				<p>Once you've finished watching the video, you can move on to a little quiz that we made just for you!</p>
+				<button onclick = "open_window('quiz-window')">Quiz!</button>
 			</div>
 		</div>
 
