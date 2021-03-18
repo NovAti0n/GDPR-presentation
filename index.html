@@ -118,6 +118,21 @@
 				</div>
 			</div>
 
+			<div hidden id = "final-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
+				<div class = "title-bar">
+					<div class = "title-bar-text">Finally! It's done!</div>
+					<div class = "title-bar-controls">
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Close" onclick = "close_window('why-window')"><i></i></button>
+					</div>
+				</div>
+				<div class = "window-body">
+					<p>You have <i>finally</i> finished our presentation! Finally!<br><br>You now have two options: you can either quit the presentation now and eternally live in regret, <i>oooorrrrr</i> you could take a look at the results of the various surveys by clicking on the "View results" buttons in each one. Don't forget to come back here to formally end the presentation once you're done!</p>
+					<button onclick = "active_view_results()">Activate "View results"</button>
+					<button onclick = "yes_cancel_dialog('Are you suuuurrreee??', `Once you're out, you cannot get back in!`, 'bsod()')">Exit presentation now</button>
+				</div>
+			</div>
+
 			<div hidden id = "why-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
 				<div class = "title-bar">
 					<div class = "title-bar-text">Why did we choose to work on this topic?</div>
@@ -260,8 +275,10 @@
 							</div>
 						</fieldset>
 
-						<input class = "button" id = "survey2" type = "submit" value = "Show correction">
-						<button type = "button">Next</button>
+						<p>Press the "Click" button to check your answers and show the questions where you answered incorrectly. You can try again until you've got everything right. Once everything is correct, click on "Next" to move on to the last part!</p>
+
+						<input class = "button" id = "survey2" type = "submit" value = "Check">
+						<button type = "button" disabled id = "quiz-next-button" onclick = "open_window('form3-window')">Next</button>
 					</form>
 				</div>
 			</div>
@@ -364,7 +381,7 @@
 						</fieldset>
 						
 						<input class = "button" id = "survey1" type = "submit" value = "Submit">
-						<button type = "button" id = "view-button" onclick = "onclick_view_button()">View results</button>
+						<button class = "vr" type = "button" id = "view-button" onclick = "onclick_view_button()" disabled>View results</button>
 					</form>
 				</div>
 			</div>
@@ -502,12 +519,12 @@
 						</fieldset>
 						
 						<input class = "button" id = "survey3" type = "submit" value = "Submit">
-						<button type = "button" id = "view-button-survey3" onclick = "onclick_view_button_survey3()">View results</button>
+						<button class = "vr" type = "button" id = "view-button-survey3" onclick = "onclick_view_button_survey3()" disabled>View results</button>
 					</form>
 				</div>
 			</div>
 
-			<div hidden id = "results-window-survey3" class = "draggable window glass" style = "position: absolute; min-width: 740px">
+			<div hidden id = "results-window-survey3" class = "draggable window glass" style = "position: absolute; min-width: 740px; max-width: 740px">
 				<div class = "title-bar">
 					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
 					<div class = "title-bar-controls">
@@ -869,8 +886,8 @@ Loading the GREAT BRICHANT...
 					<p>Your browser doesn't support videos :(</p>
 					<p>Use the link above...</p>
 				</video>
-				<p>Once you've finished watching the video, you can move on to a little quiz that we made just for you!</p>
-				<button onclick = "open_window('quiz-window')">Quiz!</button>
+				<p>Once you've finished watching the video (and we mean <i>actually</i> finished, don't just stop half way), you can move on to a little quiz that we made just for you!</p>
+				<button id = "lets-have-some-fun" onclick = "open_window('quiz-window')" disabled>Quiz!</button>
 			</div>
 		</div>
 
@@ -930,6 +947,10 @@ Loading the GREAT BRICHANT...
 
 				} else {
 					lock_liar_popup = false;
+				}
+
+				if (seconds >= 319) { // end of the MEAT of the video
+					document.getElementById("lets-have-some-fun").disabled = false;
 				}
 			}
 
@@ -993,6 +1014,12 @@ Loading the GREAT BRICHANT...
 			// }
 
 			// macro function things
+
+			function active_view_results() {
+				for (_ of document.getElementsByClassName("vr")) {
+					_.disabled = false;
+				}
+			}
 
 			function bsod() {
 				var big_dong = new Audio("erro.mp3");
@@ -1187,21 +1214,24 @@ Loading the GREAT BRICHANT...
 
 				// Verify answers
 				let booleanArray = verifyAnswers(quizzAnswers);
+				var right_answers = 0;
+				
 				for(let key in booleanArray){
 					if(booleanArray[key]){
+						right_answers++;
 						document.getElementById(`t${key}`).setAttribute("style", "background-color: rgba(0, 255, 0, 0.2)");
 					}else document.getElementById(`t${key}`).setAttribute("style", "background-color: rgba(255, 0, 0, 0.2)");
 				}
+
+				document.getElementById("quiz-next-button").disabled = right_answers < booleanArray.length;
 			}
 
 			// Second survey
 
 			function onsubmit_form3(e){
 				e.preventDefault();
-				if(!localStorage.getItem("alreadyDoneSurvey2")){
-					sendToDB(6, 3)
-					localStorage.setItem("alreadyDoneSurvey2", true);
-				}
+				open_window("final-window");
+				sendToDB(6, 3); // no localStorage here, we want users to be able to update their final survey responses
 			}
 
 			// Returns a promise with percentage
