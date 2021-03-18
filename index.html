@@ -75,7 +75,7 @@
 			}
 
 			.window-body {
-				max-height: 90vh;
+				max-height: 80vh;
 				overflow: auto;
 			}
 		</style>
@@ -140,9 +140,25 @@
 					</div>
 				</div>
 				<div class = "window-body">
-					<h4>What impact did the Brexit have on the application of the GDPR in the UK?</h4>
-					<h4>What are companies required to do to comply with the GDPR?</h4>
-					<h4>What are companies required to do to comply with the GDPR?</h4>
+					<h4>How much did you learn?</h4>
+					<p>It's tiiiimeeee for a quiiiiizzzz!!!!! Everyone's favourite part of the day!</p>
+					<p></p>
+
+					<form id = "form2">
+						<h5>What are companies required to do to comply with the GDPR?</h5>
+						<fieldset>
+							<legend>Please select all correct answers</legend>
+							<div class = "field-row">
+								<input required id = 
+							</div>
+						</fieldset>
+
+						<h5>What does "GDPR" stand for?</h5>
+						<h5>What impact did the Brexit have on the application of the GDPR in the UK?</h5>
+						<h5>What penalties could companies face if they don't respect the GDPR?</h5>
+						<h5>What does the "right to be forgotten" consist of?</h5>
+						<h5>Who is exempt from the "right to be forgotten"?</h5>
+					</form>
 				</div>
 			</div>
 
@@ -164,19 +180,19 @@
 						<fieldset>
 							<legend>Please select your answer</legend>
 							<div class = "field-row">
-								<input required id = "q1-r0" type = "radio" name = "q1" value = "1" onclick = "document.getElementById('q1-text').hidden = false">
-								<label for = "q1-r0">Yes, absolutely</label>
+								<input required id = "f1-q1-r0" type = "radio" name = "f1-q1" value = "1" onclick = "document.getElementById('f1-q1-text').hidden = false">
+								<label for = "f1-q1-r0">Yes, absolutely</label>
 							</div>
 							<div class = "field-row">
-								<input required id = "q1-r1" type = "radio" name = "q1" value = "2" onclick = "document.getElementById('q1-text').hidden = false">
-								<label for = "q1-r1">I think I've heard of it</label>
+								<input required id = "f1-q1-r1" type = "radio" name = "f1-q1" value = "2" onclick = "document.getElementById('f1-q1-text').hidden = false">
+								<label for = "f1-q1-r1">I think I've heard of it</label>
 							</div>
 							<div class = "field-row">
-								<input required id = "q1-r2" type = "radio" name = "q1" value = "3" onclick = "document.getElementById('q1-text').hidden = true">
-								<label for = "q1-r2">Not at all</label>
+								<input required id = "f1-q1-r2" type = "radio" name = "f1-q1" value = "3" onclick = "document.getElementById('f1-q1-text').hidden = true">
+								<label for = "f1-q1-r2">Not at all</label>
 							</div>
 							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "q1-text" type = "text" placeholder = "Explain what they are in a few words...">
+								<input style = "width: 300px" hidden id = "f1-q1-text" type = "text" placeholder = "Explain what they are in a few words...">
 							</div>
 						</fieldset>
 
@@ -184,19 +200,19 @@
 						<fieldset>
 							<legend>Please select your answer</legend>
 							<div class = "field-row">
-								<input required id = "q2-r0" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
-								<label for = "q2-r0">Yes, absolutely</label>
+								<input required id = "f1-q2-r0" type = "radio" name = "f1-q2" onclick = "document.getElementById('f1-q2-text').hidden = false">
+								<label for = "f1-q2-r0">Yes, absolutely</label>
 							</div>
 							<div class = "field-row">
-								<input required id = "q2-r1" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = false">
-								<label for = "q2-r1">I think I do</label>
+								<input required id = "f1-q2-r1" type = "radio" name = "f1-q2" onclick = "document.getElementById('f1-q2-text').hidden = false">
+								<label for = "f1-q2-r1">I think I do</label>
 							</div>
 							<div class = "field-row">
-								<input required id = "q2-r2" type = "radio" name = "q2" onclick = "document.getElementById('q2-text').hidden = true">
-								<label for = "q2-r2">Not at all</label>
+								<input required id = "f1-q2-r2" type = "radio" name = "f1-q2" onclick = "document.getElementById('f1-q2-text').hidden = true">
+								<label for = "f1-q2-r2">Not at all</label>
 							</div>
 							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "q2-text" type = "text" placeholder = "Explain what they are used for in a few words...">
+								<input style = "width: 300px" hidden id = "f1-q2-text" type = "text" placeholder = "Explain what they are used for in a few words...">
 							</div>
 						</fieldset>
 
@@ -207,19 +223,19 @@
 						<fieldset>
 							<legend>Please select your answer</legend>
 							<div class = "field-row">
-								<input required id = "q3-r0" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
-								<label for = "q3-r0">Yes, absolutely</label>
+								<input required id = "f1-q3-r0" type = "radio" name = "f1-q3" onclick = "document.getElementById('f1-q3-text').hidden = false">
+								<label for = "f1-q3-r0">Yes, absolutely</label>
 							</div>
 							<div class = "field-row">
-								<input required id = "q3-r1" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = false">
-								<label for = "q3-r1">I think I do</label>
+								<input required id = "f1-q3-r1" type = "radio" name = "f1-q3" onclick = "document.getElementById('f1-q3-text').hidden = false">
+								<label for = "f1-q3-r1">I think I do</label>
 							</div>
 							<div class = "field-row">
-								<input required id = "q3-r2" type = "radio" name = "q3" onclick = "document.getElementById('q3-text').hidden = true">
-								<label for = "q3-r2">Not at all</label>
+								<input required id = "f1-q3-r2" type = "radio" name = "f1-q3" onclick = "document.getElementById('f1-q3-text').hidden = true">
+								<label for = "f1-q3-r2">Not at all</label>
 							</div>
 							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "q3-text" type = "text" placeholder = "Explain what it is used for in a few words...">
+								<input style = "width: 300px" hidden id = "f1-q3-text" type = "text" placeholder = "Explain what it is used for in a few words...">
 							</div>
 						</fieldset>
 
@@ -227,19 +243,19 @@
 						<fieldset>
 							<legend>Please select your answer</legend>
 							<div class = "field-row">
-								<input required id = "q4-r0" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
-								<label for = "q4-r0">Yes, absolutely</label>
+								<input required id = "f1-q4-r0" type = "radio" name = "f1-q4" onclick = "document.getElementById('f1-q4-text').hidden = false">
+								<label for = "f1-q4-r0">Yes, absolutely</label>
 							</div>
 							<div class = "field-row">
-								<input required id = "q4-r1" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = false">
-								<label for = "q4-r1">I think I've heard of it</label>
+								<input required id = "f1-q4-r1" type = "radio" name = "f1-q4" onclick = "document.getElementById('f1-q4-text').hidden = false">
+								<label for = "f1-q4-r1">I think I've heard of it</label>
 							</div>
 							<div class = "field-row">
-								<input required id = "q4-r2" type = "radio" name = "q4" onclick = "document.getElementById('q4-text').hidden = true">
-								<label for = "q4-r2">Not at all</label>
+								<input required id = "f1-q4-r2" type = "radio" name = "f1-q4" onclick = "document.getElementById('f1-q4-text').hidden = true">
+								<label for = "f1-q4-r2">Not at all</label>
 							</div>
 							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "q4-text" type = "text" placeholder = "Explain what it is in a few words...">
+								<input style = "width: 300px" hidden id = "f1-q4-text" type = "text" placeholder = "Explain what it is in a few words...">
 							</div>
 						</fieldset>
 						
@@ -290,17 +306,17 @@
 							<h4>Do you know what cookies are?</h4>
 
 							<div role = "progressbar" class = "" id = "tab1">
-								<div id = "q1-b0" style = "width: 60%"></div>
+								<div id = "f1-q1-b0" style = "width: 60%"></div>
 							</div>
-							<p><span id = "q1-b0-span">60</span>% of respondents answered yes!</p>
+							<p><span id = "f1-q1-b0-span">60</span>% of respondents answered yes!</p>
 							<div role = "progressbar" class = "paused">
-								<div id = "q1-b1" style = "width: 20%"></div>
+								<div id = "f1-q1-b1" style = "width: 20%"></div>
 							</div>
-							<p><span id = "q1-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+							<p><span id = "f1-q1-b1-span">20</span>% of respondents answered they'd heard of them...</p>
 							<div role = "progressbar" class = "error">
-								<div id = "q1-b2" style = "width: 40%"></div>
+								<div id = "f1-q1-b2" style = "width: 40%"></div>
 							</div>
-							<p><span id = "q1-b2-span">40</span>% of respondents answered no :(</p>
+							<p><span id = "f1-q1-b2-span">40</span>% of respondents answered no :(</p>
 							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
 							<div id = "jeff1"></div>
 						</article>
@@ -308,17 +324,17 @@
 							<h4>Do you know what they are used for?</h4>
 
 							<div role = "progressbar" class = "">
-								<div id = "q2-b0" style = "width: 60%"></div>
+								<div id = "f1-q2-b0" style = "width: 60%"></div>
 							</div>
-							<p><span id = "q2-b0-span">60</span>% of respondents answered yes!</p>
+							<p><span id = "f1-q2-b0-span">60</span>% of respondents answered yes!</p>
 							<div role = "progressbar" class = "paused">
-								<div id = "q2-b1" style = "width: 20%"></div>
+								<div id = "f1-q2-b1" style = "width: 20%"></div>
 							</div>
-							<p><span id = "q2-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+							<p><span id = "f1-q2-b1-span">20</span>% of respondents answered they'd heard of them...</p>
 							<div role = "progressbar" class = "error">
-								<div id = "q2-b2" style = "width: 40%"></div>
+								<div id = "f1-q2-b2" style = "width: 40%"></div>
 							</div>
-							<p><span id = "q2-b2-span">40</span>% of respondents answered no :(</p>
+							<p><span id = "f1-q2-b2-span">40</span>% of respondents answered no :(</p>
 							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
 							<div id = "jeff2"></div>
 						</article>
@@ -326,17 +342,17 @@
 							<h4>Do you know what your personal data is used for?</h4>
 
 							<div role = "progressbar" class = "">
-								<div id = "q3-b0" style = "width: 60%"></div>
+								<div id = "f1-q3-b0" style = "width: 60%"></div>
 							</div>
-							<p><span id = "q3-b0-span">60</span>% of respondents answered yes!</p>
+							<p><span id = "f1-q3-b0-span">60</span>% of respondents answered yes!</p>
 							<div role = "progressbar" class = "paused">
-								<div id = "q3-b1" style = "width: 20%"></div>
+								<div id = "f1-q3-b1" style = "width: 20%"></div>
 							</div>
-							<p><span id = "q3-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+							<p><span id = "f1-q3-b1-span">20</span>% of respondents answered they'd heard of them...</p>
 							<div role = "progressbar" class = "error">
-								<div id = "q3-b2" style = "width: 40%"></div>
+								<div id = "f1-q3-b2" style = "width: 40%"></div>
 							</div>
-							<p><span id = "q3-b2-span">40</span>% of respondents answered no :(</p>
+							<p><span id = "f1-q3-b2-span">40</span>% of respondents answered no :(</p>
 							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
 							<div id = "jeff3"></div>
 						</article>
@@ -344,17 +360,17 @@
 							<h4>Do you know what the GDPR is?</h4>
 
 							<div role = "progressbar" class = "">
-								<div id = "q4-b0" style = "width: 60%"></div>
+								<div id = "f1-q4-b0" style = "width: 60%"></div>
 							</div>
-							<p><span id = "q4-b0-span">60</span>% of respondents answered yes!</p>
+							<p><span id = "f1-q4-b0-span">60</span>% of respondents answered yes!</p>
 							<div role = "progressbar" class = "paused">
-								<div id = "q4-b1" style = "width: 20%"></div>
+								<div id = "f1-q4-b1" style = "width: 20%"></div>
 							</div>
-							<p><span id = "q4-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+							<p><span id = "f1-q4-b1-span">20</span>% of respondents answered they'd heard of them...</p>
 							<div role = "progressbar" class = "error">
-								<div id = "q4-b2" style = "width: 40%"></div>
+								<div id = "f1-q4-b2" style = "width: 40%"></div>
 							</div>
-							<p><span id = "q4-b2-span">40</span>% of respondents answered no :(</p>
+							<p><span id = "f1-q4-b2-span">40</span>% of respondents answered no :(</p>
 							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
 							<div id = "jeff4"></div>
 						</article>
@@ -385,7 +401,7 @@ Loading the GREAT BRICHANT...
 				</div>
 			</div>
 
-			<div hidden id = "excel-window" class = "draggable window glass" style = "position: absolute">
+			<div hidden id = "excel-window" class = "draggable window glass" style = "position: absolute; min-width: 620px">
 				<div class = "title-bar">
 					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Microsoft Excel 2077 - vocab.xls</div>
 					<div class = "title-bar-controls">
@@ -396,7 +412,7 @@ Loading the GREAT BRICHANT...
 				</div>
 				<div style = "padding: 0" class = "window-body">
 					<input class = "excel" style = "font-weight: bold;" type = "text" value = "English" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "French" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Additional notes" readonly><br>
-					<input class = "excel" type = "text" value = "GDPR (General Data Protection Regulation)" readonly><input class = "excel" type = "text" value = "RGPD (Réglement Général sur la Protection des Données)" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "GDPR" readonly><input class = "excel" type = "text" value = "RGPD" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "Data" readonly><input class = "excel" type = "text" value = "Données" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "To reply to" readonly><input class = "excel" type = "text" value = "Répondre à" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "Turnover" readonly><input class = "excel" type = "text" value = "Chiffres d'affaires" readonly><input class = "excel" type = "text"><br>
@@ -417,6 +433,12 @@ Loading the GREAT BRICHANT...
 					<input class = "excel" type = "text" value = "Cookie" readonly><input class = "excel" type = "text" value = "Témoin de connexion" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "Legitimate interests" readonly><input class = "excel" type = "text" value = "Intérêts légitimes" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "To comply" readonly><input class = "excel" type = "text" value = "Se conformer" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Lawful" readonly><input class = "excel" type = "text" value = "Dans la légalité" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Coup de pied de réparation" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Loi 14" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Pénalty" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Pénalité" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Exempt from" readonly><input class = "excel" type = "text" value = "Dispensé de" readonly><input class = "excel" type = "text"><br>
 				</div>
 			</div>
 
@@ -602,7 +624,8 @@ Loading the GREAT BRICHANT...
 					"To fix this, <a href = 'https://www.youtube.com/watch?v=tVQsxLfKPNI'>a gig of RAM should do the trick</a>.<br><br>" +
 					"Technical information:<br><br>" +
 					"*** THANKS: 0x000000AD (0x00000000, 0x00000000)<br><br>" +
-					"If the problem persists, please contact <a href = 'mailto:m.brichant@ccro.be'>m.brichant@ccro.be</a>.";
+					"If the problem persists, please contact the webmaster at <a href = 'mailto:m.brichant@ccro.be'>m.brichant@ccro.be</a>.<br><br>" +
+					"Alternatively, you could contact any one of the kind folks that helped work on this project: Appollinne Flahaut, <span style = 'font-size:38px'>Aymeric Wibo</span>, Edouard Denef, <span style = 'color: #ddd'>Noa Quenon</span>";
 
 				document.body.style.background = "#0000AD";
 				document.body.innerHTML = "<div class = 'bsod'><p style = 'max-width: 1280px; max-height: 960px'>" + text + "</p></div>";
@@ -855,11 +878,11 @@ Loading the GREAT BRICHANT...
 					for(let l = 0; l < 3; l++){
 						fetchResults(k, l, 1).then((results) => {
 							if(results === "aymeric <3"){
-								document.getElementById(`q${k}-b${l}`).setAttribute("style", `width: 0%`);
-								document.getElementById(`q${k}-b${l}-span`).innerText = "0";
+								document.getElementById(`f1-q${k}-b${l}`).setAttribute("style", `width: 0%`);
+								document.getElementById(`f1-q${k}-b${l}-span`).innerText = "0";
 							}else{
-								document.getElementById(`q${k}-b${l}`).setAttribute("style", `width: ${results}%`);
-								document.getElementById(`q${k}-b${l}-span`).innerText = results;
+								document.getElementById(`f1-q${k}-b${l}`).setAttribute("style", `width: ${results}%`);
+								document.getElementById(`f1-q${k}-b${l}-span`).innerText = results;
 							}
 						})
 					}
