@@ -146,7 +146,7 @@
 					<p>Answer the following questions as accurately as you can, and don't hesitate to re-watch the video multiple times if you're not sure!</p>
 					<p>Don't forget to help yourself with the vocabulary list and the notes you were <i>supposed</i> to take during the video <del>but we know you didn't</del>.</p>
 
-					<form id = "form2">
+					<form id = "form2" onsubmit = "onsubmit_form2(event)">
 						<h5 id = "t0">What is required for companies to comply with the GDPR?</h5>
 						<fieldset>
 							<legend>Please select all correct answers</legend>
@@ -279,7 +279,7 @@
 					<p>In this little survey, find out how much you <i>really</i> know about the GDPR, and more!</p>
 					<p>Just kidding, you'll only find out about how much you know about the GDPR, nothing else.</p>
 
-					<form id = "form1">
+					<form id = "form1" onsubmit = "onsubmit_form1(event)">
 						<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
 						<fieldset>
 							<legend>Please select your answer</legend>
@@ -364,7 +364,7 @@
 						</fieldset>
 						
 						<input class = "button" id = "survey1" type = "submit" value = "Submit">
-						<button type = "button" id = "view-button">View results</button>
+						<button type = "button" id = "view-button" onclick = "onclick_view_button()">View results</button>
 					</form>
 				</div>
 			</div>
@@ -886,7 +886,7 @@ Loading the GREAT BRICHANT...
 
 			// Survey thing (i dont know how to call it so fuck it) (ps: i didn't write this code, noa did and its the most beautiful code ive ever seen this is not sarcastic :thumbs_up:)
 
-			document.getElementById("form1").onsubmit = async function(e){
+			async function onsubmit_form1(e){
 				e.preventDefault();
 				open_window('ie-window');
 				if(!localStorage.getItem("alreadyDoneSurvey1")){
@@ -928,8 +928,8 @@ Loading the GREAT BRICHANT...
 			};
 
 			// Quiz thing
-
-			document.getElementById("form2").onsubmit = function(e){
+			
+			function onsubmit_form2(e){
 				let quizzAnswers = array = [];
 				e.preventDefault();
 				for(let o = 1; o < 6; o++){
@@ -1011,7 +1011,8 @@ Loading the GREAT BRICHANT...
 					return "noa <3";
 				}else return finalArray
 			}
-			document.getElementById("view-button").onclick = async function() {
+
+			async function onclick_view_button() {
 				open_window("results-window");
 				// Answers
 				for(let k = 1; k < 5; k++){
