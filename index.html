@@ -898,7 +898,7 @@ Loading the GREAT BRICHANT...
 					}).then( async (data) => {
 						let ip = data.YourFuckingIPAddress.split(".").join(""); // Get rid of the stupids . between the numbers
 						for(let i = 1; i < 5; i++){
-							let qRadios = document.getElementsByName(`q${i}`);
+							let qRadios = document.getElementsByName(`f1-q${i}`);
 							for(let j = 0; j < qRadios.length; j++){
 								if(qRadios[j].checked){
 									// Adds an "answer" value in db
@@ -909,7 +909,7 @@ Loading the GREAT BRICHANT...
 										body: JSON.stringify(bodyRadios)
 									});
 									// Adds a text value to answer if necessary
-									let qTextValue = document.getElementById(`q${i}-text`).value;
+									let qTextValue = document.getElementById(`f1-q${i}-text`).value;
 									if(qTextValue !== ""){
 										let bodyText = {};
 										bodyText["text"] = qTextValue;
