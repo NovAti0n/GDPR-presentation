@@ -905,6 +905,18 @@ Loading the GREAT BRICHANT...
 				}
 			};
 
+			function verifyAnswers(array){
+				let booleanArray = []
+				const correctAnswers = [[0, 1, 3], "generaldataprotectionregulation", 2, [0, 1, 3], [0, 3], [1, 2, 3]];
+				for(let key in correctAnswers){
+					console.log(array[key])
+					if(correctAnswers[key] === array[key] || JSON.stringify(correctAnswers[key]) === JSON.stringify(array[key]) || String(array[key]).toLowerCase().split(" ").join("") === correctAnswers[key]){
+						booleanArray.push(true);
+					}else booleanArray.push(false);
+				}
+				return booleanArray;
+			}
+
 			// from khang-nd.github.io/7.cs
 			// again, I didn't write this ugly-ass shit
 			// I did change the spaces into tabs though, I just couldn't leave it as it was
