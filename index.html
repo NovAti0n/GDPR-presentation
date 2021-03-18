@@ -87,8 +87,9 @@
 				<div class = "title-bar">
 					<div class = "title-bar-text">Introduction to the GDPR</div>
 					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"></button>
-						<button onclick = "yes_cancel_dialog('Exit Presentation', 'Are you sure you would like to exit the presentation?', 'alert(`no`)')" aria-label = "Close"></button>
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Maximize"><i></i></button>
+						<button onclick = "yes_cancel_dialog('Exit Presentation', 'Are you sure you would like to exit the presentation?', 'alert(`no`)')" aria-label = "Close"><i></i></button>
 					</div>
 				</div>
 				<div class = "window-body">
@@ -121,8 +122,8 @@
 				<div class = "title-bar">
 					<div class = "title-bar-text">Why did we choose to work on this topic?</div>
 					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"></button>
-						<button aria-label = "Close" onclick = "close_window('why-window')"></button>
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Close" onclick = "close_window('why-window')"><i></i></button>
 					</div>
 				</div>
 				<div class = "window-body">
@@ -131,12 +132,12 @@
 				</div>
 			</div>
 
-			<div id = "quiz-window" class = "draggable window glass" style = "position: absolute; max-width: 620px; min-width: 620px">
+			<div hidden id = "quiz-window" class = "draggable window glass" style = "position: absolute; max-width: 620px; min-width: 620px">
 				<div class = "title-bar">
 					<div class = "title-bar-text">Little quiz on the video...</div>
 					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"></button>
-						<button aria-label = "Close" onclick = "close_window('quiz-window')"></button>
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Close" onclick = "close_window('quiz-window')"><i></i></button>
 					</div>
 				</div>
 				<div class = "window-body">
@@ -269,8 +270,8 @@
 				<div class = "title-bar">
 					<div class = "title-bar-text">Small survey</div>
 					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"></button>
-						<button aria-label = "Close" onclick = "close_window('form-window')"></button>
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Close" onclick = "close_window('form-window')"><i></i></button>
 					</div>
 				</div>
 				<div class = "window-body">
@@ -372,9 +373,9 @@
 				<div class = "title-bar">
 					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "notepad.png" style = "width: 16px; height: 16px; margin-right: 4px">Notepad</div>
 					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"></button>
-						<button aria-label = "Maximize"></button>
-						<button aria-label = "Close" onclick = "close_window('notepad-window')"></button>
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Maximize"><i></i></button>
+						<button aria-label = "Close" onclick = "close_window('notepad-window')"><i></i></button>
 					</div>
 				</div>
 				<div style = "padding: 0" class = "window-body">
@@ -386,9 +387,9 @@
 				<div class = "title-bar">
 					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
 					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"></button>
-						<button aria-label = "Maximize"></button>
-						<button aria-label = "Close" onclick = "close_window('results-window')"></button>
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Maximize"><i></i></button>
+						<button aria-label = "Close" onclick = "close_window('results-window')"><i></i></button>
 					</div>
 				</div>
 				<div class = "window-body">
@@ -504,13 +505,13 @@ Loading the GREAT BRICHANT...
 				</div>
 			</div>
 
-			<div hidden id = "excel-window" class = "draggable window glass" style = "position: absolute; min-width: 620px">
+			<div id = "excel-window" class = "draggable window glass" style = "position: absolute; min-width: 612px"> <!-- 200 * 3 + 12 = 612-->
 				<div class = "title-bar">
 					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Microsoft Excel 2077 - vocab.xls</div>
 					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"></button>
-						<button aria-label = "Maximize"></button>
-						<button aria-label = "Close" onclick = "close_window('excel-window')"></button>
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Maximize"><i></i></button>
+						<button aria-label = "Close" onclick = "close_window('excel-window')"><i></i></button>
 					</div>
 				</div>
 				<div style = "padding: 0" class = "window-body">
@@ -552,9 +553,9 @@ Loading the GREAT BRICHANT...
 				<div class = "title-bar">
 					<div class = "title-bar-text">THE GREAT BRICHANT!!!</div>
 					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"></button>
-						<button aria-label = "Maximize"></button>
-						<button onclick = "yes_cancel_dialog('SILENCE the GREAT BRICHANT', 'Are you sure you would like to <b>SILENCE</b> the great BRICHANT?', 'alert(`YOU CANNOT SILENCE THE GREAT BRICHANT`)')" aria-label = "Close"></button>
+						<button aria-label = "Minimize"><i></i></button>
+						<button aria-label = "Maximize"><i></i></button>
+						<button onclick = "yes_cancel_dialog('SILENCE the GREAT BRICHANT', 'Are you sure you would like to <b>SILENCE</b> the great BRICHANT?', 'alert(`YOU CANNOT SILENCE THE GREAT BRICHANT`)')" aria-label = "Close"><i></i></button>
 					</div>
 				</div>
 				<div style = "padding: 0" class = "window-body">
@@ -580,9 +581,9 @@ Loading the GREAT BRICHANT...
 			<div class = "title-bar">
 				<div class = "title-bar-text">Internet Explorer 2.0</div>
 				<div class = "title-bar-controls">
-					<button aria-label = "Minimize"></button>
-					<button aria-label = "Maximize"></button>
-					<button aria-label = "Close" onclick = "close_window('ie-window');document.querySelector('#video').pause()"></button>
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Maximize"><i></i></button>
+					<button aria-label = "Close" onclick = "close_window('ie-window');document.querySelector('#video').pause()"><i></i></button>
 				</div>
 			</div>
 			<div class = "window-body">
@@ -752,7 +753,7 @@ Loading the GREAT BRICHANT...
 
 				document.querySelector("#everything").innerHTML += "<div id='" + uuid + "' class='window glass draggable' style='position:absolute;min-width:400px;max-width:400px;top:" + offset + "px;left:" + offset + "px;'>"
 				+ "<div class='title-bar'><div class='title-bar-text'>" + title + "</div>"
-				+ "<div class='title-bar-controls'><button aria-label = 'Minimize'></button><button aria-label='Close' onclick='" + cancel + "'></button></div></div>"
+				+ "<div class='title-bar-controls'><button aria-label = 'Minimize'><i></i></button><button aria-label='Close' onclick='" + cancel + "'><i></i></button></div></div>"
 				+ "<div class='window-body'><p>" + message + "</p>"
 				+ "<button onclick='" + cancel + "'>" + btnmsg + "</button></div></div>";
 
@@ -775,7 +776,7 @@ Loading the GREAT BRICHANT...
 
 				document.querySelector("#everything").innerHTML += "<div id='" + uuid + "' class='window glass draggable' style='position:absolute;min-width:400px;max-width:400px;top:" + offset + "px;left:" + offset + "px;'>"
 				+ "<div class='title-bar'><div class='title-bar-text'>" + title + "</div>"
-				+ "<div class='title-bar-controls'><button aria-label = 'Minimize'></button><button aria-label='Close' onclick='" + cancel + "'></button></div></div>"
+				+ "<div class='title-bar-controls'><button aria-label = 'Minimize'><i></i></button><button aria-label='Close' onclick='" + cancel + "'><i></i></button></div></div>"
 				+ "<div class='window-body'><p>" + message + "</p>"
 				+ "<button onclick='" + action + "'>Yes</button>\n"
 				+ "<button onclick='" + cancel + "'>Cancel</button></div></div>";
