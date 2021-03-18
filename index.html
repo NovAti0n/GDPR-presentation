@@ -131,7 +131,7 @@
 				</div>
 			</div>
 
-			<div id = "quiz-window" class = "draggable window glass" style = "position: absolute">
+			<div id = "quiz-window" class = "draggable window glass" style = "position: absolute; max-width: 620px; min-width: 620px">
 				<div class = "title-bar">
 					<div class = "title-bar-text">Little quiz on the video...</div>
 					<div class = "title-bar-controls">
@@ -142,22 +142,106 @@
 				<div class = "window-body">
 					<h4>How much did you learn?</h4>
 					<p>It's tiiiimeeee for a quiiiiizzzz!!!!! Everyone's favourite part of the day!</p>
-					<p></p>
+					<p>Answer the following questions as accurately as you can, and don't hesitate to re-watch the video multiple times if you're not sure!</p>
+					<p>Don't forget to help yourself with the vocabulary list and the notes you were <i>supposed</i> to take during the video <del>but we know you didn't</del>.</p>
 
 					<form id = "form2">
-						<h5>What are companies required to do to comply with the GDPR?</h5>
+						<h5>What is required for companies to comply with the GDPR?</h5>
 						<fieldset>
 							<legend>Please select all correct answers</legend>
+							<div class = "field-row"> <!-- correct -->
+								<input required id = "f2-q1-r0" type = "checkbox">
+								<label for = "f2-q1-r0">The consent of their users for data processing</label>
+							</div>
+							<div class = "field-row"> <!-- correct -->
+								<input required id = "f2-q1-r1" type = "checkbox">
+								<label for = "f2-q1-r1">Providing notifications to the authorities for data breaches</label>
+							</div>
 							<div class = "field-row">
-								<input required id = 
+								<input required id = "f2-q1-r2" type = "checkbox">
+								<label for = "f2-q1-r2">Feeding your cookies to their cat</label>
+							</div>
+							<div class = "field-row"> <!-- correct -->
+								<input required id = "f2-q1-r3" type = "checkbox">
+								<label for = "f2-q1-r3">Anonymizing collected data to protect privacy</label>
 							</div>
 						</fieldset>
 
 						<h5>What does "GDPR" stand for?</h5>
+						<fieldset>
+							<legend>Please type the correct answer</legend>
+							<div class = "field-row">
+								<input style = "width: 300px" id = "f2-q2" type = "text" placeholder = "WRITE HERE">
+							</div>
+						</fieldset>
+
 						<h5>What impact did the Brexit have on the application of the GDPR in the UK?</h5>
-						<h5>What penalties could companies face if they don't respect the GDPR?</h5>
+						<fieldset>
+							<legend>Please select all correct answers</legend>
+							<div class = "field-row">
+								<input required id = "f2-q3-r0" type = "radio" name = "f2-q3">
+								<label for = "f2-q3-r0">The UK decided to make its own data protection regulation</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f2-q3-r1" type = "radio" name = "f2-q3">
+								<label for = "f2-q3-r1">The UK decided to not make its own data protection regulation</label>
+							</div>
+							<div class = "field-row"> <!-- correct -->
+								<input required id = "f2-q3-r2" type = "radio" name = "f2-q3">
+								<label for = "f2-q3-r2">None at all</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f2-q3-r2" type = "radio" name = "f2-q3">
+								<label for = "f2-q3-r2">The UK's economy nosedived, which increased unemployment to historic levels. This induced a shortage of the country's most precious resource: teachers. The lack of education that followed made the now-illiterate government workers at the UK's Privacy & Information Security Syndicate (PISS) headquarters get lost in the European Council building. They could not navigate because all the signs and directions were written in a language they called... Rench</i>. The government workers never came back, and thus could never properly implement the GDPR or any other data protection regulation. Everyone died. The end.</label>
+							</div>
+						</fieldset>
+
+						<h5>What penalties could companies face if they infringe upon the GDPR?</h5>
+						<fieldset>
+							<legend>Please select all correct answers</legend>
+							<div class = "field-row"> <!-- correct -->
+								<input required id = "f2-q4-r0" type = "checkbox">
+								<label for = "f2-q4-r0">Administrative fines of €20 million</label>
+							</div>
+							<div class = "field-row"> <!-- correct -->
+								<input required id = "f2-q4-r1" type = "checkbox">
+								<label for = "f2-q4-r1">Administrative fines of 4% of annual global turnover</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f2-q4-r2" type = "checkbox">
+								<label for = "f2-q4-r2">A good ol' spanking</label>
+							</div>
+							<div class = "field-row"> <!-- correct -->
+								<input required id = "f2-q4-r3" type = "checkbox">
+								<label for = "f2-q4-r3">A temporary or permanent ban on data processing.</label>
+							</div>
+						</fieldset>
+
 						<h5>What does the "right to be forgotten" consist of?</h5>
+						<fieldset>
+							<legend>Please select all correct answers</legend>
+							<div class = "field-row">
+								<input required id = "f2-q5-r0" type = "checkbox">
+								<label for = "f2-q5-r0">Administrative fines of €20 million</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f2-q5-r1" type = "checkbox">
+								<label for = "f2-q5-r1">Administrative fines of 4% of annual global turnover</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f2-q5-r2" type = "checkbox">
+								<label for = "f2-q5-r2">A good ol' spanking</label>
+							</div>
+							<div class = "field-row">
+								<input required id = "f2-q5-r3" type = "checkbox">
+								<label for = "f2-q5-r3">A temporary or permanent ban on data processing.</label>
+							</div>
+						</fieldset>
+
 						<h5>Who is exempt from the "right to be forgotten"?</h5>
+
+						<input class = "button" id = "survey1" type = "submit" value = "Submit">
+						<button type = "button">Show corrections</button>
 					</form>
 				</div>
 			</div>
@@ -412,33 +496,37 @@ Loading the GREAT BRICHANT...
 				</div>
 				<div style = "padding: 0" class = "window-body">
 					<input class = "excel" style = "font-weight: bold;" type = "text" value = "English" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "French" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Additional notes" readonly><br>
-					<input class = "excel" type = "text" value = "GDPR" readonly><input class = "excel" type = "text" value = "RGPD" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Data" readonly><input class = "excel" type = "text" value = "Données" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To reply to" readonly><input class = "excel" type = "text" value = "Répondre à" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Turnover" readonly><input class = "excel" type = "text" value = "Chiffres d'affaires" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To stalk / to track" readonly><input class = "excel" type = "text" value = "Traquer" readonly><input class = "excel" type = "text"><br>
+					
 					<input class = "excel" type = "text" value = "To act" readonly><input class = "excel" type = "text" value = "Agir" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Database" readonly><input class = "excel" type = "text" value = "Base de données" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To involve" readonly><input class = "excel" type = "text" value = "Impliquer" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Loopholes" readonly><input class = "excel" type = "text" value = "Failles" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To hold" readonly><input class = "excel" type = "text" value = "Conserver" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "Burden" readonly><input class = "excel" type = "text" value = "Fardeau" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "To hire" readonly><input class = "excel" type = "text" value = "Employer" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Pop-up" readonly><input class = "excel" type = "text" value = "Fenêtre contextuelle" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Tool" readonly><input class = "excel" type = "text" value = "Outil" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Path" readonly><input class = "excel" type = "text" value = "Trajet" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Corner" readonly><input class = "excel" type = "text" value = "Coin" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "A load / to load" readonly><input class = "excel" type = "text" value = "Une charge / charger" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Settings" readonly><input class = "excel" type = "text" value = "Réglages" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Cookie" readonly><input class = "excel" type = "text" value = "Témoin de connexion" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Legitimate interests" readonly><input class = "excel" type = "text" value = "Intérêts légitimes" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "To comply" readonly><input class = "excel" type = "text" value = "Se conformer" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Cookie" readonly><input class = "excel" type = "text" value = "Témoin de connexion" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Corner" readonly><input class = "excel" type = "text" value = "Coin" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Data" readonly><input class = "excel" type = "text" value = "Données" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Database" readonly><input class = "excel" type = "text" value = "Base de données" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Data processing" readonly><input class = "excel" type = "text" value = "Traitement des données" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Exempt from" readonly><input class = "excel" type = "text" value = "Dispensé de" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "GDPR" readonly><input class = "excel" type = "text" value = "RGPD" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To hire" readonly><input class = "excel" type = "text" value = "Employer" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To hold" readonly><input class = "excel" type = "text" value = "Conserver" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To infringe upon" readonly><input class = "excel" type = "text" value = "Enfreindre" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To involve" readonly><input class = "excel" type = "text" value = "Impliquer" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "Lawful" readonly><input class = "excel" type = "text" value = "Dans la légalité" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Legitimate interests" readonly><input class = "excel" type = "text" value = "Intérêts légitimes" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "A load / to load" readonly><input class = "excel" type = "text" value = "Une charge / charger" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Loopholes" readonly><input class = "excel" type = "text" value = "Failles" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Path" readonly><input class = "excel" type = "text" value = "Trajet" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Coup de pied de réparation" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Loi 14" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Pénalty" readonly><input class = "excel" type = "text"><br>
 					<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Pénalité" readonly><input class = "excel" type = "text"><br>
-					<input class = "excel" type = "text" value = "Exempt from" readonly><input class = "excel" type = "text" value = "Dispensé de" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Pop-up" readonly><input class = "excel" type = "text" value = "Fenêtre contextuelle" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To reply to" readonly><input class = "excel" type = "text" value = "Répondre à" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Settings" readonly><input class = "excel" type = "text" value = "Réglages" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Spanking" readonly><input class = "excel" type = "text" value = "Fessée" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "To stalk / to track" readonly><input class = "excel" type = "text" value = "Traquer" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Tool" readonly><input class = "excel" type = "text" value = "Outil" readonly><input class = "excel" type = "text"><br>
+					<input class = "excel" type = "text" value = "Turnover" readonly><input class = "excel" type = "text" value = "Chiffres d'affaires" readonly><input class = "excel" type = "text"><br>
 				</div>
 			</div>
 
@@ -620,7 +708,7 @@ Loading the GREAT BRICHANT...
 				var text = 
 					"A problem has been detected and Windows has been shut down to prevent damage to your computer.<br><br>" +
 					"TOO_MUCH_ATTENTION_GIVEN<br><br>" +
-					"Too much attention was given to our presentation and there was not enough thanks to go around. This caused a loopback exception in the flux capacitor which shut down the firewall which caused the detonation of all antivirus defenses.<br><br>" +
+					"Too much attention was given to our presentation and there was not enough thanks to go around. This caused a loopback exception in the flux capacitor which shut down the firewall which caused the detonation of all antivirus defenses after flip-flopping all the flip-flops bits.<br><br>" +
 					"To fix this, <a href = 'https://www.youtube.com/watch?v=tVQsxLfKPNI'>a gig of RAM should do the trick</a>.<br><br>" +
 					"Technical information:<br><br>" +
 					"*** THANKS: 0x000000AD (0x00000000, 0x00000000)<br><br>" +
