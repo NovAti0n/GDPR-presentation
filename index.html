@@ -73,6 +73,11 @@
 			.excel {
 				width: 200px;
 			}
+
+			.window-body {
+				max-height: 90vh;
+				overflow: auto;
+			}
 		</style>
 	</head>
 
@@ -128,7 +133,7 @@
 
 			<div id = "quiz-window" class = "draggable window glass" style = "position: absolute">
 				<div class = "title-bar">
-					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "notepad.png" style = "width: 16px; height: 16px; margin-right: 4px">Little quiz on the video...</div>
+					<div class = "title-bar-text">Little quiz on the video...</div>
 					<div class = "title-bar-controls">
 						<button aria-label = "Minimize"></button>
 						<button aria-label = "Close" onclick = "close_window('quiz-window')"></button>
@@ -141,7 +146,7 @@
 				</div>
 			</div>
 
-			<div hidden id = "form-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div hidden id = "form-window" class = "draggable window glass" style = "position: absolute; min-width: 630px">
 				<div class = "title-bar">
 					<div class = "title-bar-text">Small survey</div>
 					<div class = "title-bar-controls">
@@ -258,7 +263,7 @@
 				</div>
 			</div>
 			
-			<div hidden id = "results-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div hidden id = "results-window" class = "draggable window glass" style = "position: absolute; min-width: 740px">
 				<div class = "title-bar">
 					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
 					<div class = "title-bar-controls">
