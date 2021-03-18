@@ -81,7 +81,7 @@
 		</style>
 	</head>
 
-	<body>
+	<body> <!-- if DOMContentLoaded still doesn't work, try adding 'onload' here -->
 		<div id = "everything"> <!-- this div contains everything. why? because fuck you, innerHTML can't be changed without reloading all child videos, that's why -->
 			<div id = "intro-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
 				<div class = "title-bar">
@@ -118,7 +118,7 @@
 				</div>
 			</div>
 
-			<div hidden id = "final-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
+			<div id = "final-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
 				<div class = "title-bar">
 					<div class = "title-bar-text">Finally! It's done!</div>
 					<div class = "title-bar-controls">
@@ -128,7 +128,16 @@
 				</div>
 				<div class = "window-body">
 					<p>You have <i>finally</i> finished our presentation! Finally!<br><br>You now have two options: you can either quit the presentation now and eternally live in regret, <i>oooorrrrr</i> you could take a look at the results of the various surveys by clicking on the "View results" buttons in each one. Don't forget to come back here to formally end the presentation once you're done!</p>
+					<p>If you would like to discuss the subject orally or write an essay on it, here are some prompts to get you started:</p>
+					
+					<ul>
+						<li>How can we protect our online privacy, and why is it important?</li>
+						<li>Can cookies/data collection be beneficial and why? When is it ok to collect data?</li>
+						<li>Does the EU (and more broadly, the world) do enough to protect us? What could they do to improve?</li>
+					</ul>
+
 					<p><i>Editor's (Aymeric's) note:</i> <a target = "_blank" href = "https://www.youtube.com/watch?v=v_W0wR4AClk">click here</a> for a really good video explaining the GDPR today, and its successes, as well as its shortcomings!</p>
+					
 					<button onclick = "active_view_results()">Activate "View results"</button>
 					<button onclick = "yes_cancel_dialog('Are you suuuurrreee??', `Once you're out, you cannot get back in!`, 'bsod()')">Exit presentation now</button>
 				</div>
@@ -385,6 +394,11 @@
 						<button class = "vr" type = "button" id = "view-button" onclick = "onclick_view_button()" disabled>View results</button>
 					</form>
 				</div>
+				<div class = "status-bar">
+					<p class = "status-bar-field">Press F1 for help</p>
+					<p class = "status-bar-field">Slide 1</p>
+					<p class = "status-bar-field">CPU Usage: 14%</p>
+				</div>				
 			</div>
 
 			<div hidden id = "form3-window" class = "draggable window glass" style = "position: absolute; min-width: 630px">
