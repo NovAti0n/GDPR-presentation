@@ -128,6 +128,7 @@
 				</div>
 				<div class = "window-body">
 					<p>You have <i>finally</i> finished our presentation! Finally!<br><br>You now have two options: you can either quit the presentation now and eternally live in regret, <i>oooorrrrr</i> you could take a look at the results of the various surveys by clicking on the "View results" buttons in each one. Don't forget to come back here to formally end the presentation once you're done!</p>
+					<p><i>Editor's (Aymeric's) note:</i> <a target = "_blank" href = "https://www.youtube.com/watch?v=v_W0wR4AClk">click here</a> for a really good video explaining the GDPR today, and its successes, as well as its shortcomings!</p>
 					<button onclick = "active_view_results()">Activate "View results"</button>
 					<button onclick = "yes_cancel_dialog('Are you suuuurrreee??', `Once you're out, you cannot get back in!`, 'bsod()')">Exit presentation now</button>
 				</div>
@@ -142,8 +143,8 @@
 					</div>
 				</div>
 				<div class = "window-body">
-					<p>Cookies and GDPR are nowadays subjects. A lot of new scandals are emerging all around the world about private data.<br>We all believe that it is a very important subject to understand.</p>
-					<button onclick = "open_window('form-window')">Ok?</button>
+					<p>Cookies and the GDPR are both oft-talked about subjects nowadays. A lot of new scandals are emerging all around the world about data privacy, and what that entails.<br>Everyone in our group believes that it is a very important subject to understand, and so we made this absolutely stunning presentation for you. Yes, you.</p>
+					<button onclick = "open_window('form-window')">Thank you, next</button>
 				</div>
 			</div>
 
@@ -396,10 +397,11 @@
 				</div>
 				<div class = "window-body">
 					<h4>Nearly the end!</h4>
-					<p>It's nearly the end of the presentation! Let's do one more survey to finish.</p>
+					<p>It's nearly the end of the presentation! Just ooonneeee more littttlllee thingggggg...</p>
+					<p>We would like to know how much you learned thanks to our presentation, and if you found it epic or not epic. Please answer the questions as honestly as possible!</p>
 
 					<form id = "form3" onsubmit = "onsubmit_form3(event)">
-						<h5>Did the video allowed you to better understand the subject?</h5>
+						<h5>Did the video allow you to better understand the subject?</h5>
 						<fieldset>
 							<legend>Please select your answer</legend>
 							<div class = "field-row">
@@ -431,10 +433,10 @@
 							</div>
 							<div class = "field-row">
 								<input required id = "f3-q2-r2" type = "radio" name = "f3-q2">
-								<label for = "f3-q2-r2">Nothing, I have a superior IQ</label>
+								<label for = "f3-q2-r2">Nothing, I have a superior IQ</label> <!-- me too -->
 							</div>
 							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f3-q2-text" type = "text" placeholder = "Explain your opinion in a few words...">
+								<input style = "width: 300px" hidden id = "f3-q2-text" type = "text" placeholder = "Explain your answer in a few words...">
 							</div>
 						</fieldset>
 
@@ -447,14 +449,14 @@
 							</div>
 							<div class = "field-row">
 								<input required id = "f3-q3-r1" type = "radio" name = "f3-q3">
-								<label for = "f3-q3-r1">It's probably a good thing...</label>
+								<label for = "f3-q3-r1">It's probably a good thing... I think</label>
 							</div>
 							<div class = "field-row">
 								<input required id = "f3-q3-r2" type = "radio" name = "f3-q3">
 								<label for = "f3-q3-r2">It's horrible! Please send help!</label>
 							</div>
 							<div class = "field-row">
-								<input style = "width: 300px" id = "f3-q3-text" type = "text" placeholder = "Explain your opinion in a few words...">
+								<input style = "width: 300px" id = "f3-q3-text" type = "text" placeholder = "Explain your answer in a few words...">
 							</div>
 						</fieldset>
 
@@ -471,10 +473,10 @@
 							</div>
 							<div class = "field-row">
 								<input required id = "f3-q4-r2" type = "radio" name = "f3-q4">
-								<label for = "f3-q4-r2">Not at all</label>
+								<label for = "f3-q4-r2">I have trust issues</label>
 							</div>
 							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f3-q4-text" type = "text" placeholder = "Explain your opinion in a few words...">
+								<input style = "width: 300px" hidden id = "f3-q4-text" type = "text" placeholder = "Explain your answer in a few words...">
 							</div>
 						</fieldset>
 
@@ -491,10 +493,10 @@
 							</div>
 							<div class = "field-row">
 								<input required id = "f3-q5-r2" type = "radio" name = "f3-q5">
-								<label for = "f3-q5-r2">Not at all</label>
+								<label for = "f3-q5-r2">I have things to hide, I'm scared :(</label>
 							</div>
 							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f3-q5-text" type = "text" placeholder = "Explain your opinion in a few words...">
+								<input style = "width: 300px" hidden id = "f3-q5-text" type = "text" placeholder = "Explain your answer in a few words...">
 							</div>
 						</fieldset>
 
@@ -514,7 +516,7 @@
 								<label for = "f3-q6-r2">Not at all</label>
 							</div>
 							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f3-q6-text" type = "text" placeholder = "Explain your opinion in a few words...">
+								<input style = "width: 300px" hidden id = "f3-q6-text" type = "text" placeholder = "Explain your answer in a few words...">
 							</div>
 						</fieldset>
 						
