@@ -1428,27 +1428,29 @@ Loading the GREAT BRICHANT...
 				return booleanArray;
 			}
 
-			// from khang-nd.github.io/7.css
-			// again, I didn't write this ugly-ass shit
-			// I did change the spaces into tabs though, I just couldn't leave it as it was
-			// Yeah I agree, I cant understand people who use spaces
+			document.addEventListener("DOMContentLoaded", function() {
+				// from khang-nd.github.io/7.css
+				// again, I didn't write this ugly-ass shit
+				// I did change the spaces into tabs though, I just couldn't leave it as it was
+				// Yeah I agree, I cant understand people who use spaces
 
-			const tabButtons = document.querySelectorAll("[role=tab]");
-			tabButtons.forEach((tabButton) => {
-				tabButton.addEventListener("click", (e) => {
-					e.preventDefault();
-					const tabContainer = e.target.parentElement.parentElement;
-					const targetId = e.target.getAttribute("aria-controls");
-					tabButtons.forEach((_tabButton) =>
-						_tabButton.setAttribute("aria-selected", false)
-					);
-					tabButton.setAttribute("aria-selected", true);
-					tabContainer
-						.querySelectorAll("[role=tabpanel]")
-						.forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
-					tabContainer
-						.querySelector(`[role=tabpanel]#${targetId}`)
-						.removeAttribute("hidden");
+				const tabButtons = document.querySelectorAll("[role=tab]");
+				tabButtons.forEach((tabButton) => {
+					tabButton.addEventListener("click", (e) => {
+						e.preventDefault();
+						const tabContainer = e.target.parentElement.parentElement;
+						const targetId = e.target.getAttribute("aria-controls");
+						tabButtons.forEach((_tabButton) =>
+							_tabButton.setAttribute("aria-selected", false)
+						);
+						tabButton.setAttribute("aria-selected", true);
+						tabContainer
+							.querySelectorAll("[role=tabpanel]")
+							.forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
+						tabContainer
+							.querySelector(`[role=tabpanel]#${targetId}`)
+							.removeAttribute("hidden");
+					});
 				});
 			});
 		</script>
