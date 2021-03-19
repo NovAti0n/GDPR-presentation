@@ -81,716 +81,720 @@
 		</style>
 	</head>
 
-	<body> <!-- if DOMContentLoaded still doesn't work, try adding 'onload' here -->
-		<div id = "everything"> <!-- this div contains everything. why? because fuck you, innerHTML can't be changed without reloading all child videos, that's why -->
-			<div id = "intro-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
-				<div class = "title-bar">
-					<div class = "title-bar-text">Introduction to the GDPR</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Maximize"><i></i></button>
-						<button onclick = "yes_cancel_dialog('Exit Presentation', 'Are you sure you would like to exit the presentation?', 'alert(`no`)')" aria-label = "Close"><i></i></button>
-					</div>
-				</div>
-				<div class = "window-body">
-					<p>Internet is an incredible tool, but it has a dark side. Have you ever gone to a website and been assaulted by a lot of popups asking you to accept cookies? Have you ever received loads of emails about a thing that you were just searching for or talking about five minutes ago? How can evil companies retrieve all this data from you? Are they using black magic? This is what we will be trying to answer today.</p>
-					<p>From your lamp to your flip-flops, everything is connected to the Internet these days. No wonder Google is able to know every single thing about you. Let’s do an experiment, just follow these simple steps (click on the triangles to expand the section):</p>
-					<details close>
-						<summary>If you have an iPhone and are not using Google Maps:</summary>
-						<ul>
-							<li>Open settings.</li>
-							<li>Go to "Confidentialité", then "Services de localisation", then "Services système", then "Lieux importants".</li>
-							<li>You should see a list of places you've been. Click on one to see more!</li>
-						</ul>
-					</details>
-					<details close>
-						<summary>If you are using Google Maps:</summary>
-						<ul>
-							<li>Open Google Maps.</li>
-							<li>Click on your profile picture on the top-right corner.</li>
-							<li>Click on "Vos trajets".</li>
-							<li>You should see your recent paths.</li>
-						</ul>
-					</details>
-					<p>So, are you terrified now?</p>
-					<button onclick = "open_window('why-window')">Yes, I am!</button>
-					<button onclick = "info_dialog('Try Again', `That's the wrong answer! Try again by clicking on 'Yes, I am!'...`, 'Ok')">No...</button>
+	<body onload> <!-- if DOMContentLoaded still doesn't work, try adding 'onload' here -->
+		<div id = "everything">
+			<!-- this div contains everything. why? because fuck you, innerHTML can't be changed without reloading all child videos, that's why -->
+			<!-- actually it doesn't anymore for more reasons that I don't really care about anymore -->
+		</div>
+		
+		<div id = "intro-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Introduction to the GDPR</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Maximize"><i></i></button>
+					<button onclick = "yes_cancel_dialog('Exit Presentation', 'Are you sure you would like to exit the presentation?', 'alert(`no`)')" aria-label = "Close"><i></i></button>
 				</div>
 			</div>
-
-			<div hidden id = "final-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
-				<div class = "title-bar">
-					<div class = "title-bar-text">Finally! It's done!</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Close" onclick = "close_window('final-window')"><i></i></button>
-					</div>
-				</div>
-				<div class = "window-body">
-					<p>You have <i>finally</i> finished our presentation! Finally!<br><br>You now have two options: you can either quit the presentation now and eternally live in regret, <i>oooorrrrr</i> you could take a look at the results of the various surveys by clicking on the "View results" buttons in each one. Don't forget to come back here to formally end the presentation once you're done!</p>
-					<p>If you would like to discuss the subject orally or write an essay on it, here are some prompts to get you started:</p>
-					
+			<div class = "window-body">
+				<p>Internet is an incredible tool, but it has a dark side. Have you ever gone to a website and been assaulted by a lot of popups asking you to accept cookies? Have you ever received loads of emails about a thing that you were just searching for or talking about five minutes ago? How can evil companies retrieve all this data from you? Are they using black magic? This is what we will be trying to answer today.</p>
+				<p>From your lamp to your flip-flops, everything is connected to the Internet these days. No wonder Google is able to know every single thing about you. Let’s do an experiment, just follow these simple steps (click on the triangles to expand the section):</p>
+				<details close>
+					<summary>If you have an iPhone and are not using Google Maps:</summary>
 					<ul>
-						<li>How can we protect our online privacy, and why is it important?</li>
-						<li>Can cookies/data collection be beneficial and why? When is it ok to collect data?</li>
-						<li>Does the EU (and more broadly, the world) do enough to protect us? What could they do to improve?</li>
+						<li>Open settings.</li>
+						<li>Go to "Confidentialité", then "Services de localisation", then "Services système", then "Lieux importants".</li>
+						<li>You should see a list of places you've been. Click on one to see more!</li>
 					</ul>
+				</details>
+				<details close>
+					<summary>If you are using Google Maps:</summary>
+					<ul>
+						<li>Open Google Maps.</li>
+						<li>Click on your profile picture on the top-right corner.</li>
+						<li>Click on "Vos trajets".</li>
+						<li>You should see your recent paths.</li>
+					</ul>
+				</details>
+				<p>So, are you terrified now?</p>
+				<button onclick = "open_window('why-window')">Yes, I am!</button>
+				<button onclick = "info_dialog('Try Again', `That's the wrong answer! Try again by clicking on 'Yes, I am!'...`, 'Ok')">No...</button>
+			</div>
+		</div>
 
-					<p><i>Editor's (Aymeric's) note:</i> <a target = "_blank" href = "https://www.youtube.com/watch?v=v_W0wR4AClk">click here</a> for a really good video explaining the GDPR today, and its successes, as well as its shortcomings!</p>
+		<div hidden id = "final-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Finally! It's done!</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Close" onclick = "close_window('final-window')"><i></i></button>
+				</div>
+			</div>
+			<div class = "window-body">
+				<p>You have <i>finally</i> finished our presentation! Finally!<br><br>You now have two options: you can either quit the presentation now and eternally live in regret, <i>oooorrrrr</i> you could take a look at the results of the various surveys by clicking on the "View results" buttons in each one. Don't forget to come back here to formally end the presentation once you're done!</p>
+				<p>If you would like to discuss the subject orally or write an essay on it, here are some prompts to get you started:</p>
+				
+				<ul>
+					<li>How can we protect our online privacy, and why is it important?</li>
+					<li>Can cookies/data collection be beneficial and why? When is it ok to collect data?</li>
+					<li>Does the EU (and more broadly, the world) do enough to protect us? What could they do to improve?</li>
+				</ul>
+
+				<p><i>Editor's (Aymeric's) note:</i> <a target = "_blank" href = "https://www.youtube.com/watch?v=v_W0wR4AClk">click here</a> for a really good video explaining the GDPR today, and its successes, as well as its shortcomings!</p>
+				
+				<button onclick = "active_view_results()">Activate "View results"</button>
+				<button onclick = "yes_cancel_dialog('Are you suuuurrreee??', `Once you're out, you cannot get back in!`, 'bsod()')">Exit presentation now</button>
+			</div>
+		</div>
+
+		<div hidden id = "why-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Why did we choose to work on this topic?</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Close" onclick = "close_window('why-window')"><i></i></button>
+				</div>
+			</div>
+			<div class = "window-body">
+				<p>Cookies and the GDPR are both oft-talked about subjects nowadays. A lot of new scandals are emerging all around the world about data privacy, and what that entails.<br>Everyone in our group believes that it is a very important subject to understand, and so we made this absolutely stunning presentation for you. Yes, you.</p>
+				<button onclick = "open_window('form-window')">Thank you, next</button>
+			</div>
+		</div>
+
+		<div hidden id = "quiz-window" class = "draggable window glass" style = "position: absolute; max-width: 620px; min-width: 620px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Little quiz on the video...</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Close" onclick = "close_window('quiz-window')"><i></i></button>
+				</div>
+			</div>
+			<div class = "window-body">
+				<h4>How much did you learn?</h4>
+				<p>It's tiiiimeeee for a quiiiiizzzz!!!!! Everyone's favourite part of the day!</p>
+				<p>Answer the following questions as accurately as you can, and don't hesitate to re-watch the video multiple times if you're not sure!</p>
+				<p>Don't forget to help yourself with the vocabulary list and the notes you were <i>supposed</i> to take during the video <del>but we know you didn't</del>.</p>
+
+				<form id = "form2" onsubmit = "onsubmit_form2(event)">
+					<h5 id = "t0">What is required for companies to comply with the GDPR?</h5>
+					<fieldset>
+						<legend>Please select all correct answers</legend>
+						<div class = "field-row"> <!-- correct -->
+							<input id = "f2-q1-r0" type = "checkbox">
+							<label for = "f2-q1-r0">The consent of their users for data processing</label>
+						</div>
+						<div class = "field-row"> <!-- correct -->
+							<input id = "f2-q1-r1" type = "checkbox">
+							<label for = "f2-q1-r1">Providing notifications to the authorities for data breaches</label>
+						</div>
+						<div class = "field-row">
+							<input id = "f2-q1-r2" type = "checkbox">
+							<label for = "f2-q1-r2">Feeding your cookies to their cat</label>
+						</div>
+						<div class = "field-row"> <!-- correct -->
+							<input id = "f2-q1-r3" type = "checkbox">
+							<label for = "f2-q1-r3">Anonymizing collected data to protect privacy</label>
+						</div>
+					</fieldset>
+
+					<h5 id = "t1">What does "GDPR" stand for?</h5>
+					<fieldset>
+						<legend>Please type the correct answer</legend>
+						<div class = "field-row">
+							<input required style = "width: 300px" id = "f2-text" type = "text" placeholder = "WRITE HERE">
+						</div>
+					</fieldset>
+
+					<h5 id = "t2">What impact did the Brexit have on the application of the GDPR in the UK?</h5>
+					<fieldset>
+						<legend>Please select the correct answer</legend>
+						<div class = "field-row">
+							<input required id = "f2-q2-r0" type = "radio" name = "f2-q2">
+							<label for = "f2-q2-r0">The UK decided to make its own data protection regulation</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f2-q2-r1" type = "radio" name = "f2-q2">
+							<label for = "f2-q2-r1">The UK decided to not adopt any data protection regulation</label>
+						</div>
+						<div class = "field-row"> <!-- correct -->
+							<input required id = "f2-q2-r2" type = "radio" name = "f2-q2">
+							<label for = "f2-q2-r2">None at all</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f2-q2-r3" type = "radio" name = "f2-q2">
+							<label for = "f2-q2-r3">The UK's economy nosedived, which increased unemployment to historic levels. This induced a shortage of the country's most precious resource: teachers. The lack of education that followed made the now-illiterate government workers at the UK's Privacy & Information Security Syndicate (PISS) headquarters get lost in the European Council building. They could not navigate because all the signs and directions were written in a language they called... Rançais. The government workers never came back, and thus could never properly implement the GDPR or any other data protection regulation in the UK. Everyone died. The end.</label>
+						</div>
+					</fieldset>
+
+					<h5 id = "t3">What penalties could companies face if they infringe upon the GDPR?</h5>
+					<fieldset>
+						<legend>Please select all correct answers</legend>
+						<div class = "field-row"> <!-- correct -->
+							<input id = "f2-q3-r0" type = "checkbox">
+							<label for = "f2-q3-r0">Administrative fines of €20 million</label>
+						</div>
+						<div class = "field-row"> <!-- correct -->
+							<input id = "f2-q3-r1" type = "checkbox">
+							<label for = "f2-q3-r1">Administrative fines of 4% of annual global turnover</label>
+						</div>
+						<div class = "field-row">
+							<input id = "f2-q3-r2" type = "checkbox">
+							<label for = "f2-q3-r2">A good ol' spanking</label>
+						</div>
+						<div class = "field-row"> <!-- correct -->
+							<input id = "f2-q3-r3" type = "checkbox">
+							<label for = "f2-q3-r3">A temporary or permanent ban on data processing</label>
+						</div>
+					</fieldset>
+
+					<h5 id = "t4">What does the "right to be forgotten" consist of?</h5>
+					<fieldset>
+						<legend>Please select all correct answers</legend>
+						<div class = "field-row"> <!-- correct -->
+							<input id = "f2-q4-r0" type = "checkbox">
+							<label for = "f2-q4-r0">The right to have your data erased</label>
+						</div>
+						<div class = "field-row">
+							<input id = "f2-q4-r1" type = "checkbox">
+							<label for = "f2-q4-r1">The right to use mind-control on anyone who might have interacted with you in the past</label>
+						</div>
+						<div class = "field-row">
+							<input id = "f2-q4-r2" type = "checkbox">
+							<label for = "f2-q4-r2">The right to have your medical records cleared</label>
+						</div>
+						<div class = "field-row"> <!-- correct -->
+							<input id = "f2-q4-r3" type = "checkbox">
+							<label for = "f2-q4-r3">The right to be removed publicly from online search engines</label>
+						</div>
+					</fieldset>
+
+					<h5 id = "t5">Who is exempt from the "right to be forgotten"?</h5>
+					<fieldset>
+						<legend>Please select all correct answers</legend>
+						<div class = "field-row">
+							<input id = "f2-q5-r0" type = "checkbox">
+							<label for = "f2-q5-r0">Joe's pizza shop</label>
+						</div>
+						<div class = "field-row"> <!-- correct -->
+							<input id = "f2-q5-r1" type = "checkbox">
+							<label for = "f2-q5-r1">Hospitals</label>
+						</div>
+						<div class = "field-row"> <!-- correct -->
+							<input id = "f2-q5-r2" type = "checkbox">
+							<label for = "f2-q5-r2">Government agencies</label>
+						</div>
+						<div class = "field-row"> <!-- correct -->
+							<input id = "f2-q5-r3" type = "checkbox">
+							<label for = "f2-q5-r3">Journalists and the press</label>
+						</div>
+					</fieldset>
+
+					<p>Press the "Click" button to check your answers and show the questions where you answered incorrectly. You can try again until you've got everything right. Once everything is correct, click on "Next" to move on to the last part!</p>
+
+					<input class = "button" id = "survey2" type = "submit" value = "Check">
+					<button type = "button" disabled id = "quiz-next-button" onclick = "open_window('form3-window')">Next</button>
+				</form>
+			</div>
+		</div>
+
+		<div hidden id = "form-window" class = "draggable window glass" style = "position: absolute; min-width: 630px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Small survey</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Close" onclick = "close_window('form-window')"><i></i></button>
+				</div>
+			</div>
+			<div class = "window-body">
+				<h4>How much do you know about the GDPR?</h4>
+				<p>In this little survey, find out how much you <i>really</i> know about the GDPR, and more!</p>
+				<p>Just kidding, you'll only find out about how much you know about the GDPR, nothing else.</p>
+
+				<form id = "form1" onsubmit = "onsubmit_form1(event)">
+					<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input required id = "f1-q1-r0" type = "radio" name = "f1-q1" value = "1" onclick = "document.getElementById('f1-q1-text').hidden = false">
+							<label for = "f1-q1-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f1-q1-r1" type = "radio" name = "f1-q1" value = "2" onclick = "document.getElementById('f1-q1-text').hidden = false">
+							<label for = "f1-q1-r1">I think I've heard of it</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f1-q1-r2" type = "radio" name = "f1-q1" value = "3" onclick = "document.getElementById('f1-q1-text').hidden = true">
+							<label for = "f1-q1-r2">Not at all</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "f1-q1-text" type = "text" placeholder = "Explain what they are in a few words...">
+						</div>
+					</fieldset>
+
+					<h5>Do you know what they are used for?</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input required id = "f1-q2-r0" type = "radio" name = "f1-q2" onclick = "document.getElementById('f1-q2-text').hidden = false">
+							<label for = "f1-q2-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f1-q2-r1" type = "radio" name = "f1-q2" onclick = "document.getElementById('f1-q2-text').hidden = false">
+							<label for = "f1-q2-r1">I think I do</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f1-q2-r2" type = "radio" name = "f1-q2" onclick = "document.getElementById('f1-q2-text').hidden = true">
+							<label for = "f1-q2-r2">Not at all</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "f1-q2-text" type = "text" placeholder = "Explain what they are used for in a few words...">
+						</div>
+					</fieldset>
+
+					<h5>
+						Do you know what your personal data* is used for?<br>
+						<i>*e.g., conversations, search history, favourite books, movies, who your friends are, where you've been, &c</i>
+					</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input required id = "f1-q3-r0" type = "radio" name = "f1-q3" onclick = "document.getElementById('f1-q3-text').hidden = false">
+							<label for = "f1-q3-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f1-q3-r1" type = "radio" name = "f1-q3" onclick = "document.getElementById('f1-q3-text').hidden = false">
+							<label for = "f1-q3-r1">I think I do</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f1-q3-r2" type = "radio" name = "f1-q3" onclick = "document.getElementById('f1-q3-text').hidden = true">
+							<label for = "f1-q3-r2">Not at all</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "f1-q3-text" type = "text" placeholder = "Explain what it is used for in a few words...">
+						</div>
+					</fieldset>
+
+					<h5>Do you know what the GDPR is?</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input required id = "f1-q4-r0" type = "radio" name = "f1-q4" onclick = "document.getElementById('f1-q4-text').hidden = false">
+							<label for = "f1-q4-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f1-q4-r1" type = "radio" name = "f1-q4" onclick = "document.getElementById('f1-q4-text').hidden = false">
+							<label for = "f1-q4-r1">I think I've heard of it</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f1-q4-r2" type = "radio" name = "f1-q4" onclick = "document.getElementById('f1-q4-text').hidden = true">
+							<label for = "f1-q4-r2">Not at all</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "f1-q4-text" type = "text" placeholder = "Explain what it is in a few words...">
+						</div>
+					</fieldset>
 					
-					<button onclick = "active_view_results()">Activate "View results"</button>
-					<button onclick = "yes_cancel_dialog('Are you suuuurrreee??', `Once you're out, you cannot get back in!`, 'bsod()')">Exit presentation now</button>
+					<input class = "button" id = "survey1" type = "submit" value = "Submit">
+					<button class = "vr" type = "button" id = "view-button" onclick = "onclick_view_button()" disabled>View results</button>
+				</form>
+			</div>
+		</div>
+
+		<div hidden id = "form3-window" class = "draggable window glass" style = "position: absolute; min-width: 630px; max-width: 630px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Small survey: le retour</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Close" onclick = "close_window('form3-window')"><i></i></button>
 				</div>
 			</div>
+			<div class = "window-body">
+				<h4>Nearly the end!</h4>
+				<p>It's nearly the end of the presentation! Just ooonneeee more littttlllee thingggggg...</p>
+				<p>We would like to know how much you learned thanks to our presentation, and if you found it epic or not epic. Please answer the questions as honestly as possible!</p>
 
-			<div hidden id = "why-window" class = "draggable window glass" style = "position: absolute; min-width: 400px; max-width: 400px">
-				<div class = "title-bar">
-					<div class = "title-bar-text">Why did we choose to work on this topic?</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Close" onclick = "close_window('why-window')"><i></i></button>
-					</div>
-				</div>
-				<div class = "window-body">
-					<p>Cookies and the GDPR are both oft-talked about subjects nowadays. A lot of new scandals are emerging all around the world about data privacy, and what that entails.<br>Everyone in our group believes that it is a very important subject to understand, and so we made this absolutely stunning presentation for you. Yes, you.</p>
-					<button onclick = "open_window('form-window')">Thank you, next</button>
+				<form id = "form3" onsubmit = "onsubmit_form3(event)">
+					<h5>Did the video allow you to better understand the subject?</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input required id = "f3-q1-r0" type = "radio" name = "f3-q1" value = "1">
+							<label for = "f3-q1-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q1-r1" type = "radio" name = "f3-q1" value = "2">
+							<label for = "f3-q1-r1">I think so...</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q1-r2" type = "radio" name = "f3-q1" value = "3">
+							<label for = "f3-q1-r2">Not at all</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "f3-q1-text" type = "text" placeholder = "Explain your opinion in a few words...">
+						</div>
+					</fieldset>
+					<h5>Did you learn something new on the subject?</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input required id = "f3-q2-r0" type = "radio" name = "f3-q2">
+							<label for = "f3-q2-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q2-r1" type = "radio" name = "f3-q2">
+							<label for = "f3-q2-r1">Only a few things...</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q2-r2" type = "radio" name = "f3-q2">
+							<label for = "f3-q2-r2">Nothing, I have a superior IQ</label> <!-- me too -->
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "f3-q2-text" type = "text" placeholder = "Explain your answer in a few words...">
+						</div>
+					</fieldset>
+
+					<h5>What's your opinion on the GDPR?<br></h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input required id = "f3-q3-r0" type = "radio" name = "f3-q3">
+							<label for = "f3-q3-r0">It's a good thing!</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q3-r1" type = "radio" name = "f3-q3">
+							<label for = "f3-q3-r1">It's probably a good thing... I think...</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q3-r2" type = "radio" name = "f3-q3">
+							<label for = "f3-q3-r2">It's horrible! Please send help!</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" id = "f3-q3-text" type = "text" placeholder = "Explain your answer in a few words...">
+						</div>
+					</fieldset>
+
+					<h5>Do you think you're safe with the GDPR?</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input required id = "f3-q4-r0" type = "radio" name = "f3-q4">
+							<label for = "f3-q4-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q4-r1" type = "radio" name = "f3-q4">
+							<label for = "f3-q4-r1">I'm not sure...</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q4-r2" type = "radio" name = "f3-q4">
+							<label for = "f3-q4-r2">I have trust issues</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "f3-q4-text" type = "text" placeholder = "Explain your answer in a few words...">
+						</div>
+					</fieldset>
+
+					<h5>Are you sometimes afraid that your personal information will end up everywhere on the Internet?</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input required id = "f3-q5-r0" type = "radio" name = "f3-q5">
+							<label for = "f3-q5-r0">Yes, absolutely, I'm a dangerous criminal and have things to hide</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q5-r1" type = "radio" name = "f3-q5">
+							<label for = "f3-q5-r1">I don't think so... but I don't want people peeking at my browser history</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q5-r2" type = "radio" name = "f3-q5">
+							<label for = "f3-q5-r2">I have nothing to hide and I walk around naked everywhere I go :D</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "f3-q5-text" type = "text" placeholder = "Explain your answer in a few words...">
+						</div>
+					</fieldset>
+
+					<h5>Do you feel safe on the Internet?</h5>
+					<fieldset>
+						<legend>Please select your answer</legend>
+						<div class = "field-row">
+							<input required id = "f3-q6-r0" type = "radio" name = "f3-q6">
+							<label for = "f3-q6-r0">Yes, absolutely</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q6-r1" type = "radio" name = "f3-q6">
+							<label for = "f3-q6-r1">It depends on which website...</label>
+						</div>
+						<div class = "field-row">
+							<input required id = "f3-q6-r2" type = "radio" name = "f3-q6">
+							<label for = "f3-q6-r2">Not at all</label>
+						</div>
+						<div class = "field-row">
+							<input style = "width: 300px" hidden id = "f3-q6-text" type = "text" placeholder = "Explain your answer in a few words...">
+						</div>
+					</fieldset>
+					
+					<input class = "button" id = "survey3" type = "submit" value = "Submit">
+					<button class = "vr" type = "button" id = "view-button-survey3" onclick = "onclick_view_button_survey3()" disabled>View results</button>
+				</form>
+			</div>
+		</div>
+
+		<div hidden id = "results-window-survey3" class = "draggable window glass" style = "position: absolute; min-width: 740px; max-width: 740px">
+			<div class = "title-bar">
+				<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Maximize"><i></i></button>
+					<button aria-label = "Close" onclick = "close_window('results-window-survey3')"><i></i></button>
 				</div>
 			</div>
+			<div class = "window-body">
+				<p>Here are the results of the second survey!</p>
+				<p>Click on each tab to see an overview of each question!</p>
 
-			<div hidden id = "quiz-window" class = "draggable window glass" style = "position: absolute; max-width: 620px; min-width: 620px">
-				<div class = "title-bar">
-					<div class = "title-bar-text">Little quiz on the video...</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Close" onclick = "close_window('quiz-window')"><i></i></button>
-					</div>
-				</div>
-				<div class = "window-body">
-					<h4>How much did you learn?</h4>
-					<p>It's tiiiimeeee for a quiiiiizzzz!!!!! Everyone's favourite part of the day!</p>
-					<p>Answer the following questions as accurately as you can, and don't hesitate to re-watch the video multiple times if you're not sure!</p>
-					<p>Don't forget to help yourself with the vocabulary list and the notes you were <i>supposed</i> to take during the video <del>but we know you didn't</del>.</p>
+				<section class = "tabs">
+					<menu role = "tablist">
+						<button role = "tab" aria-controls = "tab1-3" aria-selected = "true">Question 1</button>
+						<button role = "tab" aria-controls = "tab2-3">Question 2</button>
+						<button role = "tab" aria-controls = "tab3-3">Question 3</button>
+						<button role = "tab" aria-controls = "tab4-3">Question 4</button>
+						<button role = "tab" aria-controls = "tab5-3">Question 5</button>
+						<button role = "tab" aria-controls = "tab6-3">Question 6</button>
+						</menu>
 
-					<form id = "form2" onsubmit = "onsubmit_form2(event)">
-						<h5 id = "t0">What is required for companies to comply with the GDPR?</h5>
-						<fieldset>
-							<legend>Please select all correct answers</legend>
-							<div class = "field-row"> <!-- correct -->
-								<input id = "f2-q1-r0" type = "checkbox">
-								<label for = "f2-q1-r0">The consent of their users for data processing</label>
-							</div>
-							<div class = "field-row"> <!-- correct -->
-								<input id = "f2-q1-r1" type = "checkbox">
-								<label for = "f2-q1-r1">Providing notifications to the authorities for data breaches</label>
-							</div>
-							<div class = "field-row">
-								<input id = "f2-q1-r2" type = "checkbox">
-								<label for = "f2-q1-r2">Feeding your cookies to their cat</label>
-							</div>
-							<div class = "field-row"> <!-- correct -->
-								<input id = "f2-q1-r3" type = "checkbox">
-								<label for = "f2-q1-r3">Anonymizing collected data to protect privacy</label>
-							</div>
-						</fieldset>
+					<!-- TODO faudra peut-être enlever la classe 'animate' pcq elle est lente as fuck -->
 
-						<h5 id = "t1">What does "GDPR" stand for?</h5>
-						<fieldset>
-							<legend>Please type the correct answer</legend>
-							<div class = "field-row">
-								<input required style = "width: 300px" id = "f2-text" type = "text" placeholder = "WRITE HERE">
-							</div>
-						</fieldset>
+					<article role = "tabpanel" id = "tab1-3">
+						<h4>Did the video allow you to better understand the subject?</h4>
 
-						<h5 id = "t2">What impact did the Brexit have on the application of the GDPR in the UK?</h5>
-						<fieldset>
-							<legend>Please select the correct answer</legend>
-							<div class = "field-row">
-								<input required id = "f2-q2-r0" type = "radio" name = "f2-q2">
-								<label for = "f2-q2-r0">The UK decided to make its own data protection regulation</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f2-q2-r1" type = "radio" name = "f2-q2">
-								<label for = "f2-q2-r1">The UK decided to not adopt any data protection regulation</label>
-							</div>
-							<div class = "field-row"> <!-- correct -->
-								<input required id = "f2-q2-r2" type = "radio" name = "f2-q2">
-								<label for = "f2-q2-r2">None at all</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f2-q2-r3" type = "radio" name = "f2-q2">
-								<label for = "f2-q2-r3">The UK's economy nosedived, which increased unemployment to historic levels. This induced a shortage of the country's most precious resource: teachers. The lack of education that followed made the now-illiterate government workers at the UK's Privacy & Information Security Syndicate (PISS) headquarters get lost in the European Council building. They could not navigate because all the signs and directions were written in a language they called... Rançais. The government workers never came back, and thus could never properly implement the GDPR or any other data protection regulation in the UK. Everyone died. The end.</label>
-							</div>
-						</fieldset>
+						<div role = "progressbar" class = "" id = "tab1-3">
+							<div id = "f3-q1-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "f3-q1-b0-span">60</span>% of respondents answered yes!</p>
+						<div role = "progressbar" class = "paused">
+							<div id = "f3-q1-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "f3-q1-b1-span">20</span>% of respondents answered they thought it did</p>
+						<div role = "progressbar" class = "error">
+							<div id = "f3-q1-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "f3-q1-b2-span">40</span>% of respondents answered no :(</p>
+						<div id = "jeff1-3"></div>
+					</article>
+					<article role = "tabpanel" id = "tab2-3" hidden>
+						<h4>Did you learn something new on the subject?</h4>
 
-						<h5 id = "t3">What penalties could companies face if they infringe upon the GDPR?</h5>
-						<fieldset>
-							<legend>Please select all correct answers</legend>
-							<div class = "field-row"> <!-- correct -->
-								<input id = "f2-q3-r0" type = "checkbox">
-								<label for = "f2-q3-r0">Administrative fines of €20 million</label>
-							</div>
-							<div class = "field-row"> <!-- correct -->
-								<input id = "f2-q3-r1" type = "checkbox">
-								<label for = "f2-q3-r1">Administrative fines of 4% of annual global turnover</label>
-							</div>
-							<div class = "field-row">
-								<input id = "f2-q3-r2" type = "checkbox">
-								<label for = "f2-q3-r2">A good ol' spanking</label>
-							</div>
-							<div class = "field-row"> <!-- correct -->
-								<input id = "f2-q3-r3" type = "checkbox">
-								<label for = "f2-q3-r3">A temporary or permanent ban on data processing</label>
-							</div>
-						</fieldset>
+						<div role = "progressbar" class = "">
+							<div id = "f3-q2-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "f3-q2-b0-span">60</span>% of respondents answered yes!</p>
+						<div role = "progressbar" class = "paused">
+							<div id = "f3-q2-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "f3-q2-b1-span">20</span>% of respondents answered they'd only learned a few things...</p>
+						<div role = "progressbar" class = "error">
+							<div id = "f3-q2-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "f3-q2-b2-span">40</span>% of respondents answered no, and that they were Big Brain</p>
+						<div id = "jeff2-3"></div>
+					</article>
+					<article role = "tabpanel" id = "tab3-3" hidden>
+						<h4>What's your opinion on the GDPR?</h4>
 
-						<h5 id = "t4">What does the "right to be forgotten" consist of?</h5>
-						<fieldset>
-							<legend>Please select all correct answers</legend>
-							<div class = "field-row"> <!-- correct -->
-								<input id = "f2-q4-r0" type = "checkbox">
-								<label for = "f2-q4-r0">The right to have your data erased</label>
-							</div>
-							<div class = "field-row">
-								<input id = "f2-q4-r1" type = "checkbox">
-								<label for = "f2-q4-r1">The right to use mind-control on anyone who might have interacted with you in the past</label>
-							</div>
-							<div class = "field-row">
-								<input id = "f2-q4-r2" type = "checkbox">
-								<label for = "f2-q4-r2">The right to have your medical records cleared</label>
-							</div>
-							<div class = "field-row"> <!-- correct -->
-								<input id = "f2-q4-r3" type = "checkbox">
-								<label for = "f2-q4-r3">The right to be removed publicly from online search engines</label>
-							</div>
-						</fieldset>
+						<div role = "progressbar" class = "">
+							<div id = "f3-q3-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "f3-q3-b0-span">60</span>% of respondents answered that they thought it was a good thing!</p>
+						<div role = "progressbar" class = "paused">
+							<div id = "f3-q3-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "f3-q3-b1-span">20</span>% of respondents answered they didn't really know...</p>
+						<div role = "progressbar" class = "error">
+							<div id = "f3-q3-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "f3-q3-b2-span">40</span>% of respondents need help</p>
+						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+						<div id = "jeff3-3"></div>
+					</article>
+					<article role = "tabpanel" id = "tab4-3" hidden>
+						<h4>Do you think you're safe with the GDPR?</h4>
 
-						<h5 id = "t5">Who is exempt from the "right to be forgotten"?</h5>
-						<fieldset>
-							<legend>Please select all correct answers</legend>
-							<div class = "field-row">
-								<input id = "f2-q5-r0" type = "checkbox">
-								<label for = "f2-q5-r0">Joe's pizza shop</label>
-							</div>
-							<div class = "field-row"> <!-- correct -->
-								<input id = "f2-q5-r1" type = "checkbox">
-								<label for = "f2-q5-r1">Hospitals</label>
-							</div>
-							<div class = "field-row"> <!-- correct -->
-								<input id = "f2-q5-r2" type = "checkbox">
-								<label for = "f2-q5-r2">Government agencies</label>
-							</div>
-							<div class = "field-row"> <!-- correct -->
-								<input id = "f2-q5-r3" type = "checkbox">
-								<label for = "f2-q5-r3">Journalists and the press</label>
-							</div>
-						</fieldset>
+						<div role = "progressbar" class = "">
+							<div id = "f3-q4-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "f3-q4-b0-span">60</span>% of respondents answered yes!</p>
+						<div role = "progressbar" class = "paused">
+							<div id = "f3-q4-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "f3-q4-b1-span">20</span>% of respondents answered they weren't sure...</p>
+						<div role = "progressbar" class = "error">
+							<div id = "f3-q4-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "f3-q4-b2-span">40</span>% of respondents have trust issues</p>
+						<div id = "jeff4-3"></div>
+					</article>
+					<article role = "tabpanel" id = "tab5-3" hidden>
+						<h4>Are you sometimes afraid that your personal information will end up everywhere on the Internet?</h4>
 
-						<p>Press the "Click" button to check your answers and show the questions where you answered incorrectly. You can try again until you've got everything right. Once everything is correct, click on "Next" to move on to the last part!</p>
+						<div role = "progressbar" class = "">
+							<div id = "f3-q5-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "f3-q5-b0-span">60</span>% of respondents have things to hide</p>
+						<div role = "progressbar" class = "paused">
+							<div id = "f3-q5-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "f3-q5-b1-span">20</span>% of respondents answered they kind of are...</p>
+						<div role = "progressbar" class = "error">
+							<div id = "f3-q5-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "f3-q5-b2-span">40</span>% of respondents are way too naive</p>
+						<div id = "jeff5-3"></div>
+					</article>
+					<article role = "tabpanel" id = "tab6-3" hidden>
+						<h4>Do you feel safe on the Internet?</h4>
 
-						<input class = "button" id = "survey2" type = "submit" value = "Check">
-						<button type = "button" disabled id = "quiz-next-button" onclick = "open_window('form3-window')">Next</button>
-					</form>
+						<div role = "progressbar" class = "">
+							<div id = "f3-q6-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "f3-q6-b0-span">60</span>% of respondents answered yes!</p>
+						<div role = "progressbar" class = "paused">
+							<div id = "f3-q6-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "f3-q6-b1-span">20</span>% of respondents answered that it depended on which website</p>
+						<div role = "progressbar" class = "error">
+							<div id = "f3-q6-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "f3-q6-b2-span">40</span>% of respondents answered no</p>
+						<div id = "jeff6-3"></div>
+					</article>
+				</section>
+			</div>
+		</div>
+
+		<div hidden id = "notepad-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "notepad.png" style = "width: 16px; height: 16px; margin-right: 4px">Notepad</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Maximize"><i></i></button>
+					<button aria-label = "Close" onclick = "close_window('notepad-window')"><i></i></button>
 				</div>
 			</div>
-
-			<div hidden id = "form-window" class = "draggable window glass" style = "position: absolute; min-width: 630px">
-				<div class = "title-bar">
-					<div class = "title-bar-text">Small survey</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Close" onclick = "close_window('form-window')"><i></i></button>
-					</div>
-				</div>
-				<div class = "window-body">
-					<h4>How much do you know about the GDPR?</h4>
-					<p>In this little survey, find out how much you <i>really</i> know about the GDPR, and more!</p>
-					<p>Just kidding, you'll only find out about how much you know about the GDPR, nothing else.</p>
-
-					<form id = "form1" onsubmit = "onsubmit_form1(event)">
-						<h5>Do you know what cookies are? (we're talking about internet cookies, don't try to be funny)</h5>
-						<fieldset>
-							<legend>Please select your answer</legend>
-							<div class = "field-row">
-								<input required id = "f1-q1-r0" type = "radio" name = "f1-q1" value = "1" onclick = "document.getElementById('f1-q1-text').hidden = false">
-								<label for = "f1-q1-r0">Yes, absolutely</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f1-q1-r1" type = "radio" name = "f1-q1" value = "2" onclick = "document.getElementById('f1-q1-text').hidden = false">
-								<label for = "f1-q1-r1">I think I've heard of it</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f1-q1-r2" type = "radio" name = "f1-q1" value = "3" onclick = "document.getElementById('f1-q1-text').hidden = true">
-								<label for = "f1-q1-r2">Not at all</label>
-							</div>
-							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f1-q1-text" type = "text" placeholder = "Explain what they are in a few words...">
-							</div>
-						</fieldset>
-
-						<h5>Do you know what they are used for?</h5>
-						<fieldset>
-							<legend>Please select your answer</legend>
-							<div class = "field-row">
-								<input required id = "f1-q2-r0" type = "radio" name = "f1-q2" onclick = "document.getElementById('f1-q2-text').hidden = false">
-								<label for = "f1-q2-r0">Yes, absolutely</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f1-q2-r1" type = "radio" name = "f1-q2" onclick = "document.getElementById('f1-q2-text').hidden = false">
-								<label for = "f1-q2-r1">I think I do</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f1-q2-r2" type = "radio" name = "f1-q2" onclick = "document.getElementById('f1-q2-text').hidden = true">
-								<label for = "f1-q2-r2">Not at all</label>
-							</div>
-							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f1-q2-text" type = "text" placeholder = "Explain what they are used for in a few words...">
-							</div>
-						</fieldset>
-
-						<h5>
-							Do you know what your personal data* is used for?<br>
-							<i>*e.g., conversations, search history, favourite books, movies, who your friends are, where you've been, &c</i>
-						</h5>
-						<fieldset>
-							<legend>Please select your answer</legend>
-							<div class = "field-row">
-								<input required id = "f1-q3-r0" type = "radio" name = "f1-q3" onclick = "document.getElementById('f1-q3-text').hidden = false">
-								<label for = "f1-q3-r0">Yes, absolutely</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f1-q3-r1" type = "radio" name = "f1-q3" onclick = "document.getElementById('f1-q3-text').hidden = false">
-								<label for = "f1-q3-r1">I think I do</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f1-q3-r2" type = "radio" name = "f1-q3" onclick = "document.getElementById('f1-q3-text').hidden = true">
-								<label for = "f1-q3-r2">Not at all</label>
-							</div>
-							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f1-q3-text" type = "text" placeholder = "Explain what it is used for in a few words...">
-							</div>
-						</fieldset>
-
-						<h5>Do you know what the GDPR is?</h5>
-						<fieldset>
-							<legend>Please select your answer</legend>
-							<div class = "field-row">
-								<input required id = "f1-q4-r0" type = "radio" name = "f1-q4" onclick = "document.getElementById('f1-q4-text').hidden = false">
-								<label for = "f1-q4-r0">Yes, absolutely</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f1-q4-r1" type = "radio" name = "f1-q4" onclick = "document.getElementById('f1-q4-text').hidden = false">
-								<label for = "f1-q4-r1">I think I've heard of it</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f1-q4-r2" type = "radio" name = "f1-q4" onclick = "document.getElementById('f1-q4-text').hidden = true">
-								<label for = "f1-q4-r2">Not at all</label>
-							</div>
-							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f1-q4-text" type = "text" placeholder = "Explain what it is in a few words...">
-							</div>
-						</fieldset>
-						
-						<input class = "button" id = "survey1" type = "submit" value = "Submit">
-						<button class = "vr" type = "button" id = "view-button" onclick = "onclick_view_button()" disabled>View results</button>
-					</form>
+			<div style = "padding: 0" class = "window-body">
+				<textarea style = "margin-bottom: -3px; min-width: 400px; min-height: 300px">tutoriel 2008 comment ouvrir son explorateur de fichier</textarea>
+			</div>
+		</div>
+		
+		<div hidden id = "results-window" class = "draggable window glass" style = "position: absolute; min-width: 740px">
+			<div class = "title-bar">
+				<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Maximize"><i></i></button>
+					<button aria-label = "Close" onclick = "close_window('results-window')"><i></i></button>
 				</div>
 			</div>
+			<div class = "window-body">
+				<p>Here are the results of the first survey!</p>
+				<p>Click on each tab to see an overview of each question!!!!11</p>
 
-			<div hidden id = "form3-window" class = "draggable window glass" style = "position: absolute; min-width: 630px; max-width: 630px">
-				<div class = "title-bar">
-					<div class = "title-bar-text">Small survey: le retour</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Close" onclick = "close_window('form3-window')"><i></i></button>
-					</div>
-				</div>
-				<div class = "window-body">
-					<h4>Nearly the end!</h4>
-					<p>It's nearly the end of the presentation! Just ooonneeee more littttlllee thingggggg...</p>
-					<p>We would like to know how much you learned thanks to our presentation, and if you found it epic or not epic. Please answer the questions as honestly as possible!</p>
+				<section class = "tabs">
+					<menu role = "tablist">
+						<button role = "tab" aria-controls = "tab1" aria-selected = "true">Question 1</button>
+						<button role = "tab" aria-controls = "tab2">Question 2</button>
+						<button role = "tab" aria-controls = "tab3">Question 3</button>
+						<button role = "tab" aria-controls = "tab4">Question 4</button>
+						</menu>
 
-					<form id = "form3" onsubmit = "onsubmit_form3(event)">
-						<h5>Did the video allow you to better understand the subject?</h5>
-						<fieldset>
-							<legend>Please select your answer</legend>
-							<div class = "field-row">
-								<input required id = "f3-q1-r0" type = "radio" name = "f3-q1" value = "1">
-								<label for = "f3-q1-r0">Yes, absolutely</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q1-r1" type = "radio" name = "f3-q1" value = "2">
-								<label for = "f3-q1-r1">I think so...</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q1-r2" type = "radio" name = "f3-q1" value = "3">
-								<label for = "f3-q1-r2">Not at all</label>
-							</div>
-							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f3-q1-text" type = "text" placeholder = "Explain your opinion in a few words...">
-							</div>
-						</fieldset>
-						<h5>Did you learn something new on the subject?</h5>
-						<fieldset>
-							<legend>Please select your answer</legend>
-							<div class = "field-row">
-								<input required id = "f3-q2-r0" type = "radio" name = "f3-q2">
-								<label for = "f3-q2-r0">Yes, absolutely</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q2-r1" type = "radio" name = "f3-q2">
-								<label for = "f3-q2-r1">Only a few things...</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q2-r2" type = "radio" name = "f3-q2">
-								<label for = "f3-q2-r2">Nothing, I have a superior IQ</label> <!-- me too -->
-							</div>
-							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f3-q2-text" type = "text" placeholder = "Explain your answer in a few words...">
-							</div>
-						</fieldset>
+					<!-- TODO faudra peut-être enlever la classe 'animate' pcq elle est lente as fuck -->
 
-						<h5>What's your opinion on the GDPR?<br></h5>
-						<fieldset>
-							<legend>Please select your answer</legend>
-							<div class = "field-row">
-								<input required id = "f3-q3-r0" type = "radio" name = "f3-q3">
-								<label for = "f3-q3-r0">It's a good thing!</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q3-r1" type = "radio" name = "f3-q3">
-								<label for = "f3-q3-r1">It's probably a good thing... I think...</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q3-r2" type = "radio" name = "f3-q3">
-								<label for = "f3-q3-r2">It's horrible! Please send help!</label>
-							</div>
-							<div class = "field-row">
-								<input style = "width: 300px" id = "f3-q3-text" type = "text" placeholder = "Explain your answer in a few words...">
-							</div>
-						</fieldset>
+					<article role = "tabpanel" id = "tab1">
+						<h4>Do you know what cookies are?</h4>
 
-						<h5>Do you think you're safe with the GDPR?</h5>
-						<fieldset>
-							<legend>Please select your answer</legend>
-							<div class = "field-row">
-								<input required id = "f3-q4-r0" type = "radio" name = "f3-q4">
-								<label for = "f3-q4-r0">Yes, absolutely</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q4-r1" type = "radio" name = "f3-q4">
-								<label for = "f3-q4-r1">I'm not sure...</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q4-r2" type = "radio" name = "f3-q4">
-								<label for = "f3-q4-r2">I have trust issues</label>
-							</div>
-							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f3-q4-text" type = "text" placeholder = "Explain your answer in a few words...">
-							</div>
-						</fieldset>
+						<div role = "progressbar" class = "" id = "tab1">
+							<div id = "f1-q1-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "f1-q1-b0-span">60</span>% of respondents answered yes!</p>
+						<div role = "progressbar" class = "paused">
+							<div id = "f1-q1-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "f1-q1-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+						<div role = "progressbar" class = "error">
+							<div id = "f1-q1-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "f1-q1-b2-span">40</span>% of respondents answered no :(</p>
+						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+						<div id = "jeff1-1"></div>
+					</article>
+					<article role = "tabpanel" id = "tab2" hidden>
+						<h4>Do you know what they are used for?</h4>
 
-						<h5>Are you sometimes afraid that your personal information will end up everywhere on the Internet?</h5>
-						<fieldset>
-							<legend>Please select your answer</legend>
-							<div class = "field-row">
-								<input required id = "f3-q5-r0" type = "radio" name = "f3-q5">
-								<label for = "f3-q5-r0">Yes, absolutely, I'm a dangerous criminal and have things to hide</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q5-r1" type = "radio" name = "f3-q5">
-								<label for = "f3-q5-r1">I don't think so... but I don't want people peeking at my browser history</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q5-r2" type = "radio" name = "f3-q5">
-								<label for = "f3-q5-r2">I have nothing to hide and I walk around naked everywhere I go :D</label>
-							</div>
-							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f3-q5-text" type = "text" placeholder = "Explain your answer in a few words...">
-							</div>
-						</fieldset>
+						<div role = "progressbar" class = "">
+							<div id = "f1-q2-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "f1-q2-b0-span">60</span>% of respondents answered yes!</p>
+						<div role = "progressbar" class = "paused">
+							<div id = "f1-q2-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "f1-q2-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+						<div role = "progressbar" class = "error">
+							<div id = "f1-q2-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "f1-q2-b2-span">40</span>% of respondents answered no :(</p>
+						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+						<div id = "jeff2-1"></div>
+					</article>
+					<article role = "tabpanel" id = "tab3" hidden>
+						<h4>Do you know what your personal data is used for?</h4>
 
-						<h5>Do you feel safe on the Internet?</h5>
-						<fieldset>
-							<legend>Please select your answer</legend>
-							<div class = "field-row">
-								<input required id = "f3-q6-r0" type = "radio" name = "f3-q6">
-								<label for = "f3-q6-r0">Yes, absolutely</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q6-r1" type = "radio" name = "f3-q6">
-								<label for = "f3-q6-r1">It depends on which website...</label>
-							</div>
-							<div class = "field-row">
-								<input required id = "f3-q6-r2" type = "radio" name = "f3-q6">
-								<label for = "f3-q6-r2">Not at all</label>
-							</div>
-							<div class = "field-row">
-								<input style = "width: 300px" hidden id = "f3-q6-text" type = "text" placeholder = "Explain your answer in a few words...">
-							</div>
-						</fieldset>
-						
-						<input class = "button" id = "survey3" type = "submit" value = "Submit">
-						<button class = "vr" type = "button" id = "view-button-survey3" onclick = "onclick_view_button_survey3()" disabled>View results</button>
-					</form>
+						<div role = "progressbar" class = "">
+							<div id = "f1-q3-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "f1-q3-b0-span">60</span>% of respondents answered yes!</p>
+						<div role = "progressbar" class = "paused">
+							<div id = "f1-q3-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "f1-q3-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+						<div role = "progressbar" class = "error">
+							<div id = "f1-q3-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "f1-q3-b2-span">40</span>% of respondents answered no :(</p>
+						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+						<div id = "jeff3-1"></div>
+					</article>
+					<article role = "tabpanel" id = "tab4" hidden>
+						<h4>Do you know what the GDPR is?</h4>
+
+						<div role = "progressbar" class = "">
+							<div id = "f1-q4-b0" style = "width: 60%"></div>
+						</div>
+						<p><span id = "f1-q4-b0-span">60</span>% of respondents answered yes!</p>
+						<div role = "progressbar" class = "paused">
+							<div id = "f1-q4-b1" style = "width: 20%"></div>
+						</div>
+						<p><span id = "f1-q4-b1-span">20</span>% of respondents answered they'd heard of them...</p>
+						<div role = "progressbar" class = "error">
+							<div id = "f1-q4-b2" style = "width: 40%"></div>
+						</div>
+						<p><span id = "f1-q4-b2-span">40</span>% of respondents answered no :(</p>
+						<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
+						<div id = "jeff4-1"></div>
+					</article>
+				</section>
+			</div>
+		</div>
+
+		<div hidden id = "cmd-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Command Prompt</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Maximize"><i></i></button>
+					<button aria-label = "Close" onclick = "close_window('cmd-window')"><i></i></button>
 				</div>
 			</div>
-
-			<div hidden id = "results-window-survey3" class = "draggable window glass" style = "position: absolute; min-width: 740px; max-width: 740px">
-				<div class = "title-bar">
-					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Maximize"><i></i></button>
-						<button aria-label = "Close" onclick = "close_window('results-window-survey3')"><i></i></button>
-					</div>
-				</div>
-				<div class = "window-body">
-					<p>Here are the results of the second survey!</p>
-					<p>Click on each tab to see an overview of each question!</p>
-
-					<section class = "tabs">
-						<menu role = "tablist">
-							<button role = "tab" aria-controls = "tab1-3" aria-selected = "true">Question 1</button>
-							<button role = "tab" aria-controls = "tab2-3">Question 2</button>
-							<button role = "tab" aria-controls = "tab3-3">Question 3</button>
-							<button role = "tab" aria-controls = "tab4-3">Question 4</button>
-							<button role = "tab" aria-controls = "tab5-3">Question 5</button>
-							<button role = "tab" aria-controls = "tab6-3">Question 6</button>
-							</menu>
-
-						<!-- TODO faudra peut-être enlever la classe 'animate' pcq elle est lente as fuck -->
-
-						<article role = "tabpanel" id = "tab1-3">
-							<h4>Did the video allow you to better understand the subject?</h4>
-
-							<div role = "progressbar" class = "" id = "tab1-3">
-								<div id = "f3-q1-b0" style = "width: 60%"></div>
-							</div>
-							<p><span id = "f3-q1-b0-span">60</span>% of respondents answered yes!</p>
-							<div role = "progressbar" class = "paused">
-								<div id = "f3-q1-b1" style = "width: 20%"></div>
-							</div>
-							<p><span id = "f3-q1-b1-span">20</span>% of respondents answered they thought it did</p>
-							<div role = "progressbar" class = "error">
-								<div id = "f3-q1-b2" style = "width: 40%"></div>
-							</div>
-							<p><span id = "f3-q1-b2-span">40</span>% of respondents answered no :(</p>
-							<div id = "jeff1-3"></div>
-						</article>
-						<article role = "tabpanel" id = "tab2-3" hidden>
-							<h4>Did you learn something new on the subject?</h4>
-
-							<div role = "progressbar" class = "">
-								<div id = "f3-q2-b0" style = "width: 60%"></div>
-							</div>
-							<p><span id = "f3-q2-b0-span">60</span>% of respondents answered yes!</p>
-							<div role = "progressbar" class = "paused">
-								<div id = "f3-q2-b1" style = "width: 20%"></div>
-							</div>
-							<p><span id = "f3-q2-b1-span">20</span>% of respondents answered they'd only learned a few things...</p>
-							<div role = "progressbar" class = "error">
-								<div id = "f3-q2-b2" style = "width: 40%"></div>
-							</div>
-							<p><span id = "f3-q2-b2-span">40</span>% of respondents answered no, and that they were Big Brain</p>
-							<div id = "jeff2-3"></div>
-						</article>
-						<article role = "tabpanel" id = "tab3-3" hidden>
-							<h4>What's your opinion on the GDPR?</h4>
-
-							<div role = "progressbar" class = "">
-								<div id = "f3-q3-b0" style = "width: 60%"></div>
-							</div>
-							<p><span id = "f3-q3-b0-span">60</span>% of respondents answered that they thought it was a good thing!</p>
-							<div role = "progressbar" class = "paused">
-								<div id = "f3-q3-b1" style = "width: 20%"></div>
-							</div>
-							<p><span id = "f3-q3-b1-span">20</span>% of respondents answered they didn't really know...</p>
-							<div role = "progressbar" class = "error">
-								<div id = "f3-q3-b2" style = "width: 40%"></div>
-							</div>
-							<p><span id = "f3-q3-b2-span">40</span>% of respondents need help</p>
-							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-							<div id = "jeff3-3"></div>
-						</article>
-						<article role = "tabpanel" id = "tab4-3" hidden>
-							<h4>Do you think you're safe with the GDPR?</h4>
-
-							<div role = "progressbar" class = "">
-								<div id = "f3-q4-b0" style = "width: 60%"></div>
-							</div>
-							<p><span id = "f3-q4-b0-span">60</span>% of respondents answered yes!</p>
-							<div role = "progressbar" class = "paused">
-								<div id = "f3-q4-b1" style = "width: 20%"></div>
-							</div>
-							<p><span id = "f3-q4-b1-span">20</span>% of respondents answered they weren't sure...</p>
-							<div role = "progressbar" class = "error">
-								<div id = "f3-q4-b2" style = "width: 40%"></div>
-							</div>
-							<p><span id = "f3-q4-b2-span">40</span>% of respondents have trust issues</p>
-							<div id = "jeff4-3"></div>
-						</article>
-						<article role = "tabpanel" id = "tab5-3" hidden>
-							<h4>Are you sometimes afraid that your personal information will end up everywhere on the Internet?</h4>
-
-							<div role = "progressbar" class = "">
-								<div id = "f3-q5-b0" style = "width: 60%"></div>
-							</div>
-							<p><span id = "f3-q5-b0-span">60</span>% of respondents have things to hide</p>
-							<div role = "progressbar" class = "paused">
-								<div id = "f3-q5-b1" style = "width: 20%"></div>
-							</div>
-							<p><span id = "f3-q5-b1-span">20</span>% of respondents answered they kind of are...</p>
-							<div role = "progressbar" class = "error">
-								<div id = "f3-q5-b2" style = "width: 40%"></div>
-							</div>
-							<p><span id = "f3-q5-b2-span">40</span>% of respondents are way too naive</p>
-							<div id = "jeff5-3"></div>
-						</article>
-						<article role = "tabpanel" id = "tab6-3" hidden>
-							<h4>Do you feel safe on the Internet?</h4>
-
-							<div role = "progressbar" class = "">
-								<div id = "f3-q6-b0" style = "width: 60%"></div>
-							</div>
-							<p><span id = "f3-q6-b0-span">60</span>% of respondents answered yes!</p>
-							<div role = "progressbar" class = "paused">
-								<div id = "f3-q6-b1" style = "width: 20%"></div>
-							</div>
-							<p><span id = "f3-q6-b1-span">20</span>% of respondents answered that it depended on which website</p>
-							<div role = "progressbar" class = "error">
-								<div id = "f3-q6-b2" style = "width: 40%"></div>
-							</div>
-							<p><span id = "f3-q6-b2-span">40</span>% of respondents answered no</p>
-							<div id = "jeff6-3"></div>
-						</article>
-					</section>
-				</div>
-			</div>
-
-			<div hidden id = "notepad-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
-				<div class = "title-bar">
-					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "notepad.png" style = "width: 16px; height: 16px; margin-right: 4px">Notepad</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Maximize"><i></i></button>
-						<button aria-label = "Close" onclick = "close_window('notepad-window')"><i></i></button>
-					</div>
-				</div>
-				<div style = "padding: 0" class = "window-body">
-					<textarea style = "margin-bottom: -3px; min-width: 400px; min-height: 300px">tutoriel 2008 comment ouvrir son explorateur de fichier</textarea>
-				</div>
-			</div>
-			
-			<div hidden id = "results-window" class = "draggable window glass" style = "position: absolute; min-width: 740px">
-				<div class = "title-bar">
-					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Survey Results</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Maximize"><i></i></button>
-						<button aria-label = "Close" onclick = "close_window('results-window')"><i></i></button>
-					</div>
-				</div>
-				<div class = "window-body">
-					<p>Here are the results of the first survey!</p>
-					<p>Click on each tab to see an overview of each question!!!!11</p>
-
-					<section class = "tabs">
-						<menu role = "tablist">
-							<button role = "tab" aria-controls = "tab1" aria-selected = "true">Question 1</button>
-							<button role = "tab" aria-controls = "tab2">Question 2</button>
-							<button role = "tab" aria-controls = "tab3">Question 3</button>
-							<button role = "tab" aria-controls = "tab4">Question 4</button>
-							</menu>
-
-						<!-- TODO faudra peut-être enlever la classe 'animate' pcq elle est lente as fuck -->
-
-						<article role = "tabpanel" id = "tab1">
-							<h4>Do you know what cookies are?</h4>
-
-							<div role = "progressbar" class = "" id = "tab1">
-								<div id = "f1-q1-b0" style = "width: 60%"></div>
-							</div>
-							<p><span id = "f1-q1-b0-span">60</span>% of respondents answered yes!</p>
-							<div role = "progressbar" class = "paused">
-								<div id = "f1-q1-b1" style = "width: 20%"></div>
-							</div>
-							<p><span id = "f1-q1-b1-span">20</span>% of respondents answered they'd heard of them...</p>
-							<div role = "progressbar" class = "error">
-								<div id = "f1-q1-b2" style = "width: 40%"></div>
-							</div>
-							<p><span id = "f1-q1-b2-span">40</span>% of respondents answered no :(</p>
-							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-							<div id = "jeff1-1"></div>
-						</article>
-						<article role = "tabpanel" id = "tab2" hidden>
-							<h4>Do you know what they are used for?</h4>
-
-							<div role = "progressbar" class = "">
-								<div id = "f1-q2-b0" style = "width: 60%"></div>
-							</div>
-							<p><span id = "f1-q2-b0-span">60</span>% of respondents answered yes!</p>
-							<div role = "progressbar" class = "paused">
-								<div id = "f1-q2-b1" style = "width: 20%"></div>
-							</div>
-							<p><span id = "f1-q2-b1-span">20</span>% of respondents answered they'd heard of them...</p>
-							<div role = "progressbar" class = "error">
-								<div id = "f1-q2-b2" style = "width: 40%"></div>
-							</div>
-							<p><span id = "f1-q2-b2-span">40</span>% of respondents answered no :(</p>
-							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-							<div id = "jeff2-1"></div>
-						</article>
-						<article role = "tabpanel" id = "tab3" hidden>
-							<h4>Do you know what your personal data is used for?</h4>
-
-							<div role = "progressbar" class = "">
-								<div id = "f1-q3-b0" style = "width: 60%"></div>
-							</div>
-							<p><span id = "f1-q3-b0-span">60</span>% of respondents answered yes!</p>
-							<div role = "progressbar" class = "paused">
-								<div id = "f1-q3-b1" style = "width: 20%"></div>
-							</div>
-							<p><span id = "f1-q3-b1-span">20</span>% of respondents answered they'd heard of them...</p>
-							<div role = "progressbar" class = "error">
-								<div id = "f1-q3-b2" style = "width: 40%"></div>
-							</div>
-							<p><span id = "f1-q3-b2-span">40</span>% of respondents answered no :(</p>
-							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-							<div id = "jeff3-1"></div>
-						</article>
-						<article role = "tabpanel" id = "tab4" hidden>
-							<h4>Do you know what the GDPR is?</h4>
-
-							<div role = "progressbar" class = "">
-								<div id = "f1-q4-b0" style = "width: 60%"></div>
-							</div>
-							<p><span id = "f1-q4-b0-span">60</span>% of respondents answered yes!</p>
-							<div role = "progressbar" class = "paused">
-								<div id = "f1-q4-b1" style = "width: 20%"></div>
-							</div>
-							<p><span id = "f1-q4-b1-span">20</span>% of respondents answered they'd heard of them...</p>
-							<div role = "progressbar" class = "error">
-								<div id = "f1-q4-b2" style = "width: 40%"></div>
-							</div>
-							<p><span id = "f1-q4-b2-span">40</span>% of respondents answered no :(</p>
-							<input class = "excel" style = "font-weight: bold;" type = "text" value = "Answers" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Explanation" readonly><br>
-							<div id = "jeff4-1"></div>
-						</article>
-					</section>
-				</div>
-			</div>
-
-			<div hidden id = "cmd-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
-				<div class = "title-bar">
-					<div class = "title-bar-text">Command Prompt</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Maximize"><i></i></button>
-						<button aria-label = "Close" onclick = "close_window('cmd-window')"><i></i></button>
-					</div>
-				</div>
-				<div style = "padding: 0" class = "window-body">
-					<pre style = "background-color: black; color: white">
+			<div style = "padding: 0" class = "window-body">
+				<pre style = "background-color: black; color: white">
 Microsoft&#10094;R&#10095; Windows DOS
 &#10094;C&#10095; Copyright Microsoft Corp 1990-2001.
 <br>C:&#92;WINDOWS&#92;SYSTEM32> brichant.exe
@@ -799,79 +803,78 @@ He will grant you thre--
 I have just been informed tha--
 Ok the great Brichant will grant you NO wishes!<br>
 Loading the GREAT BRICHANT...
-					</pre>
+				</pre>
+			</div>
+		</div>
+
+		<div hidden id = "excel-window" class = "draggable window glass" style = "position: absolute; min-width: 630px; max-width: 630px"> <!-- 200 * 3 + 12 + 24 = 612-->
+			<div class = "title-bar">
+				<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Microsoft Excel 2077 - vocab.xls</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Maximize"><i></i></button>
+					<button aria-label = "Close" onclick = "close_window('excel-window')"><i></i></button>
 				</div>
 			</div>
+			<div style = "padding: 0; overflow-y: scroll" class = "window-body">
+				<input class = "excel" style = "font-weight: bold;" type = "text" value = "English" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "French" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Additional notes" readonly>
+				
+				<input class = "excel" type = "text" value = "To act" readonly><input class = "excel" type = "text" value = "Agir" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Burden" readonly><input class = "excel" type = "text" value = "Fardeau" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "To comply" readonly><input class = "excel" type = "text" value = "Se conformer" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Cookie" readonly><input class = "excel" type = "text" value = "Témoin de connexion" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Corner" readonly><input class = "excel" type = "text" value = "Coin" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Data" readonly><input class = "excel" type = "text" value = "Données" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Database" readonly><input class = "excel" type = "text" value = "Base de données" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Data processing" readonly><input class = "excel" type = "text" value = "Traitement des données" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Exempt from" readonly><input class = "excel" type = "text" value = "Dispensé de" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "GDPR" readonly><input class = "excel" type = "text" value = "RGPD" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "To hire" readonly><input class = "excel" type = "text" value = "Employer" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "To hold" readonly><input class = "excel" type = "text" value = "Conserver" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "To infringe upon" readonly><input class = "excel" type = "text" value = "Enfreindre" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "To involve" readonly><input class = "excel" type = "text" value = "Impliquer" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Lawful" readonly><input class = "excel" type = "text" value = "Dans la légalité" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Legitimate interests" readonly><input class = "excel" type = "text" value = "Intérêts légitimes" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "A load / to load" readonly><input class = "excel" type = "text" value = "Une charge / charger" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Loopholes" readonly><input class = "excel" type = "text" value = "Failles" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Medical records" readonly><input class = "excel" type = "text" value = "Dossiers médicaux" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Path" readonly><input class = "excel" type = "text" value = "Trajet" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Pénalité" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Pop-up" readonly><input class = "excel" type = "text" value = "Fenêtre contextuelle" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "To reply to" readonly><input class = "excel" type = "text" value = "Répondre à" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Search engine" readonly><input class = "excel" type = "text" value = "Moteur de recherche" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Settings" readonly><input class = "excel" type = "text" value = "Réglages" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Spanking" readonly><input class = "excel" type = "text" value = "Fessée" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "To stalk / to track" readonly><input class = "excel" type = "text" value = "Traquer" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Tool" readonly><input class = "excel" type = "text" value = "Outil" readonly><input class = "excel" type = "text">
+				<input class = "excel" type = "text" value = "Turnover" readonly><input class = "excel" type = "text" value = "Chiffres d'affaires" readonly><input class = "excel" type = "text">
+			</div>
+		</div>
 
-			<div hidden id = "excel-window" class = "draggable window glass" style = "position: absolute; min-width: 630px; max-width: 630px"> <!-- 200 * 3 + 12 + 24 = 612-->
-				<div class = "title-bar">
-					<div class = "title-bar-text" style = "display: flex; align-items: center"><img src = "excel.png" style = "width: 16px; height: 16px; margin-right: 4px">Microsoft Excel 2077 - vocab.xls</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Maximize"><i></i></button>
-						<button aria-label = "Close" onclick = "close_window('excel-window')"><i></i></button>
-					</div>
-				</div>
-				<div style = "padding: 0; overflow-y: scroll" class = "window-body">
-					<input class = "excel" style = "font-weight: bold;" type = "text" value = "English" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "French" readonly><input class = "excel" style = "font-weight: bold;" type = "text" value = "Additional notes" readonly>
-					
-					<input class = "excel" type = "text" value = "To act" readonly><input class = "excel" type = "text" value = "Agir" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Burden" readonly><input class = "excel" type = "text" value = "Fardeau" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "To comply" readonly><input class = "excel" type = "text" value = "Se conformer" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Cookie" readonly><input class = "excel" type = "text" value = "Témoin de connexion" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Corner" readonly><input class = "excel" type = "text" value = "Coin" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Data" readonly><input class = "excel" type = "text" value = "Données" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Database" readonly><input class = "excel" type = "text" value = "Base de données" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Data processing" readonly><input class = "excel" type = "text" value = "Traitement des données" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Exempt from" readonly><input class = "excel" type = "text" value = "Dispensé de" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "GDPR" readonly><input class = "excel" type = "text" value = "RGPD" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "To hire" readonly><input class = "excel" type = "text" value = "Employer" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "To hold" readonly><input class = "excel" type = "text" value = "Conserver" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "To infringe upon" readonly><input class = "excel" type = "text" value = "Enfreindre" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "To involve" readonly><input class = "excel" type = "text" value = "Impliquer" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Lawful" readonly><input class = "excel" type = "text" value = "Dans la légalité" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Legitimate interests" readonly><input class = "excel" type = "text" value = "Intérêts légitimes" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "A load / to load" readonly><input class = "excel" type = "text" value = "Une charge / charger" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Loopholes" readonly><input class = "excel" type = "text" value = "Failles" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Medical records" readonly><input class = "excel" type = "text" value = "Dossiers médicaux" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Path" readonly><input class = "excel" type = "text" value = "Trajet" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Penalty" readonly><input class = "excel" type = "text" value = "Pénalité" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Pop-up" readonly><input class = "excel" type = "text" value = "Fenêtre contextuelle" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "To reply to" readonly><input class = "excel" type = "text" value = "Répondre à" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Search engine" readonly><input class = "excel" type = "text" value = "Moteur de recherche" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Settings" readonly><input class = "excel" type = "text" value = "Réglages" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Spanking" readonly><input class = "excel" type = "text" value = "Fessée" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "To stalk / to track" readonly><input class = "excel" type = "text" value = "Traquer" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Tool" readonly><input class = "excel" type = "text" value = "Outil" readonly><input class = "excel" type = "text">
-					<input class = "excel" type = "text" value = "Turnover" readonly><input class = "excel" type = "text" value = "Chiffres d'affaires" readonly><input class = "excel" type = "text">
+		<div hidden id = "brichant-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">THE GREAT BRICHANT!!!</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button aria-label = "Maximize"><i></i></button>
+					<button onclick = "yes_cancel_dialog('SILENCE the GREAT BRICHANT', 'Are you sure you would like to <b>SILENCE</b> the great BRICHANT?', 'alert(`YOU CANNOT SILENCE THE GREAT BRICHANT`)')" aria-label = "Close"><i></i></button>
 				</div>
 			</div>
+			<div style = "padding: 0" class = "window-body">
+				<img src = "brichant.jpg" style = "margin-bottom: -3px"></img>
+			</div>
+		</div>
 
-			<div hidden id = "brichant-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
-				<div class = "title-bar">
-					<div class = "title-bar-text">THE GREAT BRICHANT!!!</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button aria-label = "Maximize"><i></i></button>
-						<button onclick = "yes_cancel_dialog('SILENCE the GREAT BRICHANT', 'Are you sure you would like to <b>SILENCE</b> the great BRICHANT?', 'alert(`YOU CANNOT SILENCE THE GREAT BRICHANT`)')" aria-label = "Close"><i></i></button>
-					</div>
-				</div>
-				<div style = "padding: 0" class = "window-body">
-					<img src = "brichant.jpg" style = "margin-bottom: -3px"></img>
+		<div hidden id = "napster-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
+			<div class = "title-bar">
+				<div class = "title-bar-text">Limewire - Here come the Suns (beetels, 2009)</div>
+				<div class = "title-bar-controls">
+					<button aria-label = "Minimize"><i></i></button>
+					<button onclick = "close_window('napster-window')" aria-label = "Close"><i></i></button>
 				</div>
 			</div>
-
-			<div hidden id = "napster-window" class = "draggable window glass" style = "position: absolute; min-width: 400px">
-				<div class = "title-bar">
-					<div class = "title-bar-text">Limewire - Here come the Suns (beetels, 2009)</div>
-					<div class = "title-bar-controls">
-						<button aria-label = "Minimize"><i></i></button>
-						<button onclick = "close_window('napster-window')" aria-label = "Close"><i></i></button>
-					</div>
-				</div>
-				<div style = "padding: 0" class = "window-body">
-					<img src = "napster.png" style = "margin-bottom: -3px" onclick = "close_window('napster-window');info_dialog('FBI', 'What you are doing is copyright infringement and piracy, and I am here to inform you that this is, in fact, illegal activity, sir.<br><br><a target = \'_blank\' href = \'https:\/\/www.youtube.com/watch?v=qJK_9eyRQl8\'>How would you feel if you were some multi-millionaire and some <i>&quot;people&quot;</i> decided to download your music for free?</a>', `I'm sorry :(`)"></img>
-				</div>
+			<div style = "padding: 0" class = "window-body">
+				<img src = "napster.png" style = "margin-bottom: -3px" onclick = "close_window('napster-window');info_dialog('FBI', 'What you are doing is copyright infringement and piracy, and I am here to inform you that this is, in fact, illegal activity, sir.<br><br><a target = \'_blank\' href = \'https:\/\/www.youtube.com/watch?v=qJK_9eyRQl8\'>How would you feel if you were some multi-millionaire and some <i>&quot;people&quot;</i> decided to download your music for free?</a>', `I'm sorry :(`)"></img>
 			</div>
 		</div>
 
@@ -1425,29 +1428,27 @@ Loading the GREAT BRICHANT...
 				return booleanArray;
 			}
 
-			document.addEventListener("DOMContentLoaded", function(event) {
-				// from khang-nd.github.io/7.css
-				// again, I didn't write this ugly-ass shit
-				// I did change the spaces into tabs though, I just couldn't leave it as it was
-				// Yeah I agree, I cant understand people who use spaces
+			// from khang-nd.github.io/7.css
+			// again, I didn't write this ugly-ass shit
+			// I did change the spaces into tabs though, I just couldn't leave it as it was
+			// Yeah I agree, I cant understand people who use spaces
 
-				const tabButtons = document.querySelectorAll("[role=tab]");
-				tabButtons.forEach((tabButton) => {
-					tabButton.addEventListener("click", (e) => {
-						e.preventDefault();
-						const tabContainer = e.target.parentElement.parentElement;
-						const targetId = e.target.getAttribute("aria-controls");
-						tabButtons.forEach((_tabButton) =>
-							_tabButton.setAttribute("aria-selected", false)
-						);
-						tabButton.setAttribute("aria-selected", true);
-						tabContainer
-							.querySelectorAll("[role=tabpanel]")
-							.forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
-						tabContainer
-							.querySelector(`[role=tabpanel]#${targetId}`)
-							.removeAttribute("hidden");
-					});
+			const tabButtons = document.querySelectorAll("[role=tab]");
+			tabButtons.forEach((tabButton) => {
+				tabButton.addEventListener("click", (e) => {
+					e.preventDefault();
+					const tabContainer = e.target.parentElement.parentElement;
+					const targetId = e.target.getAttribute("aria-controls");
+					tabButtons.forEach((_tabButton) =>
+						_tabButton.setAttribute("aria-selected", false)
+					);
+					tabButton.setAttribute("aria-selected", true);
+					tabContainer
+						.querySelectorAll("[role=tabpanel]")
+						.forEach((tabPanel) => tabPanel.setAttribute("hidden", true));
+					tabContainer
+						.querySelector(`[role=tabpanel]#${targetId}`)
+						.removeAttribute("hidden");
 				});
 			});
 		</script>
