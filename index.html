@@ -395,6 +395,8 @@
 						</div>
 					</fieldset>
 					
+					<h5 class = "vr-disclaimer">You must complete the whole presentation before you can view the results!</h5>
+
 					<input class = "button" id = "survey1" type = "submit" value = "Submit">
 					<button class = "vr" type = "button" id = "view-button" onclick = "onclick_view_button()" disabled>View results</button>
 				</form>
@@ -534,6 +536,8 @@
 						</div>
 					</fieldset>
 					
+					<h5 class = "vr-disclaimer">You must complete the whole presentation before you can view the results!</h5>
+
 					<input class = "button" id = "survey3" type = "submit" value = "Submit">
 					<button class = "vr" type = "button" id = "view-button-survey3" onclick = "onclick_view_button_survey3()" disabled>View results</button>
 				</form>
@@ -1037,6 +1041,10 @@ Loading the GREAT BRICHANT...
 			function active_view_results() {
 				for (_ of document.getElementsByClassName("vr")) {
 					_.disabled = false;
+				}
+
+				for (_ of document.getElementsByClassName("vr-disclaimer")) {
+					_.hidden = true;
 				}
 			}
 
