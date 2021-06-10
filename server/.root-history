@@ -1,0 +1,16 @@
+#+1614879519
+pkg remove sudo
+#+1614879540
+pkg install zsh
+#+1614879582
+exit
+#+1614879594
+pkg install nano
+#+1614879600
+nano ~/.zshrc
+#+1614879613
+exit
+#+1614879743
+chsh -s zsh
+#+1614879746
+exit

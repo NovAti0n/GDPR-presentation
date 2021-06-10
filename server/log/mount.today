@@ -1,0 +1,4 @@
+/dev/gpt/rootfs		/			ufs	rw		1 1
+/dev/vtbd1		/var/lib/cloud/seed/config_drive cd9660	ro		0 0
+devfs			/dev			devfs	rw		0 0
+fdescfs			/dev/fd			fdescfs	rw		0 0

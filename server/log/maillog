@@ -1,0 +1,22 @@
+Jun 10 00:00:00 paquet newsyslog[11043]: logfile turned over
+Jun 10 03:01:00 paquet sendmail[11480]: gethostbyaddr(167.172.172.108) failed: 1
+Jun 10 03:01:00 paquet sendmail[11480]: gethostbyaddr(10.19.0.5) failed: 1
+Jun 10 03:01:00 paquet sendmail[11480]: gethostbyaddr(10.114.0.2) failed: 1
+Jun 10 03:01:00 paquet sendmail[11531]: gethostbyaddr(167.172.172.108) failed: 1
+Jun 10 03:01:00 paquet sendmail[11531]: gethostbyaddr(10.19.0.5) failed: 1
+Jun 10 03:01:00 paquet sendmail[11531]: gethostbyaddr(10.114.0.2) failed: 1
+Jun 10 03:01:55 paquet sendmail[11695]: 15A31te2011695: from=root, size=248226, class=0, nrcpts=1, msgid=<202106100301.15A31te2011695@paquet>, relay=root@localhost
+Jun 10 03:01:55 paquet sm-mta[11720]: STARTTLS=server, relay=localhost [127.0.0.1], version=TLSv1.3, verify=NO, cipher=TLS_AES_256_GCM_SHA384, bits=256/256
+Jun 10 03:01:55 paquet sendmail[11695]: STARTTLS=client, relay=[127.0.0.1], version=TLSv1.3, verify=FAIL, cipher=TLS_AES_256_GCM_SHA384, bits=256/256
+Jun 10 03:01:55 paquet sendmail[11737]: gethostbyaddr(167.172.172.108) failed: 1
+Jun 10 03:01:55 paquet sendmail[11737]: gethostbyaddr(10.19.0.5) failed: 1
+Jun 10 03:01:55 paquet sendmail[11737]: gethostbyaddr(10.114.0.2) failed: 1
+Jun 10 03:01:55 paquet sm-mta[11720]: 15A31ttC011720: from=<root@paquet>, size=248498, class=0, nrcpts=1, msgid=<202106100301.15A31te2011695@paquet>, proto=ESMTPS, daemon=Daemon0, relay=localhost [127.0.0.1]
+Jun 10 03:01:55 paquet sendmail[11695]: 15A31te2011695: to=root, ctladdr=root (0/0), delay=00:00:00, xdelay=00:00:00, mailer=relay, pri=278226, relay=[127.0.0.1] [127.0.0.1], dsn=2.0.0, stat=Sent (15A31ttC011720 Message accepted for delivery)
+Jun 10 03:01:55 paquet sm-mta[11767]: 15A31ttC011720: to=<root@paquet>, ctladdr=<root@paquet> (0/0), delay=00:00:00, xdelay=00:00:00, mailer=local, pri=278782, relay=local, dsn=2.0.0, stat=Sent
+Jun 10 03:02:05 paquet sendmail[11773]: 15A325Ym011773: from=root, size=2180, class=0, nrcpts=1, msgid=<202106100302.15A325Ym011773@paquet>, relay=root@localhost
+Jun 10 03:02:05 paquet sendmail[11773]: STARTTLS=client, relay=[127.0.0.1], version=TLSv1.3, verify=FAIL, cipher=TLS_AES_256_GCM_SHA384, bits=256/256
+Jun 10 03:02:05 paquet sm-mta[11776]: STARTTLS=server, relay=localhost [127.0.0.1], version=TLSv1.3, verify=NO, cipher=TLS_AES_256_GCM_SHA384, bits=256/256
+Jun 10 03:02:05 paquet sm-mta[11776]: 15A325rl011776: from=<root@paquet>, size=2452, class=0, nrcpts=1, msgid=<202106100302.15A325Ym011773@paquet>, proto=ESMTPS, daemon=Daemon0, relay=localhost [127.0.0.1]
+Jun 10 03:02:05 paquet sendmail[11773]: 15A325Ym011773: to=root, ctladdr=root (0/0), delay=00:00:00, xdelay=00:00:00, mailer=relay, pri=32180, relay=[127.0.0.1] [127.0.0.1], dsn=2.0.0, stat=Sent (15A325rl011776 Message accepted for delivery)
+Jun 10 03:02:05 paquet sm-mta[11777]: 15A325rl011776: to=<root@paquet>, ctladdr=<root@paquet> (0/0), delay=00:00:00, xdelay=00:00:00, mailer=local, pri=32736, relay=local, dsn=2.0.0, stat=Sent

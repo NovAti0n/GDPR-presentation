@@ -1,0 +1,32 @@
+2021-03-04 17:35:43 [unknown:groupadd] freebsd(1001)
+2021-03-04 17:35:43 [unknown:useradd] freebsd(1001):freebsd(1001):FreeBSD:/usr/home/freebsd:/bin/sh
+2021-03-04 17:35:43 [unknown:useradd] freebsd(1001) home /usr/home/freebsd made
+2021-03-04 19:20:18 [freebsd:groupadd] madame(1002)
+2021-03-04 19:20:18 [freebsd:useradd] madame(1002):madame(1002):Madame Paquet:/home/madame:/usr/local/bin/zsh
+2021-03-04 19:20:18 [freebsd:useradd] madame(1002) home /home/madame made
+2021-03-04 19:37:20 [root:usermod] madame(1002):madame(1002):Madame Paquet:/home/madame:/usr/local/bin/zsh
+2021-03-04 21:02:41 [madame:groupadd] _tss(601)
+2021-03-04 21:02:41 [madame:useradd] _tss(601):_tss(601):TCG Software Stack user:/var/empty:/usr/sbin/nologin
+2021-03-04 21:02:42 [madame:groupadd] messagebus(556)
+2021-03-04 21:02:42 [madame:useradd] messagebus(556):messagebus(556):D-BUS Daemon User:/nonexistent:/usr/sbin/nologin
+2021-03-04 21:02:51 [madame:groupadd] avahi(558)
+2021-03-04 21:02:51 [madame:useradd] avahi(558):avahi(558):Avahi Daemon User:/nonexistent:/usr/sbin/nologin
+2021-03-04 21:02:51 [madame:groupadd] polkitd(565)
+2021-03-04 21:02:51 [madame:useradd] polkitd(565):polkitd(565):Polkit Daemon User:/var/empty:/usr/sbin/nologin
+2021-03-04 21:02:57 [madame:groupadd] cups(193)
+2021-03-04 21:02:57 [madame:useradd] cups(193):cups(193):Cups Owner:/nonexistent:/usr/sbin/nologin
+2021-03-04 21:02:59 [madame:groupadd] colord(970)
+2021-03-04 21:02:59 [madame:useradd] colord(970):colord(970):colord color management daemon:/nonexistent:/usr/sbin/nologin
+2021-03-04 21:11:13 [madame:userdel] avahi(558) account removed
+2021-03-04 21:13:10 [madame:userdel] messagebus(556) account removed
+2021-03-04 21:13:19 [madame:userdel] polkitd(565) account removed
+2021-03-06 16:00:06 [madame:groupadd] git_daemon(964)
+2021-03-06 16:00:06 [madame:useradd] git_daemon(964):git_daemon(964):git daemon:/nonexistent:/usr/sbin/nologin
+2021-03-11 22:14:41 [madame:groupadd] messagebus(556)
+2021-03-11 22:14:41 [madame:useradd] messagebus(556):messagebus(556):D-BUS Daemon User:/nonexistent:/usr/sbin/nologin
+2021-03-11 22:14:48 [madame:groupadd] avahi(558)
+2021-03-11 22:14:48 [madame:useradd] avahi(558):avahi(558):Avahi Daemon User:/nonexistent:/usr/sbin/nologin
+2021-03-11 22:14:48 [madame:groupadd] polkitd(565)
+2021-03-11 22:14:48 [madame:useradd] polkitd(565):polkitd(565):Polkit Daemon User:/var/empty:/usr/sbin/nologin
+2021-03-11 22:15:10 [madame:groupadd] _sndio(702)
+2021-03-11 22:15:10 [madame:useradd] _sndio(702):_sndio(702):sndio privsep:/var/empty:/usr/sbin/nologin

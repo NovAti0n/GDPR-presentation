@@ -1,0 +1,247 @@
+: 1614879761:0;pkg install zsh-syntax-highlighting
+: 1614879770:0;pkg install zsh-autosuggestions
+: 1614879894:0;pkg install nginx
+: 1614879899:0;rehash
+: 1614879925:0;grep -i "rcvar" /usr/local/etc/rc.d/*
+: 1614879939:0;nano /etc/rc.conf
+: 1614880073:0;exec zsh
+: 1614880077:0;nano /etc/pas
+: 1614880079:0;nano /etc/passwd
+: 1614880118:0;cd /usr/local/
+: 1614880124:0;cd www
+: 1614880137:0;mkdir gdpr-presentation.com
+: 1614880139:0;cd gdpr-presentation.com
+: 1614880160:0;mkdir html
+: 1614880161:0;cd html
+: 1614880233:0;chown -R www:www /usr/local/www/gdpr-presentation.com
+: 1614880247:0;chmod -R 755 /usr/local/www/gdpr-presentation.com
+: 1614880761:0;pkg sudo
+: 1614880765:0;pkg install sudo
+: 1614880812:0;pkg remove sudo
+: 1614880927:0;nano /etc/periodic.conf
+: 1614880939:0;pkg info py37-certbot
+: 1614880980:0;pkg help
+: 1614881005:0;pkg config py37-certbot
+: 1614881013:0;pkg htop py37-certbot
+: 1614881036:0;man pkg
+: 1614881052:0;pkg install py37-certbot
+: 1614881060:0;cat /etc/periodic.conf
+: 1614884629:0;mv /usr/local/www/gdpr-presentation.com /usr/local/www/gdpr-presentation.tech
+: 1614884678:0;locate nginx
+: 1614884729:0;rm /var/log/nginx/gdpr-presentation.com.*
+: 1614885310:0;/usr/libexec/locate.updatedb
+: 1614885318:0;locate cert
+: 1614885320:0;locate cert.pem
+: 1614885369:0;ls /usr/local/etc/letsencrypt/live/gdpr-presentation.tech/cert.key
+: 1614885378:0;locate cert.key
+: 1614885390:0;certbot certonly --standalone
+: 1614885571:0;adduser
+: 1614885686:0;rmuser freebsd
+: 1614885763:0;sshd_config
+: 1614885794:0;reboot
+: 1614885897:0;openssl req -new -newkey rsa:2048 -nodes -keyout gdpr-presentation.key -out gdpr-presentation.csr
+: 1614885986:0;cat gdpr-presentation.key
+: 1614886005:0;cat gdpr-presentation.csr
+: 1614886093:0;nano /etc/ssh/ssh_config
+: 1614886174:0;ls .ssh
+: 1614886201:0;cp -R /home/freebsd/.ssh /home/madame/.ssh
+: 1614886206:0;sl
+: 1614886219:0;chown madame: .ssh
+: 1614886274:0;login
+: 1614886352:0;cd /home/madame
+: 1614886354:0;cd .ssh
+: 1614886360:0;chown -R madame: .ssh
+: 1614886384:0;service sshd reload
+: 1614886563:0;pwd
+: 1614886566:0;rm gdpr-presentation.*
+: 1614886640:0;pw usermod madame -G wheel
+: 1614886644:0;login madame
+: 1614887599:0;mkdir -p /usr/local/etc/ssl_keys/gdpr-presentation.tech
+: 1614887621:0;mv server.* /usr/local/etc/ssl_keys/gdpr-presentation.tech
+: 1614887625:0;ls /usr/local/etc/ssl_keys/gdpr-presentation.tech
+: 1614887671:0;nano considerations.md
+: 1614887712:0;rm -rf /usr/local/etc/letsencrypt/
+: 1614887724:0;pkg remove py37-certbot
+: 1614887747:0;ls /usr/local/etc/ssl_keys/gdpr-presentation.tech/server.key
+: 1614888811:0;nginx -t
+: 1614890429:0;rm server.*
+: 1614890433:0;cd é~
+: 1614890439:0;cd ~
+: 1614890510:0;mv server.crt /usr/local/etc/ssl_keys/gdpr-presentation.tech
+: 1614890525:0;mv server.key /usr/local/etc/ssl_keys/gdpr-presentation.tech
+: 1614890532:0;cd /us
+: 1614890557:0;cd /usr/local/etc/ssl_keys
+: 1614890562:0;ls gdpr-presentation.tech
+: 1614890571:0;cat gdpr-presentation.tech/server.crt
+: 1614890652:0;ls /usr/local/www/gdpr-presentation.tech/html
+: 1614891051:0;sed -i '' "s/    /\t/g"
+: 1614891071:0;cat /usr/local/etc/nginx/nginx.conf
+: 1614891225:0;sed -i '' "s/    /\t/g" /usr/local/etc/nginx/nginx.conf
+: 1614891426:0;pkg install xcalc
+: 1614891591:0;nano /etc/ssh/sshd_config
+: 1614891608:0;pkg install xauth
+: 1614891729:0;pkg install geany
+: 1614891851:0;pkg remove geany
+: 1614891858:0;pkg install xnedit
+: 1614891861:0;pkg install xedit
+: 1614891923:0;service nginx r
+: 1614891925:0;xedit
+: 1614891940:0;xedit /usr/local/etc/nginx/nginx.conf
+: 1614892175:0;pkg remove adwaita-icon-theme
+: 1614892187:0;pkg remove argyllcms
+: 1614892198:0;pkg remove at-spi2-atk
+: 1614892208:0;pkg remove at-spi2-core
+: 1614892244:0;pkg remove atk
+: 1614892250:0;pkg remove -y bash
+: 1614892253:0;pkg remove -y bash-completion
+: 1614892260:0;pkg remove -y avahi-app
+: 1614892267:0;rmuser avahi
+: 1614892277:0;rmgroup avahi
+: 1614892318:0;pw grouprm avahi
+: 1614892321:0;pw groupremove avahi
+: 1614892351:0;pw groupshow avahi
+: 1614892362:0;pkg remove -y cairo
+: 1614892368:0;pkg remove -y colord
+: 1614892375:0;pkg remove -y cups
+: 1614892378:0;pkg remove -y dbus
+: 1614892387:0;rmuser messagebus
+: 1614892397:0;rmuser polkitd
+: 1614892406:0;pkg remove -y dejavu
+: 1614892413:0;pkg remove -y desktop-file-utils
+: 1614892418:0;pkg remove -y encodings
+: 1614892423:0;pkg remove -y font-bh-ttf
+: 1614892431:0;pkg remove -y font-misc-ethiopic
+: 1614892442:0;pkg remove -y font-misc-meltho
+: 1614892449:0;pkg remove -y fribidi
+: 1614892455:0;pkg remove -y gdbm
+: 1614892483:0;pkg remove -y gdk-pixbuf2
+: 1614892488:0;pkg remove -y geany
+: 1614892491:0;pkg remove -y glib
+: 1614892494:0;pkg remove -y gmp
+: 1614892500:0;pkg remove -y gnome_subr
+: 1614892505:0;pkg remove -y gnutls
+: 1614892514:0;pkg remove -y graphite2
+: 1614892519:0;pkg remove -y gtk-update-icon-cache
+: 1614892524:0;pkg remove -y gtk2
+: 1614892525:0;pkg remove -y gtk3
+: 1614892530:0;pkg remove -y harfbuzz
+: 1614892539:0;pkg remove -y hicolor-icon-theme
+: 1614892543:0;pkg remove -y icu
+: 1614892548:0;pkg remove -y jbigkit
+: 1614892553:0;pkg remove -y jpeg-turbo
+: 1614892557:0;pkg remove -y lcms2
+: 1614892563:0;pkg remove -y libXScrnSaver
+: 1614892574:0;pkg autoremove
+: 1614892597:0;pkg remove -y wayland
+: 1614892602:0;pkg remove -y libunwind
+: 1614892606:0;pkg remove -y tiff
+: 1614892608:0;df
+: 1614892635:0;cd /usr
+: 1614892638:0;du -h /
+: 1614892647:0;du -h .
+: 1614894388:0;echo $((300 * 1.6667))
+: 1614894423:0;echo $((300 * 16/9))
+: 1614894914:0;ext
+: 1614945629:0;nano /usr/local/www/gdpr-presentation.com/html/index.html
+: 1614951047:0;nano /usr/local/www/gdpr-presentation.tech/html/index.html
+: 1614954278:0;ls english-presentation
+: 1614954282:0;rmdir english-presentation
+: 1614954571:0;mv english-presentation/* /usr/local/www/gdpr-presentation.tech/html
+: 1615046274:0;pkg install gpit
+: 1615046283:0;pkg install gitlite
+: 1615046359:0;pkg install git
+: 1615046419:0;svnlite --version
+: 1615046425:0;svnlite 
+: 1615046431:0;pkg info svn
+: 1615046434:0;pkg info svnlite
+: 1615046464:0;pkg info subversion
+: 1615046809:0;ls .gpit
+: 1615046810:0;ls .git
+: 1615046817:0;cat .git/config
+: 1615047503:0;cd ..
+: 1615047508:0;service nginx stop
+: 1615047512:0;rm -rf html
+: 1615047534:0;git clone https://github.com/novati0n/gdpr-presentation
+: 1615047543:0;mv gdpr-presentation html
+: 1615047547:0;service nginx start
+: 1615048615:0;echo $((265-248+1))
+: 1615053603:0;nano /usr/local/etc/nginx/nginx.conf
+: 1615053608:0;service nginx reload
+: 1615071289:0;nano /etc/crontab
+: 1615071428:0;nano index.html
+: 1615500848:0;pkg install chromium
+: 1615500936:0;mkdir padlet-autoliker
+: 1615500996:0;chown -R madame: padlet-autoliker
+: 1615501014:0;pkg install selenium
+: 1615501026:0;pkg install python3.7-pip
+: 1615501030:0;pkg install python-pip
+: 1615501034:0;pkg install pip-3.7
+: 1615501035:0;pkg install pip
+: 1615501046:0;pkg install python3.7
+: 1615501049:0;pkg install python
+: 1615501067:0;pkg remove python
+: 1615501098:0;pkg install py37-pip
+: 1615916277:0;git stash
+: 1615917686:0;git config pull.rebase false
+: 1615998080:0;python3
+: 1616001439:0;sudo su
+: 1616001443:0;su
+: 1616001563:0;clear
+: 1616104014:0;cat index.html| grep close_window(\'final\
+
+: 1616104019:0;cat index.html| grep "close_window('final"\
+
+: 1616950230:0;mkdir ncc-prototype
+: 1616950244:0;rm -rf .git
+: 1616950253:0;git config --global init.defaultBranch main
+: 1616950257:0;git init .
+: 1616950277:0;git remote add origin https://github.com/NoCrapCorporation/news-template
+: 1617003596:0;ls
+: 1617003949:0;git add .
+: 1617003954:0;git commit -m "Does charset work here"
+: 1617003964:0;git commit -m "Does charset work here?"
+: 1617010062:0;cd ncc-prototype
+: 1617135319:0;pkg install htop
+: 1617135334:0;exiy
+: 1617135389:0;killall chrome
+: 1617135391:0;killall chromedriver
+: 1617135558:0;pkg install java
+: 1617135561:0;pkg install openjdk
+: 1617135609:0;whoami
+: 1617135693:0;pkg remove openjdk
+: 1617135698:0;pkg install openjdk13
+: 1617135725:0;cat /etc/fstab
+: 1617135729:0;mount -al
+: 1619187775:0;pkg install neofetch
+: 1619187794:0;neofetch
+: 1619187841:0;mv neofetch.sh /usr/local/bin/ne
+: 1619187852:0;mv /usr/local/bin/ne /usr/local/bin/neofetch
+: 1619187874:0;chmod +x /usr/local/bin/neofetch
+: 1619786923:0;echo "source /home/madame/.zshrc" > .zshrc
+: 1619786941:0;cat .zshrc
+: 1619786953:0;mv .zshrc ~/.zshrc
+: 1619786954:0;exixt
+: 1619787274:0;git pull 
+: 1619787291:0;neofetch --ascii_distro aqua
+: 1619787360:0;pkg install xterm
+: 1619787370:0;pkg remove xedit
+: 1619787536:0;cd /usr/local/www/gdpr-presentation.tech/html
+: 1619787537:0;git pull origin main
+: 1619819865:0;vidcontrol -i mode /dev/ttyv0
+: 1620113304:0;pkg install lolcat
+: 1620113328:0;pkg install fortune
+: 1620113334:0;fortune
+: 1620113338:0;pkg search fortune
+: 1620113361:0;pkg install cowsay
+: 1622750922:0;pkg remove chromium
+: 1622750928:0;pkg t
+: 1622750958:0;pkg upgrade
+: 1622751627:0;pkg audit
+: 1623338851:0;cp -R log/ /home/madame/log
+: 1623338867:0;chown -R madame: log
+: 1623338870:0;exit
+: 1623338991:0;cat .history
+: 1623338995:0;cat ~/.history
+: 1623339005:0;cat ~/.histfile
+: 1623339016:0;neofetch --ascii_distro aqua
+: 1623339040:0;cp ~/.histfile .root-histfile

@@ -1,0 +1,42 @@
+561827 -r-sr-xr--  1 root  operator     11184 Oct 23 05:33:52 2020 /sbin/mksnap_ffs
+561862 -r-sr-xr-x  1 root  wheel        32552 Oct 23 05:34:00 2020 /sbin/ping
+561821 -r-sr-xr-x  1 root  wheel        41456 Oct 23 05:34:09 2020 /sbin/ping6
+561825 -r-sr-xr--  2 root  operator     16024 Oct 23 05:34:06 2020 /sbin/poweroff
+561825 -r-sr-xr--  2 root  operator     16024 Oct 23 05:34:06 2020 /sbin/shutdown
+ 80309 -r-sr-xr-x  4 root  wheel        29544 Oct 23 05:37:10 2020 /usr/bin/at
+ 80309 -r-sr-xr-x  4 root  wheel        29544 Oct 23 05:37:10 2020 /usr/bin/atq
+ 80309 -r-sr-xr-x  4 root  wheel        29544 Oct 23 05:37:10 2020 /usr/bin/atrm
+ 80309 -r-sr-xr-x  4 root  wheel        29544 Oct 23 05:37:10 2020 /usr/bin/batch
+ 80286 -r-xr-sr-x  1 root  kmem         14016 Oct 23 05:37:10 2020 /usr/bin/btsockstat
+ 80445 -r-sr-xr-x  1 root  wheel        23928 Oct 23 05:36:51 2020 /usr/bin/chpass
+ 80495 -r-sr-xr-x  1 root  wheel        34960 Oct 23 05:37:44 2020 /usr/bin/crontab
+ 80492 -r-sr-xr-x  1 root  wheel        12080 Oct 23 05:36:57 2020 /usr/bin/lock
+ 80565 -r-sr-xr-x  1 root  wheel        26248 Oct 23 05:36:57 2020 /usr/bin/login
+ 80587 -r-sr-sr-x  1 root  daemon       35536 Oct 23 05:38:13 2020 /usr/bin/lpq
+ 80485 -r-sr-sr-x  1 root  daemon       41024 Oct 23 05:38:13 2020 /usr/bin/lpr
+ 80425 -r-sr-sr-x  1 root  daemon       33280 Oct 23 05:38:13 2020 /usr/bin/lprm
+ 80436 -r-xr-sr-x  1 root  kmem        152864 Oct 23 05:37:01 2020 /usr/bin/netstat
+ 80278 -r-sr-xr-x  1 root  wheel         7400 Oct 23 05:37:02 2020 /usr/bin/opieinfo
+ 80621 -r-sr-xr-x  1 root  wheel        14704 Oct 23 05:37:02 2020 /usr/bin/opiepasswd
+ 80475 -r-sr-xr-x  1 root  wheel        10136 Oct 23 05:37:02 2020 /usr/bin/passwd
+ 80318 -r-sr-xr-x  1 root  wheel        17072 Oct 23 05:37:28 2020 /usr/bin/quota
+ 80399 -r-sr-xr-x  1 root  wheel        17832 Oct 23 05:37:05 2020 /usr/bin/su
+ 80616 -r-xr-sr-x  1 root  tty          14784 Oct 23 05:37:08 2020 /usr/bin/wall
+ 80620 -r-xr-sr-x  1 root  tty          14320 Oct 23 05:37:08 2020 /usr/bin/write
+ 80681 -r-xr-sr-x  1 root  mail         64232 Oct 23 05:32:12 2020 /usr/libexec/dma
+ 80656 -r-sr-xr--  1 root  mail          9016 Oct 23 05:32:12 2020 /usr/libexec/dma-mbox-create
+161665 -r-xr-sr-x  1 root  smmsp       743528 Oct 23 05:38:21 2020 /usr/libexec/sendmail/sendmail
+ 80650 -r-sr-xr-x  1 root  wheel        59400 Oct 23 05:34:37 2020 /usr/libexec/ssh-keysign
+ 80652 -r-sr-xr-x  1 root  wheel         6576 Oct 23 05:32:15 2020 /usr/libexec/ulog-helper
+493912 -rwsr-xr-x  1 root  wheel        22864 Feb 25 17:56:06 2021 /usr/local/bin/pkexec
+966796 -rwsr-xr-x  1 root  wheel        13920 Feb 25 17:56:06 2021 /usr/local/lib/polkit-1/polkit-agent-helper-1
+816827 -rwsr-x---  1 root  messagebus   52552 Feb 25 01:27:04 2021 /usr/local/libexec/dbus-daemon-launch-helper
+339843 -rwxr-sr-x  1 root  kmem        139528 Apr  9 01:34:19 2021 /usr/local/sbin/lsof
+ 81556 -r-sr-sr-x  2 root  authpf       21656 Oct 23 05:38:02 2020 /usr/sbin/authpf
+ 81556 -r-sr-sr-x  2 root  authpf       21656 Oct 23 05:38:02 2020 /usr/sbin/authpf-noip
+ 81484 -r-xr-sr-x  1 root  daemon       58592 Oct 23 05:38:13 2020 /usr/sbin/lpc
+ 81475 -r-sr-xr--  1 root  network     438352 Oct 23 05:38:20 2020 /usr/sbin/ppp
+ 81555 -r-sr-xr-x  1 root  wheel        22136 Oct 23 05:38:22 2020 /usr/sbin/timedc
+ 81514 -r-sr-xr-x  1 root  wheel        34760 Oct 23 05:37:53 2020 /usr/sbin/traceroute
+ 81667 -r-sr-xr-x  1 root  wheel        28888 Oct 23 05:38:11 2020 /usr/sbin/traceroute6
+ 81566 -r-xr-sr-x  1 root  kmem         12248 Oct 23 05:37:53 2020 /usr/sbin/trpt
